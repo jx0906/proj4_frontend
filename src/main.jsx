@@ -1,18 +1,32 @@
+/*main.jsx for entry point logic, ie codes for boostrapping the app and rendering the root component (ie, App)
+wrapped in various context providers such as react, router and mantine */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { MantineProvider } from "@mantine/core";
 import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App.jsx";
+import "./index.css";
 
-// Import styles of Mantine packages
-// All packages except `@mantine/hooks` require styles imports
+// import styles of Mantine packages
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/dates/styles.css";
 
+// // https://mantine.dev/theming/default-theme/
+// const theme = createTheme({
+//   fontFamily: "Montserrat, sans-serif",
+//   defaultRadius: "md",
+//   cursorType: "pointer",
+//   primaryColor: "yellow",
+// });
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <MantineProvider>{/* Your app here */}</MantineProvider>;
+      <MantineProvider>
+        {/* theme={theme} defaultColorScheme="light" */}
+        <App />
+      </MantineProvider>
     </Router>
   </React.StrictMode>
 );
