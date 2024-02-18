@@ -14,11 +14,11 @@ import "@mantine/dates/styles.css";
 
 // https://mantine.dev/theming/default-theme/
 const theme = createTheme({
-  fontFamily: "Montserrat, sans-serif",
+  fontFamily: "Helvetica, sans-serif",
   defaultRadius: "md",
   cursorType: "pointer",
   //https://mantine.dev/colors-generator/?color=C91A52
-  primaryColor: "pale red",
+  primaryColor: "red",
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
