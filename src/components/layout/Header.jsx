@@ -37,31 +37,31 @@ export const Header = ({ user, setUser }) => {
   const [userMenuOpened, setUserMenuOpened] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  // const { successToast, errorToast } = useToast();
-  // const { sendRequest } = useFetch();
+  const { successToast, errorToast } = useToast();
+  const { sendRequest } = useFetch();
 
-  // const handleLogout = () => {
-  //   try {
-  //     const res = sendRequest(
-  //       `${import.meta.env.VITE_API_URL}/user/logout`,
-  //       "POST",
-  //       { email: user.email }
-  //     );
-  //     logOut();
-  //     setUser(null);
-  //     navigate("/");
-  //     successToast({
-  //       title: "See you again!",
-  //       message: "You have successfully logged out.",
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //     errorToast({
-  //       title: "Error",
-  //       message: "Something went wrong. Please try again.",
-  //     });
-  //   }
-  // };
+  const handleLogout = () => {
+    try {
+      const res = sendRequest(
+        `${import.meta.env.VITE_API_URL}/user/logout`,
+        "POST",
+        { email: user.email }
+      );
+      logOut();
+      setUser(null);
+      navigate("/");
+      successToast({
+        title: "See you again!",
+        message: "You have successfully logged out.",
+      });
+    } catch (err) {
+      console.log(err);
+      errorToast({
+        title: "Error",
+        message: "Something went wrong. Please try again.",
+      });
+    }
+  };
 
   return (
     <div className={classes.header}>
@@ -166,7 +166,7 @@ export const Header = ({ user, setUser }) => {
                     My Shopping List
                   </Menu.Item>
                 </>
-                <Menu.Item
+                {/* <Menu.Item
                   component={Link}
                   to="/account"
                   leftSection={
@@ -177,7 +177,7 @@ export const Header = ({ user, setUser }) => {
                   }
                 >
                   Account settings
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item
                   leftSection={
                     <IconLogout

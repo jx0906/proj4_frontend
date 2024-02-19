@@ -12,7 +12,7 @@ import classes from "./Login.module.css";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { hashDataWithSaltRounds, storeToken } from "../../util/security";
 import useFetch from "../../hooks/useFetch";
-// import useToast from "../../hooks/useToast";
+import useToast from "../../hooks/useToast";
 // import { getUser } from "../../service/users";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ function UserLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { sendRequest, getLoginDetails } = useFetch();
-  // const { successToast, errorToast } = useToast();
+  const { successToast, errorToast } = useToast();
   // const { setUser } = useOutletContext();
   const [submitting, setSubmitting] = useState(false);
 

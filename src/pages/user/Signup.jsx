@@ -15,7 +15,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { hashData } from "../../util/security";
 import useFetch from "../../hooks/useFetch";
-// import useToast from "../../hooks/useToast";
+import useToast from "../../hooks/useToast";
 
 function UserSignUp() {
   //Function to redirect users upon clicking button
@@ -24,7 +24,7 @@ function UserSignUp() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const { sendRequest } = useFetch();
-  // const { successToast, errorToast } = useToast();
+  const { successToast, errorToast } = useToast();
   const [submitting, setSubmitting] = useState(false);
 
   //user input
@@ -63,7 +63,7 @@ function UserSignUp() {
       });
     } catch (err) {
       console.log(err);
-      // errorToast(err.message ? err.message : "Error");
+      errorToast(err.message ? err.message : "Error");
       setSubmitting(false);
     }
   }
