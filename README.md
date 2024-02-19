@@ -40,6 +40,7 @@ https://todaybakewhat.onrender.com
 ## Product Design Documentations
 
 - [Wireframe](https://www.figma.com/file/W64GG2WStSC9YhuQr7aYYS/today-bake-what%3F?type=design&node-id=1848-2927&mode=design)
+- [Brandboard](https://drive.google.com/file/d/1QS5OU1KiXaRBT_Ld9ah4mofdfDTLS_80/view?usp=sharing)
 - [Data model ERD](https://app.diagrams.net/#Hjx0906%2Fproj4-backend%2Fmain%2FERD.drawio)
 - [Overview of API](https://docs.google.com/spreadsheets/d/1onAcolqETuYnLY4E1aEvDwoeBZb6KpkL_CIPehhYmws/edit?pli=1#gid=1899189910)
 - [Frontend page structure](https://docs.google.com/spreadsheets/d/1onAcolqETuYnLY4E1aEvDwoeBZb6KpkL_CIPehhYmws/edit?pli=1#gid=0)
