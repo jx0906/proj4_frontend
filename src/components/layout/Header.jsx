@@ -28,8 +28,8 @@ import {
 import classes from "./HeaderTabs.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-// import useToast from "../../hooks/useToast";
-// import useFetch from "../../hooks/useFetch";
+import useToast from "../../hooks/useToast";
+import useFetch from "../../hooks/useFetch";
 // import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
@@ -72,14 +72,10 @@ export const Header = ({ user, setUser }) => {
             style={{
               color: theme.colors.red[6],
               textDecoration: "none",
-              fontWeight: 400,
-              fontSize: "20px",
             }}
           >
-            <Anchor component={Link} to="/" underline="never">
-              <Flex justify="space-between" direction="row" align="center">
-                <Image src={logo} w={500} h={30} />
-              </Flex>
+            <Anchor component={Link} to="/">
+              <Image src={logo} h={40} w={300} fit="contain" />
             </Anchor>
           </Title>
 
