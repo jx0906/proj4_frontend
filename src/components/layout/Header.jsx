@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+// disable specific ESLint rules for the file or portion of code to facilitate temp testing.
+/* eslint-disable react-hooks/rules-of-hooks, no-unused-vars, react/prop-types */
+
 import cx from "clsx";
 import { useState } from "react";
 import {
@@ -18,19 +18,19 @@ import {
   Anchor,
 } from "@mantine/core";
 import {
-  IconLogout,
-  IconHeart,
-  IconStar,
+  IconBucket,
+  IconShoppingCartSearch,
   IconChevronDown,
-  IconMapPin,
+  IconNotes,
   IconSettings,
+  IconLogout,
 } from "@tabler/icons-react";
 import classes from "./HeaderTabs.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import useToast from "../../hooks/useToast";
-import useFetch from "../../hooks/useFetch";
-import { logOut } from "../../service/users";
+// import useToast from "../../hooks/useToast";
+// import useFetch from "../../hooks/useFetch";
+// import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
   const theme = useMantineTheme();
@@ -40,28 +40,28 @@ export const Header = ({ user, setUser }) => {
   // const { successToast, errorToast } = useToast();
   // const { sendRequest } = useFetch();
 
-  const handleLogout = () => {
-    try {
-      const res = sendRequest(
-        `${import.meta.env.VITE_API_URL}/user/logout`,
-        "POST",
-        { email: user.email }
-      );
-      logOut();
-      setUser(null);
-      navigate("/");
-      successToast({
-        title: "See you again!",
-        message: "You have successfully logged out.",
-      });
-    } catch (err) {
-      console.log(err);
-      errorToast({
-        title: "Error",
-        message: "Something went wrong. Please try again.",
-      });
-    }
-  };
+  // const handleLogout = () => {
+  //   try {
+  //     const res = sendRequest(
+  //       `${import.meta.env.VITE_API_URL}/user/logout`,
+  //       "POST",
+  //       { email: user.email }
+  //     );
+  //     logOut();
+  //     setUser(null);
+  //     navigate("/");
+  //     successToast({
+  //       title: "See you again!",
+  //       message: "You have successfully logged out.",
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //     errorToast({
+  //       title: "Error",
+  //       message: "Something went wrong. Please try again.",
+  //     });
+  //   }
+  // };
 
   return (
     <div className={classes.header}>
@@ -70,7 +70,7 @@ export const Header = ({ user, setUser }) => {
           <Title
             order={1}
             style={{
-              color: theme.colors.blue[6],
+              color: theme.colors.red[6],
               textDecoration: "none",
               fontWeight: 400,
               fontSize: "20px",
@@ -78,10 +78,7 @@ export const Header = ({ user, setUser }) => {
           >
             <Anchor component={Link} to="/" underline="never">
               <Flex justify="space-between" direction="row" align="center">
-                <Image src={logo} w={30} h={30} />
-                {/* <Text ml="xs" fw="bold">
-                  todaybakewhat
-                </Text> */}
+                <Image src={logo} w={500} h={30} />
               </Flex>
             </Anchor>
           </Title>
@@ -130,48 +127,45 @@ export const Header = ({ user, setUser }) => {
               <Menu.Dropdown>
                 <Menu.Item
                   component={Link}
-                  to="/account/bookings"
+                  to="/account/recipe"
                   leftSection={
-                    <IconHeart
+                    <IconBucket
                       style={{ width: rem(16), height: rem(16) }}
                       color={theme.colors.red[6]}
                       stroke={1.5}
                     />
                   }
                 >
-                  Your Bookings
+                  My Collection
                 </Menu.Item>
-
-                {user.isOwner && (
-                  <>
-                    <Menu.Item
-                      component={Link}
-                      to="/owner/bookings"
-                      leftSection={
-                        <IconStar
-                          style={{ width: rem(16), height: rem(16) }}
-                          color={theme.colors.yellow[6]}
-                          stroke={1.5}
-                        />
-                      }
-                    >
-                      Your Guests
-                    </Menu.Item>
-                    <Menu.Item
-                      component={Link}
-                      to="/owner/restaurant"
-                      leftSection={
-                        <IconMapPin
-                          style={{ width: rem(16), height: rem(16) }}
-                          color={theme.colors.blue[6]}
-                          stroke={1.5}
-                        />
-                      }
-                    >
-                      Your Restaurant
-                    </Menu.Item>
-                  </>
-                )}
+                <>
+                  <Menu.Item
+                    component={Link}
+                    to="/account/notes"
+                    leftSection={
+                      <IconNotes
+                        style={{ width: rem(16), height: rem(16) }}
+                        color={theme.colors.yellow[6]}
+                        stroke={1.5}
+                      />
+                    }
+                  >
+                    My Notes
+                  </Menu.Item>
+                  <Menu.Item
+                    component={Link}
+                    to="/butler/pricekaki"
+                    leftSection={
+                      <IconShoppingCartSearch
+                        style={{ width: rem(16), height: rem(16) }}
+                        color={theme.colors.blue[6]}
+                        stroke={1.5}
+                      />
+                    }
+                  >
+                    My Shopping List
+                  </Menu.Item>
+                </>
                 <Menu.Item
                   component={Link}
                   to="/account"
@@ -184,7 +178,6 @@ export const Header = ({ user, setUser }) => {
                 >
                   Account settings
                 </Menu.Item>
-
                 <Menu.Item
                   leftSection={
                     <IconLogout
@@ -192,7 +185,7 @@ export const Header = ({ user, setUser }) => {
                       stroke={1.5}
                     />
                   }
-                  onClick={handleLogout}
+                  // onClick={handleLogout}
                 >
                   Logout
                 </Menu.Item>
