@@ -30,7 +30,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import useToast from "../../hooks/useToast";
 import useFetch from "../../hooks/useFetch";
-// import { logOut } from "../../service/users";
+import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
   const theme = useMantineTheme();
@@ -81,7 +81,7 @@ export const Header = ({ user, setUser }) => {
 
           {/* Auth Buttons*/}
           {!user &&
-            location.pathname !== "/signin" &&
+            location.pathname !== "/login" &&
             location.pathname !== "/signup" && (
               <Group>
                 <Button variant="outline" component={Link} to="/login">
@@ -181,7 +181,7 @@ export const Header = ({ user, setUser }) => {
                       stroke={1.5}
                     />
                   }
-                  // onClick={handleLogout}
+                  onClick={handleLogout}
                 >
                   Logout
                 </Menu.Item>
