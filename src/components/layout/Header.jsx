@@ -28,40 +28,40 @@ import {
 import classes from "./HeaderTabs.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-// import useToast from "../../hooks/useToast";
-// import useFetch from "../../hooks/useFetch";
-// import { logOut } from "../../service/users";
+import useToast from "../../hooks/useToast";
+import useFetch from "../../hooks/useFetch";
+import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
   const theme = useMantineTheme();
   const [userMenuOpened, setUserMenuOpened] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  // const { successToast, errorToast } = useToast();
-  // const { sendRequest } = useFetch();
+  const { successToast, errorToast } = useToast();
+  const { sendRequest } = useFetch();
 
-  // const handleLogout = () => {
-  //   try {
-  //     const res = sendRequest(
-  //       `${import.meta.env.VITE_API_URL}/user/logout`,
-  //       "POST",
-  //       { email: user.email }
-  //     );
-  //     logOut();
-  //     setUser(null);
-  //     navigate("/");
-  //     successToast({
-  //       title: "See you again!",
-  //       message: "You have successfully logged out.",
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //     errorToast({
-  //       title: "Error",
-  //       message: "Something went wrong. Please try again.",
-  //     });
-  //   }
-  // };
+  const handleLogout = () => {
+    try {
+      const res = sendRequest(
+        `${import.meta.env.VITE_API_URL}/user/logout`,
+        "POST",
+        { email: user.email }
+      );
+      logOut();
+      setUser(null);
+      navigate("/");
+      successToast({
+        title: "See you again!",
+        message: "You have successfully logged out.",
+      });
+    } catch (err) {
+      console.log(err);
+      errorToast({
+        title: "Error",
+        message: "Something went wrong. Please try again.",
+      });
+    }
+  };
 
   return (
     <div className={classes.header}>
@@ -72,24 +72,20 @@ export const Header = ({ user, setUser }) => {
             style={{
               color: theme.colors.red[6],
               textDecoration: "none",
-              fontWeight: 400,
-              fontSize: "20px",
             }}
           >
-            <Anchor component={Link} to="/" underline="never">
-              <Flex justify="space-between" direction="row" align="center">
-                <Image src={logo} w={500} h={30} />
-              </Flex>
+            <Anchor component={Link} to="/">
+              <Image src={logo} h={40} w={300} fit="contain" />
             </Anchor>
           </Title>
 
           {/* Auth Buttons*/}
           {!user &&
-            location.pathname !== "/signin" &&
+            location.pathname !== "/login" &&
             location.pathname !== "/signup" && (
               <Group>
-                <Button variant="outline" component={Link} to="/signin">
-                  Log in
+                <Button variant="outline" component={Link} to="/login">
+                  Login
                 </Button>
                 <Button component={Link} to="/signup">
                   Sign up
@@ -166,7 +162,7 @@ export const Header = ({ user, setUser }) => {
                     My Shopping List
                   </Menu.Item>
                 </>
-                <Menu.Item
+                {/* <Menu.Item
                   component={Link}
                   to="/account"
                   leftSection={
@@ -177,7 +173,7 @@ export const Header = ({ user, setUser }) => {
                   }
                 >
                   Account settings
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item
                   leftSection={
                     <IconLogout
@@ -185,7 +181,7 @@ export const Header = ({ user, setUser }) => {
                       stroke={1.5}
                     />
                   }
-                  // onClick={handleLogout}
+                  onClick={handleLogout}
                 >
                   Logout
                 </Menu.Item>

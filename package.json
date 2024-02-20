@@ -17,6 +17,7 @@
     "@mantine/hooks": "^7.5.3",
     "@mantine/notifications": "^7.5.3",
     "@tabler/icons-react": "^2.47.0",
+    "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
     "embla-carousel-react": "^7.1.0",
     "nodemon": "^3.0.3",
