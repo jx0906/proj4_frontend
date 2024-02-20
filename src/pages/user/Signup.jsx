@@ -1,7 +1,6 @@
 import {
   Anchor,
   Button,
-  Checkbox,
   Container,
   Group,
   Paper,
@@ -29,9 +28,9 @@ function UserSignUp() {
 
   //user input
   const formState = {
+    name: name,
     email: email,
     password: password,
-    name: name,
   };
 
   function hashPassword() {
@@ -51,12 +50,12 @@ function UserSignUp() {
       hashPassword();
       const formData = { ...formState };
       await sendRequest(
-        `${import.meta.env.VITE_API_URL}/user/create`,
+        `${import.meta.env.VITE_API_URL}/user/signup`,
         "POST",
         formData
       );
       setSubmitting(false);
-      navigate("/signin");
+      navigate("/login");
       successToast({
         title: "Signup Completed!",
         message: "You have successfully created your account. Please login",
