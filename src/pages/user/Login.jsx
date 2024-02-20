@@ -9,12 +9,13 @@ import {
   Title,
 } from "@mantine/core";
 import classes from "./Login.module.css";
-import { useState } from "react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { hashDataWithSaltRounds, storeToken } from "../../util/security";
 import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import { getUser } from "../../service/users";
+import { UserContext } from "../../App.jsx";
 
 function UserLogin() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ function UserLogin() {
   const [password, setPassword] = useState("");
   const { sendRequest, getLoginDetails } = useFetch();
   const { successToast, errorToast } = useToast();
-  const { setUser } = useOutletContext();
+  const { user, setUser } = useContext(UserContext);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async () => {
