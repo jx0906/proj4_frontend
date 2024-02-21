@@ -1,4 +1,6 @@
 import { Carousel } from "@mantine/carousel";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { useMediaQuery } from "@mantine/hooks";
 import { Paper, Title, Button, useMantineTheme, rem } from "@mantine/core";
 import classes from "./CarouselCards.module.css";
@@ -57,6 +59,7 @@ function Card({ image, title, articleLink }) {
 export default function CarouselCards() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  const autoplay = useRef(Autoplay({ delay: 3000 }));
   const slides = carouselData.map((item) => (
     <Carousel.Slide key={item.title}>
       <Card {...item} />
@@ -65,6 +68,9 @@ export default function CarouselCards() {
 
   return (
     <Carousel
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
       withIndicators
       slideSize={{ base: "100%", sm: "50%", md: "100%" }}
       slideGap={{ base: rem(2), sm: "sm" }}

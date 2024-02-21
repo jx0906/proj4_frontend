@@ -25,7 +25,7 @@ function App() {
         >
           <Header />
           <main style={{ flexGrow: "1" }}>
-            <Container size="sm">
+            <Container size="lg">
               <Outlet />
             </Container>
           </main>
