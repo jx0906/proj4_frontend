@@ -6,27 +6,29 @@ import {
   Box,
   Text,
   useMantineTheme,
+  Container,
+  Group,
 } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import LoadingSpinner from "../../components/Parts/LoadingSpinner";
+import LoaderDots from "../../components/parts/Loader.jsx";
+import CarouselCards from "../../components/parts/CarouselCards.jsx";
 import { useMediaQuery } from "@mantine/hooks";
 import classes from "./RecipeList.module.css";
-import { IconClock, IconMapPin, IconToolsKitchen3 } from "@tabler/icons-react";
+import { IconClock, IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
 
-function RecipeList() {
+export default function RecipeList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
-  useEffect(() => {
-    getList();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getList();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const getList = async () => {
     try {
@@ -44,20 +46,23 @@ function RecipeList() {
   return (
     <>
       {loading ? (
-        <LoadingSpinner />
+        <LoaderDots ta="center" />
       ) : (
         <>
           <Title order={2} ta="center">
-            Book these tables, now available on ChopeSeats.
+            share ideas leh
           </Title>
+          <Group>
+            <CarouselCards />
 
-          <Flex
-            gap="xl"
-            justify="flex-start"
-            align="stretch"
-            wrap="wrap"
-            mt="xl"
-          >
+            <Flex
+              gap="xl"
+              justify="flex-start"
+              align="stretch"
+              wrap="wrap"
+              mt="xl"
+            >
+              {/*
             {data.map((recipe) => (
               <Anchor
                 key={recipe._id}
@@ -72,7 +77,7 @@ function RecipeList() {
                 }
               >
                 <Flex direction="column" w="100%" h="100%">
-                  {restaurant.image ? (
+                  {recipe.image ? (
                     <Box
                       w="100%"
                       h={200}
@@ -83,8 +88,8 @@ function RecipeList() {
                       className={classes.image}
                     >
                       <Image
-                        src={restaurant.image}
-                        alt={restaurant.name}
+                        src={recipe.image}
+                        alt={recipe.name}
                         w="100%"
                         h="100%"
                       ></Image>
@@ -109,20 +114,20 @@ function RecipeList() {
                   )}
 
                   <Title order={3} mt="sm" lineClamp={2}>
-                    {restaurant.name}
+                    {recipe.name}
                   </Title>
                   <Box w="100%" mt="auto">
                     <Flex align="center" gap="xs" mt="xs">
                       <Flex align="center" gap="5px">
                         <IconToolsKitchen3 w="sm" h="sm" stroke={1.5} />
                         <Text c="black" lh="1">
-                          {restaurant.category}
+                          {recipe.category}
                         </Text>
                       </Flex>
                       <Flex align="center" gap="5px">
-                        <IconMapPin w="sm" h="sm" stroke={1.5} />
+                        <IconSchool w="sm" h="sm" stroke={1.5} />
                         <Text c="black" lh="1">
-                          {restaurant.location}
+                          {recipe.levelOfDiff}
                         </Text>
                       </Flex>
                     </Flex>
@@ -130,7 +135,7 @@ function RecipeList() {
                     <Flex align="center" gap="5px" style={{ marginTop: "5px" }}>
                       <IconClock w="sm" h="sm" stroke={1.5} />
                       <Text c="black" lh="1">
-                        {restaurant.timeOpen} - {restaurant.timeClose}
+                        {recipe.timeRequired}
                       </Text>
                     </Flex>
 
@@ -145,12 +150,11 @@ function RecipeList() {
                   </Box>
                 </Flex>
               </Anchor>
-            ))}
-          </Flex>
+            ))}*/}
+            </Flex>
+          </Group>
         </>
       )}
     </>
   );
 }
-
-export default RestaurantList;

@@ -19,9 +19,9 @@
     margin-top: var(--mantine-spacing-xs);
   }
   
-  .category {
+  /* .category {
     color: var(--mantine-color-white);
     opacity: 0.7;
     font-weight: 700;
     text-transform: uppercase;
-  }
+  } */

@@ -33,6 +33,7 @@ import useFetch from "../../hooks/useFetch";
 import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
+  // const { user, setUser } = useContext(UserContext);
   const theme = useMantineTheme();
   const [userMenuOpened, setUserMenuOpened] = useState(false);
   const location = useLocation();
