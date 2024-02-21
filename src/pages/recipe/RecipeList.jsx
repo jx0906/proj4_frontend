@@ -6,8 +6,6 @@ import {
   Box,
   Text,
   useMantineTheme,
-  Container,
-  Group,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -25,10 +23,10 @@ export default function RecipeList() {
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
-  // useEffect(() => {
-  //   getList();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    getList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getList = async () => {
     try {
@@ -46,23 +44,23 @@ export default function RecipeList() {
   return (
     <>
       {loading ? (
-        <LoaderDots ta="center" />
+        <LoaderDots />
       ) : (
         <>
           <Title order={2} ta="center">
             share ideas leh
           </Title>
-          <Group>
-            <CarouselCards />
 
-            <Flex
-              gap="xl"
-              justify="flex-start"
-              align="stretch"
-              wrap="wrap"
-              mt="xl"
-            >
-              {/*
+          <CarouselCards />
+
+          <Flex
+            gap="xl"
+            justify="flex-start"
+            align="stretch"
+            wrap="wrap"
+            mt="xl"
+          >
+            {/*
             {data.map((recipe) => (
               <Anchor
                 key={recipe._id}
@@ -151,8 +149,7 @@ export default function RecipeList() {
                 </Flex>
               </Anchor>
             ))}*/}
-            </Flex>
-          </Group>
+          </Flex>
         </>
       )}
     </>

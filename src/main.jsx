@@ -14,7 +14,7 @@ import RecipeList from "./pages/recipe/RecipeList.jsx";
 // import styles of Mantine packages
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
-// import "@mantine/dates/styles.css";
+import "@mantine/dates/styles.css";
 import "@mantine/carousel/styles.css";
 
 // https://mantine.dev/theming/default-theme/

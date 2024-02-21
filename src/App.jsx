@@ -24,8 +24,8 @@ function App() {
           style={{ minHeight: "100vh" }}
         >
           <Header />
-          <main style={{ flexGrow: "1", padding: "40px 0" }}>
-            <Container size="md">
+          <main style={{ flexGrow: "1" }}>
+            <Container size="sm">
               <Outlet />
             </Container>
           </main>
