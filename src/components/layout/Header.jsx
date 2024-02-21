@@ -33,6 +33,7 @@ import useFetch from "../../hooks/useFetch";
 import { logOut } from "../../service/users";
 
 export const Header = ({ user, setUser }) => {
+  // const { user, setUser } = useContext(UserContext);
   const theme = useMantineTheme();
   const [userMenuOpened, setUserMenuOpened] = useState(false);
   const location = useLocation();
@@ -65,7 +66,7 @@ export const Header = ({ user, setUser }) => {
 
   return (
     <div className={classes.header}>
-      <Container className={classes.mainSection} size="md">
+      <Container className={classes.mainSection} size="xl">
         <Group justify="space-between">
           <Title
             order={1}
@@ -75,7 +76,7 @@ export const Header = ({ user, setUser }) => {
             }}
           >
             <Anchor component={Link} to="/">
-              <Image src={logo} h={40} w={300} fit="contain" />
+              <Image src={logo} h={45} w="auto" fit="fill" />
             </Anchor>
           </Title>
 
