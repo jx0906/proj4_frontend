@@ -47,10 +47,6 @@ export default function RecipeList() {
         <LoaderDots />
       ) : (
         <>
-          <Title order={2} ta="center">
-            share ideas leh
-          </Title>
-
           <CarouselCards />
 
           <Flex

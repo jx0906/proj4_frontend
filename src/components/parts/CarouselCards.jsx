@@ -1,31 +1,25 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
-import {
-  Paper,
-  Title,
-  Button,
-  useMantineTheme,
-  rem,
-} from "@mantine/core";
+import { Paper, Title, Button, useMantineTheme, rem } from "@mantine/core";
 import classes from "./CarouselCards.module.css";
 
 const carouselData = [
   {
     image:
-      "https://media.istockphoto.com/id/842797430/photo/dietary-fiber-food-still-life.jpg?s=1024x1024&w=is&k=20&c=uluxXxkoodammogpT20Ibiw9yn_pPoKPs4wUtuTgGOM=",
+      "https://media.istockphoto.com/id/1176979263/photo/large-group-of-wholegrain-food-shot-on-rustic-wooden-table.jpg?s=1024x1024&w=is&k=20&c=4ejQttNi3x6M8JEWx9dDP2ShY9_q3i1Ok_tfCzQxV88=",
     title: "Mastering gluten-free baking",
     articleLink: "https://fasteasybread.com/gluten-free-baking/",
   },
   {
     image:
-      "https://media.istockphoto.com/id/1368565310/photo/asian-little-boy-in-apron-preparing-baking-the-dough-in-kitchen-room-at-home.jpg?s=1024x1024&w=is&k=20&c=aNudLcwXdo9enISLIWnegnHetVPVDSrekk4KradNelM=",
+      "https://media.istockphoto.com/id/1297134259/photo/asian-chinese-6-years-old-boy-helping-his-grandmother-preparing-food-with-flour-baking-at.jpg?s=1024x1024&w=is&k=20&c=EdfBq1AxxbNaDyyh0j7wUfx1fMIEYOUT7tI5UoxkZYE=",
     title: "Baking with kids: 20 recipes to make the Mar hols a delicious one",
     articleLink:
       "https://www.bbcgoodfood.com/howto/guide/top-5-easy-bakes-kids",
   },
   {
     image:
-      "https://media.istockphoto.com/id/643847438/photo/restaurant-chilling-out-classy-lifestyle-reserved-concept.jpg?s=1024x1024&w=is&k=20&c=q4EJnuq8n65yvvddFbbN9lAoYRA2WuVsMH_AX1-BX6M=",
+      "https://media.istockphoto.com/id/875247342/photo/nothing-inspires-productivity-like-a-healthy-lunch.jpg?s=1024x1024&w=is&k=20&c=swAGlI33rFEFQmqDyCynwi1whrxVXRVdd9QI-I-bT1A=",
     title: "7 Healthy Lunch Tips for the Busy Executive",
     articleLink: "https://www.healthhub.sg/live-healthy/beat_lunch_hour_rush",
   },
@@ -52,7 +46,7 @@ function Card({ image, title, articleLink }) {
           {title}
         </Title>
       </div>
-      b
+
       <Button variant="white" color="dark" component="a" href={articleLink}>
         Read article
       </Button>
@@ -71,10 +65,13 @@ export default function CarouselCards() {
 
   return (
     <Carousel
-      slideSize={{ base: "100%", sm: "50%" }}
-      slideGap={{ base: rem(2), sm: "xl" }}
+      withIndicators
+      slideSize={{ base: "100%", sm: "50%", md: "100%" }}
+      slideGap={{ base: rem(2), sm: "sm" }}
       align="start"
-      slidesToScroll={mobile ? 1 : 2}
+      height={250}
+      slidesToScroll={mobile ? 4 : 1}
+      loop
     >
       {slides}
     </Carousel>
