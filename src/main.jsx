@@ -10,6 +10,7 @@ import App from "./App.jsx";
 import UserLogin from "./pages/user/Login.jsx";
 import UserSignUp from "./pages/user/Signup.jsx";
 import RecipeList from "./pages/recipe/RecipeList.jsx";
+import Recipe from "./pages/recipe/Recipe.jsx";
 
 // import styles of Mantine packages
 import "@mantine/core/styles.css";
@@ -39,6 +40,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/* User */}
             <Route path="/login" element={<UserLogin />} />
             <Route path="/signup" element={<UserSignUp />} />
+
+            {/* Recipes */}
+            <Route path="/recipe/:id" element={<Recipe />} />
           </Route>
 
           {/* 404 */}
