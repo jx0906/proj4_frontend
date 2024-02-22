@@ -82,7 +82,6 @@ export default function RecipeList() {
                         alt={recipe.name}
                         // className={classes.image}
                         height={100}
-                        aspectRatio="1/1"
                       />
                     </Card.Section>
 

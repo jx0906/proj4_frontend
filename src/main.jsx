@@ -11,6 +11,7 @@ import UserLogin from "./pages/user/Login.jsx";
 import UserSignUp from "./pages/user/Signup.jsx";
 import RecipeList from "./pages/recipe/RecipeList.jsx";
 import Recipe from "./pages/recipe/Recipe.jsx";
+import NewRecipe from "./pages/recipe/NewRecipe.jsx";
 import NotFound from "./pages/error/NotFound.jsx";
 
 // import styles of Mantine packages
@@ -44,6 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
             {/* Recipes */}
             <Route path="/recipe/:id" element={<Recipe />} />
+            <Route path="/recipe/create" element={<NewRecipe />} />
           </Route>
 
           {/* 404 */}
