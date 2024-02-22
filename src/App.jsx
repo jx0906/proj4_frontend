@@ -21,11 +21,11 @@ function App() {
         <Flex
           direction="column"
           position={"relative"}
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "400vh" }}
         >
           <Header />
           <main style={{ flexGrow: "1" }}>
-            <Container size="lg">
+            <Container size="xl">
               <Outlet />
             </Container>
           </main>
