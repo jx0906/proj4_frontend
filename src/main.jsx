@@ -11,6 +11,7 @@ import UserLogin from "./pages/user/Login.jsx";
 import UserSignUp from "./pages/user/Signup.jsx";
 import RecipeList from "./pages/recipe/RecipeList.jsx";
 import Recipe from "./pages/recipe/Recipe.jsx";
+import NotFound from "./pages/error/NotFound.jsx";
 
 // import styles of Mantine packages
 import "@mantine/core/styles.css";
@@ -46,7 +47,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
 
           {/* 404 */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MantineProvider>
     </Router>
