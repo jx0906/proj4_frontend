@@ -6,20 +6,19 @@ import {
   IconEdit,
 } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";
+import { useClipboard } from "@mantine/hooks";
 
 export default function UserActions() {
+  const clipboard = useClipboard({ timeout: 500 });
+
   function handleClickToShare(evt) {
     evt.preventDefault();
     // Get the URL field
     var getURL = window.location.href;
-    // Select the text field
-    // copyText.select();
-    // copyText.setSelectionRange(0, 99999); // For mobile devices
-
     // Copy the text inside the text field
-    navigator.clipboard.writeText(getURL.value);
+    clipboard.copy(getURL);
 
-    // Alert the copied text
+    // Success feedback
     notifications.show({
       message: "URL copied!",
       autoClose: 1000,

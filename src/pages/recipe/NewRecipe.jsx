@@ -4,9 +4,9 @@ import {
   Select,
   NumberInput,
   Textarea,
+  Text,
   Box,
   Title,
-  rem,
   Group,
   Button,
 } from "@mantine/core";
@@ -30,29 +30,29 @@ function NewRecipe() {
   const [loading, setLoading] = useState(true);
 
   //   useEffect(() => {
-  //     if (!user || !user.isOwner) {
+  //     if (!user) {
   //       navigate("/signin");
   //       return;
   //     }
 
-  //     const fetchRecipeData = async () => {
-  //       try {
-  //         const resData = await sendRequest(
-  //           `${import.meta.env.VITE_API_URL}/recipe/user`,
-  //           "GET"
-  //         );
-  //         if (resData) {
-  //           navigate("/owner/Recipe");
-  //           return;
-  //         }
+  // //     const fetchRecipeData = async () => {
+  //       // try {
+  // //         const resData = await sendRequest(
+  // //           `${import.meta.env.VITE_API_URL}/recipe/user`,
+  // //           "GET"
+  // //         );
+  // //         if (resData) {
+  // //           navigate("/owner/Recipe");
+  // //           return;
+  // //         }
   //         setLoading(false);
-  //       } catch (err) {
-  //         console.log(err);
-  //       }
-  //     };
+  //       // } catch (err) {
+  //       //   console.log(err);
+  //       // }
+  //     // };
 
-  //     fetchRecipeData();
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
+  // //     fetchRecipeData();
+  //     eslint-disable-next-line react-hooks/exhaustive-deps
   //   }, []);
 
   const form = useForm({
@@ -66,9 +66,17 @@ function NewRecipe() {
       levelOfDiff: (value) =>
         value === undefined &&
         "Please choose an area which best represents the difficulty of this recipe.",
-      // ingredients: (value) =>
-      //   value === undefined && "Please provide the required ingredients.",
-      //   servingSize: (value) =>
+      ingredients: (value) => [
+        {
+          quantity:
+            value === undefined && "Please provide the required quantity.",
+          unit: value === undefined && "Please provide the required unit",
+          name:
+            value === undefined &&
+            "Please provide the required ingredient name",
+        },
+      ],
+      //   servings: (value) =>
       //     value === undefined &&
       //     "Please enter a number for the no. of servings this recipe can serve.",
       timeRequired: (value) => value === undefined && "Please enter a time",
@@ -93,7 +101,7 @@ function NewRecipe() {
           ingredients: form.values.ingredients,
           levelOfDiff: form.values.levelOfDiff,
           timeRequired: form.values.maxPax,
-          servingSize: form.values.servingSize,
+          servings: form.values.servings,
           instructions: form.values.instruction,
         }
       );
@@ -115,32 +123,28 @@ function NewRecipe() {
   };
 
   const inputIngredient = form.values.ingredients.map((item, index) => (
-    <Group key={item.key} mt="xs">
+    <Box
+      key={item.key}
+      mt="xs"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "0.5fr 0.5fr 1fr 0.25fr",
+        gap: "5px",
+      }}
+    >
       <NumberInput
-        placeholder="10"
-        min={1}
-        mt="md"
         {...form.getInputProps(`ingredients.${index}.quantity`)}
+        min={1}
       />
-      <TextInput
-        placeholder="kg, ml, pieces.."
-        withAsterisk
-        style={{ flex: 1 }}
-        {...form.getInputProps(`ingredients.${index}.unit`)}
-      />
-      <TextInput
-        placeholder="Flour"
-        withAsterisk
-        style={{ flex: 1 }}
-        {...form.getInputProps(`ingredients.${index}.name`)}
-      />
+      <TextInput {...form.getInputProps(`ingredients.${index}.unit`)} />
+      <TextInput {...form.getInputProps(`ingredients.${index}.name`)} />
       <ActionIcon
         color="red"
         onClick={() => form.removeListItem("ingredients", index)}
       >
         <IconTrash size="1rem" />
       </ActionIcon>
-    </Group>
+    </Box>
   ));
 
   const modalContent = (form) => {
@@ -152,9 +156,9 @@ function NewRecipe() {
       Category: form.values.category,
       levelOfDiff: form.values.levelOfDiff,
       timeRequired: form.values.maxPax,
-      servingSize: form.values.servingSize
-        ? form.values.servingSize
-        : "No serving size info provided",
+      Servings: form.values.servings
+        ? form.values.servings
+        : "No info on servings provided",
       Ingredients: form.values.ingredients,
       Instructions: form.values.instruction,
     };
@@ -165,8 +169,8 @@ function NewRecipe() {
           <li key={key}>
             {key === "levelofDiff"
               ? `Level of Difficulty: ${value}`
-              : key === "servingSize"
-              ? `Serving Size: ${value}`
+              : key === "servings"
+              ? `Servings: ${value}`
               : key === "timeRequired"
               ? `Time Required: ${value} min`
               : `${key}: ${value}`}
@@ -178,136 +182,129 @@ function NewRecipe() {
 
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <LoaderDots />
-      ) : (
-        <>
-          <Title order={2} ta="center">
-            Create Recipe
-          </Title>
-          <Box maw={500} mx="auto" mt="xl">
-            <form
-              onSubmit={form.onSubmit(() => {
-                if (form.isValid) {
-                  toggle();
-                }
-              })}
-            >
-              <TextInput
-                label="Name"
-                withAsterisk
-                placeholder="Rainbow Bread"
-                {...form.getInputProps("name")}
-              />
-              <Textarea
-                label="Description"
-                mt="md"
-                placeholder="Easy peasy cake recipe for a perfect afternoon tea date."
-                autosize="true"
-                minRows={3}
-                {...form.getInputProps("description")}
-              />
-              <Select
-                label="Category"
-                withAsterisk
-                placeholder="Pick one"
-                data={["Pastries", "Biscuits", "Bread", "Cakes"]}
-                mt="md"
-                {...form.getInputProps("category")}
-              />
-              <Select
-                label="Level of Difficulty"
-                withAsterisk
-                placeholder="Pick one"
-                data={["Easy", "Intermediate", "Advanced"]}
-                mt="md"
-                {...form.getInputProps("levelOfDiff")}
-              />
-              <NumberInput
-                label="No. of Servings"
-                placeholder="10"
-                min={1}
-                mt="md"
-                {...form.getInputProps("servingSize")}
-              />
-              <NumberInput
-                label="Time Required"
-                placeholder="in minutes"
-                min={1}
-                mt="md"
-                {...form.getInputProps("timeRequired")}
-              />
-
-              <Box maw={500} mx="auto">
-                {inputIngredient.length > 0 ? (
-                  <Group mb="xs">
-                    <Text fw={500} size="sm" pr={100}>
-                      Quantity
-                    </Text>
-                    <Text fw={500} size="sm" pr={90}>
-                      Unit
-                    </Text>
-                    <Text fw={500} size="sm" style={{ flex: 1 }}>
-                      Name of Ingredient
-                    </Text>
-                  </Group>
-                ) : (
-                  <Text c="dimmed" ta="center">
-                    No ingredients have been entered.
-                  </Text>
-                )}
-
-                {fields}
-
-                <Group justify="center" mt="md">
-                  <Button
-                    onClick={() =>
-                      form.insertListItem("ingredients", {
-                        quantity: "",
-                        unit: "",
-                        name: "",
-                        key: randomId(),
-                      })
-                    }
-                  >
-                    Add ingredient
-                  </Button>
-                </Group>
-              </Box>
-
-              <Textarea
-                label="Instructions"
-                mt="md"
-                placeholder="Mix all ingredients and bake at 180 deg C. Cool and serve."
-                autosize="true"
-                minRows={5}
-                {...form.getInputProps("description")}
-              />
-
-              <Group justify="center" mt="xl">
-                <Button
-                  type="button"
-                  component={Link}
-                  to={`/`} //return to landing page
-                  variant="outline"
-                >
-                  Cancel
-                </Button>
-                <Button type="submit">Create</Button>
-              </Group>
-            </form>
-
-            <Modal
-              opened={opened}
-              title="Create Your Recipe"
-              modalContent={modalContent(form)}
-              toggle={toggle}
-              close={close}
-              handleSubmit={handleSubmit}
+      ) : ( */}
+      <>
+        <Title order={2} ta="center">
+          Create Recipe
+        </Title>
+        <Box maw={500} mx="auto" mt="xl">
+          <form
+            onSubmit={form.onSubmit(() => {
+              if (form.isValid) {
+                toggle();
+              }
+            })}
+          >
+            <TextInput
+              label="Name"
+              withAsterisk
+              placeholder="Rainbow Bread"
+              {...form.getInputProps("name")}
             />
-          </Box>
-        </>
-      )}
+            <Textarea
+              label="Description"
+              mt="md"
+              placeholder="Easy peasy cake recipe for a perfect afternoon tea date."
+              autosize="true"
+              minRows={3}
+              {...form.getInputProps("description")}
+            />
+            <Select
+              label="Category"
+              withAsterisk
+              placeholder="Pick one"
+              data={["Pastries", "Biscuits", "Bread", "Cakes"]}
+              mt="md"
+              {...form.getInputProps("category")}
+            />
+            <Select
+              label="Level of Difficulty"
+              withAsterisk
+              placeholder="Pick one"
+              data={["Easy", "Intermediate", "Advanced"]}
+              mt="md"
+              {...form.getInputProps("levelOfDiff")}
+            />
+            <NumberInput
+              label="No. of Servings"
+              placeholder="10"
+              min={1}
+              mt="md"
+              {...form.getInputProps("servings")}
+            />
+            <NumberInput
+              label="Time Required"
+              placeholder="in minutes"
+              min={1}
+              mt="md"
+              {...form.getInputProps("timeRequired")}
+            />
+
+            <Box
+              mt="xs"
+              ta="center"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "0.5fr 0.5fr 1fr 0.25fr",
+              }}
+            >
+              <Text size="sm">Quantity</Text>
+              <Text size="sm">Unit</Text>
+              <Text size="sm">Ingredient Name</Text>
+            </Box>
+
+            {inputIngredient}
+
+            <Group justify="center" mt="sm">
+              <Button
+                onClick={() =>
+                  form.insertListItem("ingredients", {
+                    quantity: "",
+                    unit: "",
+                    name: "",
+                    key: randomId(),
+                  })
+                }
+              >
+                Add ingredient
+              </Button>
+            </Group>
+
+            <Textarea
+              label="Instructions"
+              mt="md"
+              placeholder="Mix all ingredients and bake at 180 deg C. Cool and serve."
+              autosize="true"
+              minRows={5}
+              {...form.getInputProps("description")}
+            />
+
+            <Group justify="center" mt="xl">
+              <Button
+                type="button"
+                component={Link}
+                to={`/`} //return to landing page
+                variant="outline"
+              >
+                Cancel
+              </Button>
+              <Button type="submit">Create</Button>
+            </Group>
+          </form>
+
+          <Modal
+            opened={opened}
+            title="Create Your Recipe"
+            modalContent={modalContent(form)}
+            toggle={toggle}
+            close={close}
+            handleSubmit={handleSubmit}
+          />
+        </Box>
+      </>
+      {/* )} */}
     </>
   );
 }
