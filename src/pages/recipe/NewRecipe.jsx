@@ -57,7 +57,7 @@ function NewRecipe() {
 
   const form = useForm({
     initialValues: {
-      ingredients: [{ quantity: "", unit: "", name: "", key: randomId() }],
+      ingredients: [],
     },
     validate: {
       category: (value) =>
@@ -100,9 +100,9 @@ function NewRecipe() {
           category: form.values.category,
           ingredients: form.values.ingredients,
           levelOfDiff: form.values.levelOfDiff,
-          timeRequired: form.values.maxPax,
+          timeRequired: form.values.timeRequired,
           servings: form.values.servings,
-          instructions: form.values.instruction,
+          instructions: form.values.instructions,
         }
       );
       console.log(res);
@@ -169,8 +169,6 @@ function NewRecipe() {
           <li key={key}>
             {key === "levelofDiff"
               ? `Level of Difficulty: ${value}`
-              : key === "servings"
-              ? `Servings: ${value}`
               : key === "timeRequired"
               ? `Time Required: ${value} min`
               : `${key}: ${value}`}
@@ -278,7 +276,7 @@ function NewRecipe() {
               placeholder="Mix all ingredients and bake at 180 deg C. Cool and serve."
               autosize="true"
               minRows={5}
-              {...form.getInputProps("description")}
+              {...form.getInputProps("instructions")}
             />
 
             <Group justify="center" mt="xl">
@@ -290,7 +288,9 @@ function NewRecipe() {
               >
                 Cancel
               </Button>
-              <Button type="submit">Create</Button>
+              <Button type="submit" onClick={(evt) => console.log(form.values)}>
+                Create
+              </Button>
             </Group>
           </form>
 
