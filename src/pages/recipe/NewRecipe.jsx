@@ -76,9 +76,9 @@ function NewRecipe() {
             "Please provide the required ingredient name",
         },
       ],
-      //   servings: (value) =>
-      //     value === undefined &&
-      //     "Please enter a number for the no. of servings this recipe can serve.",
+      servings: (value) =>
+        value === undefined &&
+        "Please enter a number for the no. of servings this recipe can serve.",
       timeRequired: (value) => value === undefined && "Please enter a time",
       description: (value) =>
         value?.length > 500 && "Please enter less than 500 characters",
