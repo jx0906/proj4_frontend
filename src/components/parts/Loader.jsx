@@ -5,7 +5,7 @@ import { LoadingOverlay, Button, Group, Box } from "@mantine/core";
 // default page loader
 export default function LoaderDots() {
   return (
-    <Container ta="center" mt="xl">
+    <Container align="center" mt="xl">
       <Loader color="orange" type="dots" size={40} />;
     </Container>
   );

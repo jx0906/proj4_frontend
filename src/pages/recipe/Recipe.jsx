@@ -116,7 +116,7 @@ function Recipe() {
                 ></Image>
               )}
               <Flex direction="row">
-                <Box w="40%" px="xs">
+                <Box w="30%" px="xs">
                   <ul style={{ listStyle: "none", padding: 0 }}>
                     {data.ingredients.map((ingredient, index) => (
                       <li key={index}>{ingredient}</li>
@@ -124,7 +124,7 @@ function Recipe() {
                   </ul>
                 </Box>
 
-                <Box w="60%" px="xs">
+                <Box w="70%" px="xs">
                   <Text>{data.instructions}</Text>
                 </Box>
               </Flex>
