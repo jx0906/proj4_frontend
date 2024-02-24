@@ -13,6 +13,7 @@
     "@mantine/carousel": "^7.5.3",
     "@mantine/core": "^7.5.3",
     "@mantine/dates": "^7.5.3",
+    "@mantine/dropzone": "^7.5.3",
     "@mantine/form": "^7.5.3",
     "@mantine/hooks": "^7.5.3",
     "@mantine/notifications": "^7.5.3",

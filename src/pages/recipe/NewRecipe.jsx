@@ -9,6 +9,7 @@ import {
   Title,
   Group,
   Button,
+  rem,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconTrash } from "@tabler/icons-react";
@@ -32,10 +33,6 @@ function NewRecipe() {
   useEffect(() => {
     setLoading(false);
   }, []);
-
-  useEffect(() => {
-    console.log("Modal opened:", opened);
-  }, [opened]);
 
   //   useEffect(() => {
   //     if (!user) {
@@ -65,7 +62,7 @@ function NewRecipe() {
 
   const form = useForm({
     initialValues: {
-      ingredients: [],
+      ingredients: [{ quantity: "", unit: "", name: "", key: randomId() }],
     },
     validate: {
       category: (value) =>
@@ -118,8 +115,7 @@ function NewRecipe() {
       close();
       successToast({
         title: "Recipe Successfully Created!",
-        message:
-          "Your Recipe is now listed for sharing. Thank you for your contribution!",
+        message: "Your recipe is now listed. Thank you for your contribution!",
       });
     } catch (err) {
       console.log(err);
@@ -142,7 +138,7 @@ function NewRecipe() {
     >
       <NumberInput
         {...form.getInputProps(`ingredients.${index}.quantity`)}
-        min={1}
+        min={0}
       />
       <TextInput {...form.getInputProps(`ingredients.${index}.unit`)} />
       <TextInput {...form.getInputProps(`ingredients.${index}.name`)} />
@@ -245,7 +241,7 @@ function NewRecipe() {
               <NumberInput
                 label="Time Required"
                 placeholder="in minutes"
-                min={1}
+                min={0}
                 mt="md"
                 {...form.getInputProps("timeRequired")}
               />
@@ -304,14 +300,14 @@ function NewRecipe() {
               </Group>
             </form>
 
-            {/* <Modal
+            <Modal
               opened={opened}
               title="Create Your Recipe"
               modalContent={modalContent(form)}
               toggle={toggle}
               close={close}
               handleSubmit={handleSubmit}
-            /> */}
+            />
           </Box>
         </>
       )}
