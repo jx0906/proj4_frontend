@@ -9,45 +9,38 @@ import {
   Title,
   Group,
   Button,
-  rem,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconTrash } from "@tabler/icons-react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useOutletContext,
+} from "react-router-dom";
 import { useDisclosure, randomId } from "@mantine/hooks";
-import { useEffect, useState } from "react";
+import { IconTrash } from "@tabler/icons-react";
 import Modal from "../../components/parts/Modal";
 import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
-import { notifications } from "@mantine/notifications";
 
-function NewRecipe() {
-  // manage the state of whether a component (such as a modal) is open or closed.
+function EditRecipe() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const navigate = useNavigate();
   const { sendRequest } = useFetch();
   const { successToast, errorToast } = useToast();
-  // const { user } = useOutletContext();
+  const [data, setData] = useState([]);
+  const [payload, setPayload] = useState({});
   const [loading, setLoading] = useState(true);
-  const [file, setFile] = useState(null);
-
-  useEffect(() => {
-    // if (!user) {
-    //  notifications.show({
-    //     message: "You can only create a recipe if you are logged in.",
-    //     autoClose: 1000,
-    // })
-    //       navigate("/signin");
-    //       return;
-    setLoading(false);
-    window.scrollTo(0, 0);
-  }, []);
+  //   const { user } = useOutletContext();
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
 
   const form = useForm({
     initialValues: {
-      ingredients: [{ quantity: "", unit: "", name: "", key: randomId() }],
+      ingredients: [],
     },
     validate: {
       category: (value) =>
@@ -75,47 +68,68 @@ function NewRecipe() {
     },
   });
 
+  useEffect(() => {
+    // if (!user) {
+    //  notifications.show({
+    //     message: "You can only create a recipe if you are logged in.",
+    //     autoClose: 1000,
+    // })
+    //       navigate("/signin");
+    //       return;}
+
+    const getData = async () => {
+      const recpData = await sendRequest(
+        `${import.meta.env.VITE_API_URL}/recipe/${pathId}`,
+        "GET"
+      );
+      if (!recpData || recpData.length === 0) {
+        navigate("/recipe");
+        return;
+      }
+      setLoading(false);
+      setData(recpData);
+      console.log(recpData);
+      form.setValues({
+        name: recpData.name,
+        category: recpData.category,
+        description: recpData.description,
+        levelOfDiff: recpData.levelOfDiff,
+        timeRequired: recpData.timeRequired,
+        servings: recpData.servings,
+        ingredients: recpData.ingredients.map((ingredient) => {
+          return {
+            quantity: ingredient.quantity,
+            unit: ingredient.unit,
+            name: ingredient.name,
+            key: ingredient.key ? ingredient.key : randomId(),
+          };
+        }),
+        instructions: recpData.instructions,
+      });
+    };
+    getData();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Function to handle file upload
   const handleFileUpload = (uploadedFile) => {
     setFile(uploadedFile);
   };
 
-  // Function to handle form submission
   const handleSubmit = async () => {
     try {
       const res = await sendRequest(
-        `${import.meta.env.VITE_API_URL}/recipe/create`,
+        `${import.meta.env.VITE_API_URL}/Recipe/${pathId}/edit`,
         "POST",
-        {
-          name: form.values.name,
-          description: form.values.description,
-          // image: file.map((properties) => {
-          //   return {
-          //     name: ingredient.quantity,
-          //     data: ingredient.unit,
-          //     contentType: ingredient.name,
-          //   };
-          // }),
-          category: form.values.category,
-          ingredients: form.values.ingredients.map((ingredient) => {
-            return {
-              quantity: ingredient.quantity,
-              unit: ingredient.unit,
-              name: ingredient.name,
-            };
-          }),
-          levelOfDiff: form.values.levelOfDiff,
-          timeRequired: form.values.timeRequired,
-          servings: form.values.servings,
-          instructions: form.values.instructions,
-        }
+        payload
       );
       console.log(res);
-      navigate("/");
+      navigate(`/recipe/${pathId}`);
       close();
       successToast({
-        title: "Recipe Successfully Created!",
-        message: "Your recipe is now listed. Thank you for your contribution!",
+        title: "You did it!",
+        message: "Your recipe has been updated. ",
       });
     } catch (err) {
       console.log(err);
@@ -126,9 +140,9 @@ function NewRecipe() {
     }
   };
 
-  const inputIngredient = form.values.ingredients.map((item, index) => (
+  const inputIngredient = form.values.ingredients.map((ingredient, index) => (
     <Box
-      key={item.key}
+      key={ingredient.key}
       mt="xs"
       style={{
         display: "grid",
@@ -155,6 +169,33 @@ function NewRecipe() {
     </Box>
   ));
 
+  const confirmInput = (input) => {
+    const formSubmit = {
+      name: input.name,
+      description: input.description,
+      // image: file.map((properties) => {
+      //   return {
+      //     name: ingredient.quantity,
+      //     data: ingredient.unit,
+      //     contentType: ingredient.name,
+      //   };
+      // }),
+      category: input.category,
+      ingredients: input.ingredients.map((ingredient) => {
+        return {
+          quantity: ingredient.quantity,
+          unit: ingredient.unit,
+          name: ingredient.name,
+        };
+      }),
+      levelOfDiff: input.levelOfDiff,
+      timeRequired: input.timeRequired,
+      servings: input.servings,
+      instructions: input.instructions,
+    };
+    setPayload(formSubmit);
+  };
+
   function renderIngredients(ingredientArray) {
     return ingredientArray.map((ingredient) => {
       return `${ingredient.quantity} ${
@@ -163,41 +204,53 @@ function NewRecipe() {
     });
   }
 
-  const modalContent = (form, file) => {
-    const recpDetails = {
-      // add user info in req body
-      Name: form.values.name,
-      Description: form.values.description,
-      image: file && JSON.stringify(file),
-      Category: form.values.category,
-      levelOfDiff: form.values.levelOfDiff,
-      timeRequired: form.values.timeRequired,
-      Servings: form.values.servings && form.values.servings,
-      Ingredients: form.values.ingredients.map((ingredient) => {
-        return {
-          quantity: ingredient.quantity,
-          unit: ingredient.unit,
-          name: ingredient.name,
-        };
-      }),
-      Instructions: form.values.instructions,
-    };
+  // get user edited info
+  const compareData = (var1, var2) => {
+    const displayData = {};
 
-    return (
-      <ul>
-        {Object.entries(recpDetails).map(([key, value]) => (
-          <li key={key}>
-            {key === "levelOfDiff"
-              ? `Level of Difficulty: ${value}`
-              : key === "timeRequired"
-              ? `Time Required: ${value} min`
-              : key === "ingredients"
-              ? `Ingredients: ${renderIngredients(value)}`
-              : `${key}: ${value}`}
-          </li>
-        ))}
-      </ul>
-    );
+    Object.keys(var1).forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(var2, key)) {
+        // separate comparison for ingredients as it is stored as an array in the backend db unlike the rest
+        if (key === "ingredients") {
+          if (var1.ingredients) {
+            const isIngredientsEqual =
+              var1.ingredients.length === var2.ingredients.length &&
+              var1.ingredients.every((ingredient) =>
+                var2.ingredients.includes(ingredient)
+              );
+
+            if (!isIngredientsEqual) {
+              displayData[key] = var1[key];
+            }
+          } else {
+            return; //var1.ingredients would be undefined if the field is not edited (from console.logs)
+          }
+        } else if (var1[key] !== var2[key]) {
+          // Check if the value is different
+          displayData[key] = var1[key];
+        }
+      }
+    });
+
+    if (Object.keys(displayData).length === 0) {
+      return "No differing values. Pls update the relevant fields.";
+    } else {
+      return (
+        <ul>
+          {Object.entries(displayData).map(([key, value]) => (
+            <li key={key}>
+              {key === "levelOfDiff"
+                ? `Level of Difficulty: ${value}`
+                : key === "timeRequired"
+                ? `Time Required: ${value} min`
+                : key === "ingredients"
+                ? `Ingredients: ${renderIngredients(value)}`
+                : `${key}: ${value}`}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   };
 
   return (
@@ -207,13 +260,13 @@ function NewRecipe() {
       ) : (
         <>
           <Title order={2} ta="center">
-            Create Recipe
+            Update Your Recipe
           </Title>
           <Box maw={500} mx="auto" mt="xl">
             <form
               onSubmit={form.onSubmit(() => {
-                console.log();
                 if (form.isValid) {
+                  confirmInput(form.values);
                   toggle();
                 }
               })}
@@ -320,33 +373,21 @@ function NewRecipe() {
                 <Button
                   type="button"
                   component={Link}
-                  to={`/`} //return to landing page
+                  to={`/recipe/${data._id}`} //return to Owner Dashboard
                   variant="outline"
                 >
                   Cancel
                 </Button>
-                <Button
-                  type="submit"
-                  onClick={() => {
-                    console.log(
-                      `${JSON.stringify(form)} and File = ${JSON.stringify(
-                        file
-                      )}`
-                    );
-                    console.log(`Modal opened: ${opened}`);
-                  }}
-                >
-                  Create
-                </Button>
+                <Button type="submit">Update</Button>
               </Group>
             </form>
 
             <Modal
               opened={opened}
-              title="Create Your Recipe"
-              modalContent={modalContent(form, file)}
+              title="Update Recipe"
+              modalContent={compareData(payload, data)}
               toggle={toggle}
-              onClose={close}
+              close={close}
               handleSubmit={handleSubmit}
             />
           </Box>
@@ -356,4 +397,4 @@ function NewRecipe() {
   );
 }
 
-export default NewRecipe;
+export default EditRecipe;
