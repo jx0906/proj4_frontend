@@ -54,14 +54,13 @@ export default function RecipeList() {
           <Title order={3} mt="sm" lineClamp={2}>
             TRENDING NOW
           </Title>
-
           <Flex
             gap="xs"
             justify="flex-start"
             align="center"
             wrap="wrap"
             mt="sm"
-            h="200px"
+            h="100px"
           >
             {data.map((recipe) => (
               <Anchor

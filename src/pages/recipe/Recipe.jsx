@@ -1,12 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import {
-  Button,
   Image,
   Text,
   Title,
   Box,
   Stack,
-  Group,
   Flex,
   useMantineTheme,
 } from "@mantine/core";
@@ -29,12 +27,12 @@ function Recipe() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
-  // const { formatTime } = useCheckBooking();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
   useEffect(() => {
     getData();
+    window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -44,19 +42,7 @@ function Recipe() {
         `${import.meta.env.VITE_API_URL}/recipe/${pathId}`,
         "GET"
       );
-      console.log(recpData);
-      // const formattedTimeOpen = resData.timeOpen
-      //   ? formatTime(resData.timeOpen)
-      //   : null;
-      // const formattedTimeClose = resData.timeClose
-      //   ? formatTime(resData.timeClose)
-      //   : null;
-      setData(
-        recpData
-        // {...recpData,
-        // timeOpen: formattedTimeOpen,
-        // timeClose: formattedTimeClose,}
-      );
+      setData(recpData);
     } catch (err) {
       console.log(err);
     }
@@ -86,7 +72,7 @@ function Recipe() {
               <Flex direction="row" align="center" gap="5px" mt="xs">
                 <IconSoup w="sm" h="sm" stroke={1.5} />
                 <Text size="sm" c="black" lh="1">
-                  {data.servingSize ? `${data.servingSize} servings` : "-"}
+                  {data.servings ? `${data.servings} servings` : "-"}
                 </Text>
                 <IconClock w="sm" h="sm" stroke={1.5} />
                 <Text size="sm" c="black" lh="1">
@@ -119,7 +105,12 @@ function Recipe() {
                 <Box w="30%" px="xs">
                   <ul style={{ listStyle: "none", padding: 0 }}>
                     {data.ingredients.map((ingredient, index) => (
-                      <li key={index}>{ingredient}</li>
+                      <li key={index}>
+                        {/* Use conditional rendering to display unit */}
+                        <strong>{ingredient.quantity}</strong>{" "}
+                        {ingredient.unit && <strong>{ingredient.unit}</strong>}{" "}
+                        {ingredient.name}
+                      </li>
                     ))}
                   </ul>
                 </Box>
