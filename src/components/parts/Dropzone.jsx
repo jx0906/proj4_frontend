@@ -1,27 +1,50 @@
+import { useState } from "react";
 import { Group, Text, rem } from "@mantine/core";
 import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
-import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
+import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
+import useToast from "../../hooks/useToast";
 
-export function BaseDemo(props) {
+export default function ImageDropzone({ handleFileUpload }) {
+  const [file, setFile] = useState(null);
+  const { successToast, errorToast } = useToast();
+
+  const maxSizeInBytes = 10 * 1024 ** 2; // 10 MB in bytes
+
+  function fileUpload(uploadedFile) {
+    console.log("accepted files", uploadedFile);
+    setFile(uploadedFile);
+    handleFileUpload(uploadedFile); // Pass the uploaded file to the parent component
+    successToast({
+      title: "Success!",
+      message: "Image Uploaded!",
+    });
+  }
+
   return (
     <Dropzone
-      onDrop={(files) => console.log("accepted files", files)}
-      onReject={(files) => console.log("rejected files", files)}
-      maxSize={5 * 1024 ** 2}
-      accept={IMAGE_MIME_TYPE}
-      {...props}
+      onDrop={fileUpload}
+      onReject={() =>
+        errorToast({
+          title: "Oops!",
+          message:
+            "We can only accept one image file (png/jpeg) that is less than 10mb in size.",
+        })
+      }
+      maxSize={maxSizeInBytes}
+      accept={[MIME_TYPES.png, MIME_TYPES.jpeg]}
+      multiple={false}
     >
       <Group
         justify="center"
         gap="sm"
-        mih={220}
+        mih={50}
         style={{ pointerEvents: "none" }}
       >
         <Dropzone.Accept>
           <IconUpload
             style={{
-              width: rem(52),
-              height: rem(52),
+              width: rem(25),
+              height: rem(25),
               color: "var(--mantine-color-blue-6)",
             }}
             stroke={1.5}
@@ -30,8 +53,8 @@ export function BaseDemo(props) {
         <Dropzone.Reject>
           <IconX
             style={{
-              width: rem(52),
-              height: rem(52),
+              width: rem(25),
+              height: rem(25),
               color: "var(--mantine-color-red-6)",
             }}
             stroke={1.5}
@@ -40,20 +63,21 @@ export function BaseDemo(props) {
         <Dropzone.Idle>
           <IconPhoto
             style={{
-              width: rem(52),
-              height: rem(52),
+              width: rem(25),
+              height: rem(25),
               color: "var(--mantine-color-dimmed)",
             }}
             stroke={1.5}
           />
         </Dropzone.Idle>
 
-        <div>
-          <Text size="xl" inline>
-            Drag images here or click to select files
+        <div align="center">
+          <Text size="md" inline>
+            Share a picture of the dish here!
           </Text>
           <Text size="sm" c="dimmed" inline mt={7}>
-            The file should not exceed 10mb
+            We can only accept .png and .jpeg files that are less than 10mb in
+            size.
           </Text>
         </div>
       </Group>
