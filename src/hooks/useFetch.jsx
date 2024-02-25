@@ -15,6 +15,7 @@ function useFetch() {
     }
 
     try {
+      console.log(url, options);
       const res = await fetch(url, options);
       const data = await res.json();
       if (!res.ok) {
@@ -23,6 +24,7 @@ function useFetch() {
 
       return data;
     } catch (err) {
+      console.log(url, options);
       console.log(err);
       throw err;
     }

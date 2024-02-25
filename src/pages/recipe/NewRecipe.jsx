@@ -9,6 +9,7 @@ import {
   Title,
   Group,
   Button,
+  rem,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconTrash } from "@tabler/icons-react";
@@ -19,6 +20,7 @@ import Modal from "../../components/parts/Modal";
 import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
+import ImageDropzone from "../../components/parts/Dropzone";
 
 function NewRecipe() {
   // manage the state of whether a component (such as a modal) is open or closed.
@@ -28,6 +30,11 @@ function NewRecipe() {
   const { successToast, errorToast } = useToast();
   // const { user } = useOutletContext();
   const [loading, setLoading] = useState(true);
+  const [file, setFile] = useState(null);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   //   useEffect(() => {
   //     if (!user) {
@@ -57,7 +64,7 @@ function NewRecipe() {
 
   const form = useForm({
     initialValues: {
-      ingredients: [],
+      ingredients: [{ quantity: "", unit: "", name: "", key: randomId() }],
     },
     validate: {
       category: (value) =>
@@ -66,19 +73,18 @@ function NewRecipe() {
       levelOfDiff: (value) =>
         value === undefined &&
         "Please choose an area which best represents the difficulty of this recipe.",
-      ingredients: (value) => [
-        {
-          quantity:
-            value === undefined && "Please provide the required quantity.",
-          unit: value === undefined && "Please provide the required unit",
-          name:
-            value === undefined &&
-            "Please provide the required ingredient name",
-        },
-      ],
-      //   servings: (value) =>
-      //     value === undefined &&
-      //     "Please enter a number for the no. of servings this recipe can serve.",
+      ingredients: {
+        quantity: (value) =>
+          value === undefined && "Please enter a valid quantity (number).",
+        unit: (value) =>
+          value === undefined && "Please enter a valid unit (string).",
+        name: (value) =>
+          value === undefined &&
+          "Please enter a valid ingredient name (string).",
+      },
+      servings: (value) =>
+        value === undefined &&
+        "Please enter a number for the no. of servings this recipe can serve.",
       timeRequired: (value) => value === undefined && "Please enter a time",
       description: (value) =>
         value?.length > 500 && "Please enter less than 500 characters",
@@ -88,6 +94,14 @@ function NewRecipe() {
     },
   });
 
+  // Function to handle file upload
+  const handleFileUpload = (uploadedFile) => {
+    setFile(uploadedFile);
+  };
+
+  // name: encodeURIComponent(form.values.name)
+
+  // Function to handle form submission
   const handleSubmit = async () => {
     try {
       const res = await sendRequest(
@@ -96,9 +110,21 @@ function NewRecipe() {
         {
           name: form.values.name,
           description: form.values.description,
-          // image: form.values.image,
+          // image: file.map((properties) => {
+          //   return {
+          //     quantity: Math.floor(ingredient.quantity),
+          //     unit: ingredient.unit,
+          //     name: ingredient.name,
+          //   };
+          // }),
           category: form.values.category,
-          ingredients: form.values.ingredients,
+          ingredients: form.values.ingredients.map((ingredient) => {
+            return {
+              quantity: Math.floor(ingredient.quantity),
+              unit: ingredient.unit,
+              name: ingredient.name,
+            };
+          }),
           levelOfDiff: form.values.levelOfDiff,
           timeRequired: form.values.timeRequired,
           servings: form.values.servings,
@@ -106,12 +132,11 @@ function NewRecipe() {
         }
       );
       console.log(res);
-      // navigate("/");
+      navigate("/");
       close();
       successToast({
         title: "Recipe Successfully Created!",
-        message:
-          "Your Recipe is now listed for sharing. Thank you for your contribution!",
+        message: "Your recipe is now listed. Thank you for your contribution!",
       });
     } catch (err) {
       console.log(err);
@@ -133,11 +158,18 @@ function NewRecipe() {
       }}
     >
       <NumberInput
+        withAsterisk
         {...form.getInputProps(`ingredients.${index}.quantity`)}
-        min={1}
+        min={0}
       />
-      <TextInput {...form.getInputProps(`ingredients.${index}.unit`)} />
-      <TextInput {...form.getInputProps(`ingredients.${index}.name`)} />
+      <TextInput
+        withAsterisk
+        {...form.getInputProps(`ingredients.${index}.unit`)}
+      />
+      <TextInput
+        withAsterisk
+        {...form.getInputProps(`ingredients.${index}.name`)}
+      />
       <ActionIcon
         color="red"
         onClick={() => form.removeListItem("ingredients", index)}
@@ -147,27 +179,27 @@ function NewRecipe() {
     </Box>
   ));
 
-  const modalContent = (form) => {
+  const modalContent = (form, file) => {
     const recpDetails = {
       // add user info in req body
       Name: form.values.name,
       Description: form.values.description,
-      // image: form.values.image,
+      image: JSON.stringify(file),
       Category: form.values.category,
       levelOfDiff: form.values.levelOfDiff,
-      timeRequired: form.values.maxPax,
+      timeRequired: form.values.timeRequired,
       Servings: form.values.servings
         ? form.values.servings
         : "No info on servings provided",
       Ingredients: form.values.ingredients,
-      Instructions: form.values.instruction,
+      Instructions: form.values.instructions,
     };
 
     return (
       <ul>
         {Object.entries(recpDetails).map(([key, value]) => (
           <li key={key}>
-            {key === "levelofDiff"
+            {key === "levelOfDiff"
               ? `Level of Difficulty: ${value}`
               : key === "timeRequired"
               ? `Time Required: ${value} min`
@@ -180,131 +212,156 @@ function NewRecipe() {
 
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <LoaderDots />
-      ) : ( */}
-      <>
-        <Title order={2} ta="center">
-          Create Recipe
-        </Title>
-        <Box maw={500} mx="auto" mt="xl">
-          <form
-            onSubmit={form.onSubmit(() => {
-              if (form.isValid) {
-                toggle();
-              }
-            })}
-          >
-            <TextInput
-              label="Name"
-              withAsterisk
-              placeholder="Rainbow Bread"
-              {...form.getInputProps("name")}
-            />
-            <Textarea
-              label="Description"
-              mt="md"
-              placeholder="Easy peasy cake recipe for a perfect afternoon tea date."
-              autosize="true"
-              minRows={3}
-              {...form.getInputProps("description")}
-            />
-            <Select
-              label="Category"
-              withAsterisk
-              placeholder="Pick one"
-              data={["Pastries", "Biscuits", "Bread", "Cakes"]}
-              mt="md"
-              {...form.getInputProps("category")}
-            />
-            <Select
-              label="Level of Difficulty"
-              withAsterisk
-              placeholder="Pick one"
-              data={["Easy", "Intermediate", "Advanced"]}
-              mt="md"
-              {...form.getInputProps("levelOfDiff")}
-            />
-            <NumberInput
-              label="No. of Servings"
-              placeholder="10"
-              min={1}
-              mt="md"
-              {...form.getInputProps("servings")}
-            />
-            <NumberInput
-              label="Time Required"
-              placeholder="in minutes"
-              min={1}
-              mt="md"
-              {...form.getInputProps("timeRequired")}
-            />
-
-            <Box
-              mt="xs"
-              ta="center"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "0.5fr 0.5fr 1fr 0.25fr",
-              }}
-            >
-              <Text size="sm">Quantity</Text>
-              <Text size="sm">Unit</Text>
-              <Text size="sm">Ingredient Name</Text>
-            </Box>
-
-            {inputIngredient}
-
-            <Group justify="center" mt="sm">
-              <Button
-                onClick={() =>
-                  form.insertListItem("ingredients", {
-                    quantity: "",
-                    unit: "",
-                    name: "",
-                    key: randomId(),
-                  })
+      ) : (
+        <>
+          <Title order={2} ta="center">
+            Create Recipe
+          </Title>
+          <Box maw={500} mx="auto" mt="xl">
+            <form
+              onSubmit={form.onSubmit(() => {
+                console.log();
+                if (form.isValid) {
+                  toggle();
                 }
-              >
-                Add ingredient
-              </Button>
-            </Group>
+              })}
+            >
+              <TextInput
+                label="Name"
+                withAsterisk
+                placeholder="Rainbow Bread"
+                {...form.getInputProps("name")}
+              />
+              <Textarea
+                label="Description"
+                mt="md"
+                placeholder="Easy peasy cake recipe for a perfect afternoon tea date."
+                autosize="true"
+                minRows={3}
+                {...form.getInputProps("description")}
+              />
 
-            <Textarea
-              label="Instructions"
-              mt="md"
-              placeholder="Mix all ingredients and bake at 180 deg C. Cool and serve."
-              autosize="true"
-              minRows={5}
-              {...form.getInputProps("instructions")}
+              <Select
+                label="Category"
+                withAsterisk
+                placeholder="Pick one"
+                data={["Pastries", "Biscuits", "Bread", "Cakes"]}
+                mt="md"
+                searchable
+                {...form.getInputProps("category")}
+              />
+              <Select
+                label="Level of Difficulty"
+                withAsterisk
+                placeholder="Pick one"
+                data={["Easy", "Intermediate", "Advanced"]}
+                mt="md"
+                searchable
+                {...form.getInputProps("levelOfDiff")}
+              />
+              <NumberInput
+                label="No. of Servings"
+                withAsterisk
+                placeholder="10"
+                min={1}
+                mt="md"
+                {...form.getInputProps("servings")}
+              />
+              <NumberInput
+                label="Time Required"
+                withAsterisk
+                placeholder="in minutes"
+                min={0}
+                mt="md"
+                {...form.getInputProps("timeRequired")}
+              />
+
+              <Text size="sm" mt="md">
+                Ingredients*
+              </Text>
+              <Box
+                mt="xs"
+                ta="center"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "0.5fr 0.5fr 1fr 0.25fr",
+                }}
+              >
+                <Text size="xs">Quantity</Text>
+                <Text size="xs">Unit</Text>
+                <Text size="xs">Ingredient Name</Text>
+              </Box>
+
+              {inputIngredient}
+
+              <Group justify="center" mt="sm">
+                <Button
+                  onClick={() =>
+                    form.insertListItem("ingredients", {
+                      quantity: "",
+                      unit: "",
+                      name: "",
+                      key: randomId(),
+                    })
+                  }
+                >
+                  Add ingredient
+                </Button>
+              </Group>
+
+              <Textarea
+                label="Instructions"
+                mt="md"
+                withAsterisk
+                placeholder="Mix all ingredients and bake at 180 deg C. Cool and serve."
+                autosize="true"
+                minRows={5}
+                {...form.getInputProps("instructions")}
+              />
+
+              <Text size="sm" mt="md">
+                Upload image
+              </Text>
+              <ImageDropzone handleFileUpload={handleFileUpload} />
+
+              <Group justify="center" mt="xl">
+                <Button
+                  type="button"
+                  component={Link}
+                  to={`/`} //return to landing page
+                  variant="outline"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  onClick={() => {
+                    console.log(
+                      `${JSON.stringify(form)} and File = ${JSON.stringify(
+                        file
+                      )}`
+                    );
+                    console.log(`Modal opened: ${opened}`);
+                  }}
+                >
+                  Create
+                </Button>
+              </Group>
+            </form>
+
+            <Modal
+              opened={opened}
+              title="Create Your Recipe"
+              modalContent={modalContent(form, file)}
+              toggle={toggle}
+              onClose={close}
+              handleSubmit={handleSubmit}
             />
-
-            <Group justify="center" mt="xl">
-              <Button
-                type="button"
-                component={Link}
-                to={`/`} //return to landing page
-                variant="outline"
-              >
-                Cancel
-              </Button>
-              <Button type="submit" onClick={(evt) => console.log(form.values)}>
-                Create
-              </Button>
-            </Group>
-          </form>
-
-          <Modal
-            opened={opened}
-            title="Create Your Recipe"
-            modalContent={modalContent(form)}
-            toggle={toggle}
-            close={close}
-            handleSubmit={handleSubmit}
-          />
-        </Box>
-      </>
-      {/* )} */}
+          </Box>
+        </>
+      )}
     </>
   );
 }
