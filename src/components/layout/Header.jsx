@@ -3,6 +3,7 @@
 
 import cx from "clsx";
 import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Container,
   UnstyledButton,
@@ -14,19 +15,20 @@ import {
   Button,
   Title,
   Image,
-  Flex,
   Anchor,
+  TextInput,
 } from "@mantine/core";
+import { useInputState } from "@mantine/hooks";
 import {
   IconBucket,
   IconShoppingCartSearch,
   IconChevronDown,
   IconNotes,
+  IconSearch,
   IconSettings,
   IconLogout,
 } from "@tabler/icons-react";
 import classes from "./HeaderTabs.module.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import useToast from "../../hooks/useToast";
 import useFetch from "../../hooks/useFetch";
@@ -36,6 +38,7 @@ export const Header = ({ user, setUser }) => {
   // const { user, setUser } = useContext(UserContext);
   const theme = useMantineTheme();
   const [userMenuOpened, setUserMenuOpened] = useState(false);
+  const [searchTerm, setSearchTerm] = useInputState("");
   const location = useLocation();
   const navigate = useNavigate();
   const { successToast, errorToast } = useToast();
@@ -80,19 +83,41 @@ export const Header = ({ user, setUser }) => {
             </Anchor>
           </Title>
 
-          {/* Auth Buttons*/}
-          {!user &&
-            location.pathname !== "/login" &&
-            location.pathname !== "/signup" && (
-              <Group>
-                <Button variant="outline" component={Link} to="/login">
-                  Login
-                </Button>
-                <Button component={Link} to="/signup">
-                  Sign up
-                </Button>
-              </Group>
-            )}
+          <Group>
+            {/* Search Field */}
+            <TextInput
+              placeholder="What are you looking for?"
+              value={searchTerm} // Pass the searchTerm value to the input
+              leftSection={
+                <IconSearch
+                  style={{ width: rem(16), height: rem(16) }}
+                  stroke={1.5}
+                  onClick={() => navigate(`/recipe/search?${searchTerm}`)}
+                />
+              }
+              visibleFrom="xs"
+              onChange={(event) => setSearchTerm(event.currentTarget.value)} // Update searchTerm when input changes
+              onKeyDown={(evt) => {
+                if (evt.key === "Enter") {
+                  // Navigate when Enter is pressed
+                  navigate(`/recipe/search?${searchTerm}`);
+                }
+              }}
+            />
+            {/* Auth Buttons*/}
+            {!user &&
+              location.pathname !== "/login" &&
+              location.pathname !== "/signup" && (
+                <>
+                  <Button variant="outline" component={Link} to="/login">
+                    Login
+                  </Button>
+                  <Button component={Link} to="/signup">
+                    Sign up
+                  </Button>
+                </>
+              )}
+          </Group>
 
           {/* User Menu */}
           {user && (
