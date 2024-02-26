@@ -13,6 +13,7 @@ import RecipeList from "./pages/recipe/RecipeList.jsx";
 import Recipe from "./pages/recipe/Recipe.jsx";
 import NewRecipe from "./pages/recipe/NewRecipe.jsx";
 import EditRecipe from "./pages/recipe/EditRecipe.jsx";
+import SearchRecipes from "./pages/recipe/SearchRecipes.jsx";
 import NotFound from "./pages/error/NotFound.jsx";
 
 // import styles of Mantine packages
@@ -49,6 +50,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/recipe/create" element={<NewRecipe />} />
             <Route path="/recipe/:id" element={<Recipe />} />
             <Route path="/recipe/:id/edit" element={<EditRecipe />} />
+            <Route path="/recipe/search" element={<SearchRecipes />} />
           </Route>
 
           {/* 404 */}
