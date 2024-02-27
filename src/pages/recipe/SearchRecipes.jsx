@@ -22,11 +22,8 @@ import {
   useNavigate,
   useOutletContext,
 } from "react-router-dom";
-import { useDisclosure } from "@mantine/hooks";
 import { useEffect, useState } from "react";
-import Modal from "../../components/parts/Modal";
 import useFetch from "../../hooks/useFetch";
-import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import { useMediaQuery } from "@mantine/hooks";
 
