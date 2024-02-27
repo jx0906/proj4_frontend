@@ -3,7 +3,6 @@ import {
   IconBookmarkPlus,
   IconCirclePlus,
   IconShare,
-  IconEdit,
 } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
 import { notifications } from "@mantine/notifications";
@@ -37,22 +36,6 @@ export default function UserActions() {
       <Tooltip label="Copy URL for sharing">
         <ActionIcon variant="default" size="lg" onClick={handleClickToShare}>
           <IconShare style={{ width: rem(20) }} stroke={1.5} />
-        </ActionIcon>
-      </Tooltip>
-
-      {/* if user is logged on and creator of recipe - can edit */}
-      <Tooltip label="Edit Recipe">
-        <ActionIcon
-          variant="default"
-          size="lg"
-          component={Link}
-          to={`${getURL}/edit`}
-        >
-          <IconEdit
-            style={{ width: rem(20) }}
-            stroke={1.5}
-            //return to landing page
-          />
         </ActionIcon>
       </Tooltip>
 

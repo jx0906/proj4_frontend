@@ -4,14 +4,13 @@ import {
   Table,
   ScrollArea,
   Text,
-  Button,
   Anchor,
   Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { IconTrash } from "@tabler/icons-react";
+import { IconTrash, IconEdit } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import Modal from "../../components/parts/Modal";
 import useFetch from "../../hooks/useFetch";
@@ -60,7 +59,7 @@ function AllUserRecipes() {
   const handleSubmit = async () => {
     try {
       await sendRequest(
-        `${import.meta.env.VITE_API_URL}/recipe/${recipe._id}/`,
+        `${import.meta.env.VITE_API_URL}/recipe/${dataToCancel._id}/`,
         "DELETE"
       );
       setData((prev) =>
@@ -107,21 +106,17 @@ function AllUserRecipes() {
           >
             <IconTrash size="input-sm" stroke={1.5} />
           </ActionIcon>
-
-          {/* <Button
-            variant="outline"
-            onClick={() => {
-              toggle();
-              setDataToCancel(row);
-            }}
-          >
-            Delete
-          </Button> */}
         </Table.Td>
         <Table.Td w="85px">
-          <Button component={Link} to={`/recipe/${row._id}/edit`}>
-            Edit
-          </Button>
+          <ActionIcon
+            variant="default"
+            size="md"
+            onClick={() => {
+              navigate(`/recipe/${row._id}/edit`);
+            }}
+          >
+            <IconEdit size="input-sm" stroke={1.5} />
+          </ActionIcon>
         </Table.Td>
       </Table.Tr>
     ));

@@ -11,7 +11,7 @@ import {
   Button,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {
   Link,
   useLocation,
@@ -25,6 +25,7 @@ import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
+import { UserContext } from "../../App.jsx";
 
 function EditRecipe() {
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -34,7 +35,7 @@ function EditRecipe() {
   const [data, setData] = useState([]);
   const [payload, setPayload] = useState({});
   const [loading, setLoading] = useState(true);
-  //   const { user } = useOutletContext();
+  const { user } = useContext(UserContext);
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
@@ -69,19 +70,21 @@ function EditRecipe() {
   });
 
   useEffect(() => {
-    // if (!user) {
-    //  notifications.show({
-    //     message: "You can only create a recipe if you are logged in.",
-    //     autoClose: 1000,
-    // })
-    //       navigate("/signin");
-    //       return;}
+    if (!user) {
+      notifications.show({
+        message: "You can only create/edit recipes if you are logged in.",
+        autoClose: 1000,
+      });
+      navigate("/signin");
+      return;
+    }
 
     const getData = async () => {
       const recpData = await sendRequest(
         `${import.meta.env.VITE_API_URL}/recipe/${pathId}`,
         "GET"
       );
+
       if (!recpData || recpData.length === 0) {
         navigate("/recipe");
         return;
@@ -107,6 +110,7 @@ function EditRecipe() {
         instructions: recpData.instructions,
       });
     };
+    console.log(user);
     getData();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

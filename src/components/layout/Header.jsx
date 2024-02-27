@@ -89,7 +89,7 @@ export const Header = ({ user, setUser }) => {
 
           {/* Search Field */}
           <TextInput
-            w="800px"
+            w="300px"
             placeholder="How can we help you today?"
             value={searchTerm} // Pass the searchTerm value to the input
             leftSection={
@@ -184,19 +184,6 @@ export const Header = ({ user, setUser }) => {
                 </Menu.Target>
                 <Menu.Dropdown>
                   <Menu.Label>My Recipe Collection</Menu.Label>
-                  {/* <Menu.Item
-                    component={Link}
-                    to="user/collection"
-                    leftSection={
-                      <IconBucket
-                        style={{ width: rem(16), height: rem(16) }}
-                        color={theme.colors.red[6]}
-                        stroke={1.5}
-                      />
-                    }
-                  >
-                    My Collection
-                  </Menu.Item> */}
                   <Menu.Item
                     component={Link}
                     to="user/creations"
