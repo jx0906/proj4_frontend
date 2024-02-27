@@ -15,6 +15,8 @@ const UserContext = createContext({
 function App() {
   const [user, setUser] = useState(getUser());
 
+  // Context.Provider will make the variable a global one through UseContext
+  // OutletContext only for the immediate child through useOutletContext
   return (
     <>
       <UserContext.Provider value={{ user, setUser }}>
@@ -23,10 +25,10 @@ function App() {
           position={"relative"}
           style={{ minHeight: "400vh" }}
         >
-          <Header />
+          <Header user={user} setUser={setUser} />
           <main style={{ flexGrow: "1" }}>
             <Container size="xl">
-              <Outlet />
+              <Outlet user={user} setUser={setUser} />
             </Container>
           </main>
           <Footer />
