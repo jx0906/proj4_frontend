@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
+import useEdamam from "../../hooks/useEdamam";
 import classes from "./RecipeList.module.css";
 import { useMediaQuery } from "@mantine/hooks";
 import LoaderDots from "../../components/parts/Loader";
@@ -23,12 +24,19 @@ import {
 
 function Recipe() {
   const { sendRequest } = useFetch();
+  const {  sendEdamamRequest,
+    derivedLevelofDiff,
+    formattedCategories,
+    edamamRecpUri,
+    mappedEdamamRecp, } = useEdamam();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  const pathId = location.pathname.split("/")[2];
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
+  const location = useLocation();
+  const pathId = location.pathname.includes("edam")
+    ? location.pathname.split("/")[3]
+    : location.pathname.split("/")[2];
 
   useEffect(() => {
     getData();
@@ -38,11 +46,19 @@ function Recipe() {
 
   const getData = async () => {
     try {
-      const recpData = await sendRequest(
-        `${import.meta.env.VITE_API_URL}/recipe/${pathId}`,
-        "GET"
-      );
-      setData(recpData);
+      let fetchedData;
+      if (location.pathname.includes("edam")) {
+        fetchedData = await getEdamamList(
+          `https://api.edamam.com/api/recipes/v2/${pathId}?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a`
+        );
+      } else {
+        fetchedData = await sendRequest(
+          `${import.meta.env.VITE_API_URL}/recipe/${pathId}`,
+          "GET"
+        );
+      }
+
+      setData(fetchedData);
     } catch (err) {
       console.log(err);
     }
@@ -116,7 +132,7 @@ function Recipe() {
                 </Box>
 
                 <Box w="70%" px="xs">
-                  <Text>{data.instructions}</Text>
+                  <Text>data.instructions {data.instructions}</Text>
                 </Box>
               </Flex>
             </Stack>

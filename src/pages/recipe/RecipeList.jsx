@@ -10,8 +10,9 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
+import useEdamam from "../../hooks/useEdamam";
 import LoaderDots from "../../components/parts/Loader.jsx";
 import CarouselCards from "../../components/parts/CarouselCards.jsx";
 import { useMediaQuery } from "@mantine/hooks";
@@ -20,17 +21,39 @@ import { IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
 
 export default function RecipeList() {
   const [data, setData] = useState([]);
-  const [intData, setIntData] = useState([]);
-  const [extData, setExtData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
+  const {
+    sendEdamamRequest,
+    derivedLevelofDiff,
+    formattedCategories,
+    edamamRecpUri,
+  } = useEdamam();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
   useEffect(() => {
-    getInternalList();
-    getExternalList();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchData = async () => {
+      /* need to set this up as async so the concatenation of both int and ext list would only
+      start when both fetch processes are fulfilled, else we may run into the possibility of
+      getting undefined because either/both processes are not completed in time for
+      recipeCollection to run */
+      try {
+        const intData = await getInternalList();
+        const extData = await getEdamamList();
+        console.log(extData);
+        //recall that we had set both output as array of objects to facilitate the use of map
+
+        const recipeCollection = [...intData, ...extData];
+        setData(recipeCollection);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setLoading(false);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    };
+    fetchData();
   }, []);
 
   const getInternalList = async () => {
@@ -40,34 +63,48 @@ export default function RecipeList() {
         "GET"
       );
       // recpData returns as an object. need to get array to use map function below
-      setIntData(recpData.recipes);
+      return recpData.recipes;
     } catch (err) {
-      console.log(err);
-    }}
+      console.error("Error fetching internal recipe data:", err);
+    }
+  };
 
-    const getEdamamList = async () => {
-      try {
-        const edamData = await sendRequest(
-          `${import.meta.env.EDAMAM_TOP20}`,
-          "GET"
-        );
-        // recpData returns as an object. need to get array to use map function below
-        setExtData(edamData.hits);
-      } catch (err) {
-        console.log(err);
-      }}
+  const getEdamamList = async () => {
+    try {
+      const edamamRecp = await sendEdamamRequest(
+        "https://api.edamam.com/api/recipes/v2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&dishType=Biscuits%20and%20cookies&dishType=Bread&random=true&field=label&field=image&field=source&field=url&field=yield&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=dishType&field=externalId"
+      );
 
-      const edamData = edamData.hits.map((hit) => {
+      const mappedEdamamRecp = edamamRecp.hits.map((hit) => {
+        let recipe = hit.recipe;
         return {
-          name: hit.recipe.label,
-          category: hit.recipe.dishType,
-          levelOfDiff: hit.recipe.,
-          name: ingredient.name,
-          key: ingredient.key ? ingredient.key : randomId(),
+          _id: `edam/${edamamRecpUri(hit._links.self.href)}`,
+          name: recipe.label,
+          category: formattedCategories(recipe.dishType[0]),
+          levelOfDiff: derivedLevelofDiff(recipe.ingredientLines),
+          timeRequired: recipe.totalTime,
+          servings: recipe.yield,
+          ingredients: recipe.ingredients.map((ingredient) => {
+            return {
+              quantity: ingredient.quantity,
+              unit: ingredient.measure,
+              name: ingredient.food,
+              key: ingredient.foodId,
+            };
+          }),
+          instructions: recipe.url,
+          description: `This recipe from ${recipe.source} is associated with ${recipe.healthLabels[0]}, ${recipe.healthLabels[1]} and ${recipe.healthLabels[2]} diets, amongst others. It packs a total of ${recipe.calories} for the specified serving. Give it a try if it appeals to you today!`,
+          source: recipe.source,
+          createdAt: new Date().toISOString(), // You can set this to the current date and time
+          updatedAt: new Date().toISOString(), // You can set this to the current date and time
+          __v: 0, // Assuming this is a version field
+          image: null,
         };
-      }),
-
-    setLoading(false);
+      });
+      return mappedEdamamRecp;
+    } catch (err) {
+      console.error("Error fetching internal recipe data:", err);
+    }
   };
 
   return (

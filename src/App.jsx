@@ -23,7 +23,7 @@ function App() {
         <Flex
           direction="column"
           position={"relative"}
-          style={{ minHeight: "200vh" }}
+          style={{ minHeight: "320vh" }}
         >
           <Header user={user} setUser={setUser} />
           <main style={{ flexGrow: "1" }}>

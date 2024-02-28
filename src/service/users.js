@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import useFetch from "../hooks/useFetch";
 import { getToken, removeToken } from "../util/security";
 
 export function getUser() {
