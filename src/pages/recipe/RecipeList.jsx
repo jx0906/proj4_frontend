@@ -20,27 +20,53 @@ import { IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
 
 export default function RecipeList() {
   const [data, setData] = useState([]);
+  const [intData, setIntData] = useState([]);
+  const [extData, setExtData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
   useEffect(() => {
-    getList();
+    getInternalList();
+    getExternalList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getList = async () => {
+  const getInternalList = async () => {
     try {
       const recpData = await sendRequest(
         `${import.meta.env.VITE_API_URL}/recipe`,
         "GET"
       );
       // recpData returns as an object. need to get array to use map function below
-      setData(recpData.recipes);
+      setIntData(recpData.recipes);
     } catch (err) {
       console.log(err);
-    }
+    }}
+
+    const getEdamamList = async () => {
+      try {
+        const edamData = await sendRequest(
+          `${import.meta.env.EDAMAM_TOP20}`,
+          "GET"
+        );
+        // recpData returns as an object. need to get array to use map function below
+        setExtData(edamData.hits);
+      } catch (err) {
+        console.log(err);
+      }}
+
+      const edamData = edamData.hits.map((hit) => {
+        return {
+          name: hit.recipe.label,
+          category: hit.recipe.dishType,
+          levelOfDiff: hit.recipe.,
+          name: ingredient.name,
+          key: ingredient.key ? ingredient.key : randomId(),
+        };
+      }),
+
     setLoading(false);
   };
 
