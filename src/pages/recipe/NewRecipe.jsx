@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconTrash } from "@tabler/icons-react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDisclosure, randomId } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import Modal from "../../components/parts/Modal";
@@ -21,7 +21,6 @@ import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
-import { notifications } from "@mantine/notifications";
 
 function NewRecipe() {
   // manage the state of whether a component (such as a modal) is open or closed.

@@ -1,0 +1,2708 @@
+API documentation = https://developer.edamam.com/edamam-docs-recipe-api
+
+Sample response based on GET request:
+{
+  "from": 1,
+  "to": 20,
+  "count": 10000,
+  "_links": {},
+  "hits": [
+    {
+      "recipe": {
+        "label": "Shortbread Cookies",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/504/5040719acf82230abcc55c94b7df4e99.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=2e6879e868ec7f3fbe6df1835e756b5e2deb003e9661f655cc0053a894b0e1dd",
+        "source": "theindianclaypot.com",
+        "url": "http://theindianclaypot.com/shortbread-cookies/",
+        "yield": 10,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1. 1 cup (130 grams) all purpose flour",
+          "2. 1/8 teaspoon salt",
+          "3. 1/2 cup (113 grams) unsalted butter at room temperature",
+          "4. 1/4 cup (30 grams) powdered sugar",
+          "5. 1/2 teaspoon vanilla essence"
+        ],
+        "ingredients": [
+          {
+            "text": "1. 1 cup (130 grams) all purpose flour",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "all purpose flour",
+            "weight": 125,
+            "foodCategory": "grains",
+            "foodId": "food_ar3x97tbq9o9p6b6gzwj0am0c81l",
+            "image": "https://www.edamam.com/food-img/368/368077bbcab62f862a8c766a56ea5dd1.jpg"
+          },
+          {
+            "text": "2. 1/8 teaspoon salt",
+            "quantity": 2,
+            "measure": "teaspoon",
+            "food": "salt",
+            "weight": 12,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "3. 1/2 cup (113 grams) unsalted butter at room temperature",
+            "quantity": 3,
+            "measure": "cup",
+            "food": "unsalted butter",
+            "weight": 681,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "4. 1/4 cup (30 grams) powdered sugar",
+            "quantity": 4,
+            "measure": "cup",
+            "food": "powdered sugar",
+            "weight": 480,
+            "foodCategory": "sugars",
+            "foodId": "food_b7rbtshahirxisbtyc77sbv8jdue",
+            "image": "https://www.edamam.com/food-img/290/290624aa4c0e279551e462443e38bb40.jpg"
+          },
+          {
+            "text": "5. 1/2 teaspoon vanilla essence",
+            "quantity": 5,
+            "measure": "teaspoon",
+            "food": "vanilla essence",
+            "weight": 21,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          }
+        ],
+        "calories": 7265.45,
+        "totalTime": 0,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/2b088fc534899b1fce7d4b79168a479e?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Healthy & Delicious: Meringue Cookies Recipe",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/b82/b820159a323d4767ca9532d46d6734b7.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=bd48345d5e361730a8d1d01fbf73dacae8aa139fdcf6c4fae7965ed4e5b30161",
+        "source": "Serious Eats",
+        "url": "https://www.seriouseats.com/recipes/2009/11/healthy-delicious-meringue-cookies.html",
+        "yield": 40,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Keto-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Dairy-Free",
+          "Gluten-Free",
+          "Wheat-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "No oil added",
+          "FODMAP-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "2 egg whites",
+          "1/8 teaspoon salt",
+          "1/8 teaspoon cream of tartar",
+          "1/2 cup white sugar",
+          "1/4 to 1/2 teaspoon peppermint extract (optional)",
+          "4 drops green food coloring (optional)"
+        ],
+        "ingredients": [
+          {
+            "text": "2 egg whites",
+            "quantity": 2,
+            "measure": "<unit>",
+            "food": "egg whites",
+            "weight": 52.8,
+            "foodCategory": "Eggs",
+            "foodId": "food_a7hurbpb20zs42bnwg2p8bca3ihs",
+            "image": "https://www.edamam.com/food-img/b30/b304a020501418f9a63cf7f9359bc99d.jpg"
+          },
+          {
+            "text": "1/8 teaspoon salt",
+            "quantity": 0.125,
+            "measure": "teaspoon",
+            "food": "salt",
+            "weight": 0.75,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1/8 teaspoon cream of tartar",
+            "quantity": 0.125,
+            "measure": "teaspoon",
+            "food": "cream of tartar",
+            "weight": 0.375,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_a0r6t74bde4598bhz7z8natobtr8",
+            "image": "https://www.edamam.com/food-img/1c0/1c002c4edc6959ef265036bdf3582885.jpg"
+          },
+          {
+            "text": "1/2 cup white sugar",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "white sugar",
+            "weight": 100,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1/4 to 1/2 teaspoon peppermint extract (optional)",
+            "quantity": 0.375,
+            "measure": "teaspoon",
+            "food": "peppermint",
+            "weight": 0.20000000001352547,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a0d3dm0bim7d2zbvpro3wboyj7nf",
+            "image": "https://www.edamam.com/food-img/fc1/fc1b9eea517ee139e9580908530124b0.jpg"
+          },
+          {
+            "text": "4 drops green food coloring (optional)",
+            "quantity": 4,
+            "measure": "drop",
+            "food": "food coloring",
+            "weight": 0.24644608,
+            "foodCategory": "water",
+            "foodId": "food_aai0cf1b1twew9bybx0kdam9pd8c",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          }
+        ],
+        "calories": 415.56350000000947,
+        "totalTime": 0,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/5e3c050a455ce07cda05c442849be0f5?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "PB and J Strawberry Cookie Bars Recipe",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/657/657c0ab4f6ada251fe5a4ef4281ba3eb.JPG?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a3c719b2bea40ae5218ceb3805ac618e60965e33f6f75a0ffd455151a4b6c3a7",
+        "source": "Group Recipes",
+        "url": "http://www.grouprecipes.com/115436/pb-and-j-strawberry-cookie-bars.html",
+        "yield": 12,
+        "healthLabels": [
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1/2 cup unsalted butter, room temperature",
+          "3/4 cup granulated sugar",
+          "1/2 teaspoon vanilla extract",
+          "1 extra large egg (cage free), room temperature",
+          "1 cup natural creamy peanut butter (like skippy)",
+          "1 1/2 cups unbleached all-purpose flour",
+          "1/2 teaspoon baking powder",
+          "1/2 teaspoon kosher salt",
+          "1 (10 oz) jar organic strawberry jam (you could easily substitute your favorite flavor)"
+        ],
+        "ingredients": [
+          {
+            "text": "1/2 cup unsalted butter, room temperature",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "unsalted butter",
+            "weight": 113.5,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "3/4 cup granulated sugar",
+            "quantity": 0.75,
+            "measure": "cup",
+            "food": "granulated sugar",
+            "weight": 150,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1/2 teaspoon vanilla extract",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "vanilla extract",
+            "weight": 2.1,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          },
+          {
+            "text": "1 extra large egg (cage free), room temperature",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "egg",
+            "weight": 56,
+            "foodCategory": "Eggs",
+            "foodId": "food_bhpradua77pk16aipcvzeayg732r",
+            "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+          },
+          {
+            "text": "1 cup natural creamy peanut butter (like skippy)",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "peanut butter",
+            "weight": 258,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bz6b8fsbccyn3zaij72f7av8dl9m",
+            "image": "https://www.edamam.com/food-img/d74/d740276ae1409472a8714b2cee88a310.jpg"
+          },
+          {
+            "text": "1 1/2 cups unbleached all-purpose flour",
+            "quantity": 1.5,
+            "measure": "cup",
+            "food": "all-purpose flour",
+            "weight": 187.5,
+            "foodCategory": "grains",
+            "foodId": "food_ar3x97tbq9o9p6b6gzwj0am0c81l",
+            "image": "https://www.edamam.com/food-img/368/368077bbcab62f862a8c766a56ea5dd1.jpg"
+          },
+          {
+            "text": "1/2 teaspoon baking powder",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "baking powder",
+            "weight": 2.3,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_bad4zycbt4w60dbut111vaub2g3e",
+            "image": "https://www.edamam.com/food-img/a84/a8410ec57a2e62a1ad9955ac14d40af6.jpg"
+          },
+          {
+            "text": "1/2 teaspoon kosher salt",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "kosher salt",
+            "weight": 2.4270833334564377,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1 (10 oz) jar organic strawberry jam (you could easily substitute your favorite flavor)",
+            "quantity": 10,
+            "measure": "ounce",
+            "food": "strawberry jam",
+            "weight": 283.49523125,
+            "foodCategory": "sugar syrups",
+            "foodId": "food_bzsx4atbph30cebveok2ebmgwrq8",
+            "image": "https://www.edamam.com/food-img/42b/42ba8bb2c0e13f6e69b3af18f0f641ae.jpg"
+          }
+        ],
+        "calories": 4495.052742874999,
+        "totalTime": 30,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/963f1fcb42434728818ae6bff4e672fa?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Date Cookies Recipe, Date And Walnut Cookies recipes",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/172/1722562baf106ce2bfa5199f890a08a0?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0ea253467c01314361691cd4a0d834819c073e6476b2967bde46977d2cb32697",
+        "source": "cookclickndevour.com",
+        "url": "http://cookclickndevour.com/date-cookies-recipe",
+        "yield": 18,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Egg-Free",
+          "Peanut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 cup whole wheat flour",
+          "125 grams butter,melted",
+          "½ cup dates, chopped",
+          "½ cup walnut,chopped",
+          "½ cup sugar(fine variety)",
+          "1 teaspoon baking powder",
+          "½ teaspoon baking soda"
+        ],
+        "ingredients": [
+          {
+            "text": "1 cup whole wheat flour",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "whole wheat flour",
+            "weight": 120,
+            "foodCategory": "grains",
+            "foodId": "food_azuyr92bee8mu1aodnko9agg46su",
+            "image": "https://www.edamam.com/food-img/f46/f46a64137365c10237522be5980f769c.jpg"
+          },
+          {
+            "text": "125 grams butter,melted",
+            "quantity": 125,
+            "measure": "gram",
+            "food": "butter",
+            "weight": 125,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "½ cup dates, chopped",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "dates",
+            "weight": 112.5,
+            "foodCategory": "fruit",
+            "foodId": "food_aq6d442amcodjrah72l55bzoqenc",
+            "image": "https://www.edamam.com/food-img/051/05168bdd7c88ca141e28c49ccf5a04a9.jpg"
+          },
+          {
+            "text": "½ cup walnut,chopped",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "walnut",
+            "weight": 58.5,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_acqkmojaw4fltga9jad8mb85u9z2",
+            "image": "https://www.edamam.com/food-img/624/6243d320d94b15ebaece2634cc5b40c5.jpg"
+          },
+          {
+            "text": "½ cup sugar(fine variety)",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "sugar",
+            "weight": 100,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1 teaspoon baking powder",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "baking powder",
+            "weight": 4.6,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_bad4zycbt4w60dbut111vaub2g3e",
+            "image": "https://www.edamam.com/food-img/a84/a8410ec57a2e62a1ad9955ac14d40af6.jpg"
+          },
+          {
+            "text": "½ teaspoon baking soda",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "baking soda",
+            "weight": 2.3,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_asa4cjoa3lmt8ibwdg0cpblheo69",
+            "image": "https://www.edamam.com/food-img/7e5/7e55e4482cc2fde91f427fc568e6f5b8.jpeg"
+          }
+        ],
+        "calories": 2387.811,
+        "totalTime": 33,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/8f56a72debd9b4d5a48ffeaa06eae726?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Little sultana scrolls",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/1fd/1fddbf895756c9caa06f95a0e46c2e39.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a95666c2856335dfb53f5381e5ee1b0baeeefa0c05babc32521e5fa50a032f4d",
+        "source": "womensweeklyfood.com.au",
+        "url": "https://www.womensweeklyfood.com.au/recipes/little-sultana-scrolls-3438",
+        "yield": 22,
+        "healthLabels": [
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Peanut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "500 gram (1 pound) sultanas",
+          "1/4 cup (55g) caster (superfine) sugar",
+          "1 teaspoon vanilla extract",
+          "1 teaspoon ground cinnamon",
+          "1 1/2 cup (375ml) water",
+          "1 cup (120g) finely chopped walnuts",
+          "1/4 cup (60ml) dark rum",
+          "250 gram (8 ounces) cold unsalted butter, chopped coarsely",
+          "250 gram (8 ounces) cream cheese, chopped coarsely",
+          "1/4 cup (55g) caster (superfine) sugar",
+          "2 1/4 cup (335g) plain (all-purpose) flour",
+          "2 egg yolks",
+          "1/4 cup (55g) demerara sugar"
+        ],
+        "ingredients": [
+          {
+            "text": "500 gram (1 pound) sultanas",
+            "quantity": 500,
+            "measure": "gram",
+            "food": "sultanas",
+            "weight": 500,
+            "foodCategory": "fruit",
+            "foodId": "food_a5xnxgkadye5y6ag1qnwxafwj1rc",
+            "image": "https://www.edamam.com/food-img/ffb/ffb9885ac25e1c1520cb0a92c7e09001.jpg"
+          },
+          {
+            "text": "1/4 cup (55g) caster (superfine) sugar",
+            "quantity": 55,
+            "measure": "gram",
+            "food": "sugar",
+            "weight": 55,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1 teaspoon vanilla extract",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "vanilla extract",
+            "weight": 4.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          },
+          {
+            "text": "1 teaspoon ground cinnamon",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "ground cinnamon",
+            "weight": 2.6,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_atjxtznauw5zabaixm24xa787onz",
+            "image": "https://www.edamam.com/food-img/d4d/d4daa18b92c596a1c99c08537c38e65b.jpg"
+          },
+          {
+            "text": "1 1/2 cup (375ml) water",
+            "quantity": 375,
+            "measure": "milliliter",
+            "food": "water",
+            "weight": 375,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          },
+          {
+            "text": "1 cup (120g) finely chopped walnuts",
+            "quantity": 120,
+            "measure": "gram",
+            "food": "walnuts",
+            "weight": 120,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_acqkmojaw4fltga9jad8mb85u9z2",
+            "image": "https://www.edamam.com/food-img/624/6243d320d94b15ebaece2634cc5b40c5.jpg"
+          },
+          {
+            "text": "1/4 cup (60ml) dark rum",
+            "quantity": 60,
+            "measure": "milliliter",
+            "food": "dark rum",
+            "weight": 56.40178986667412,
+            "foodCategory": "liquors and cocktails",
+            "foodId": "food_bi9pqpkbrb86k8aowifmbbxwzgng",
+            "image": "https://www.edamam.com/food-img/eb5/eb51e606b36b62c66ea1a245ab0d4a8b.jpg"
+          },
+          {
+            "text": "250 gram (8 ounces) cold unsalted butter, chopped coarsely",
+            "quantity": 250,
+            "measure": "gram",
+            "food": "unsalted butter",
+            "weight": 250,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "250 gram (8 ounces) cream cheese, chopped coarsely",
+            "quantity": 250,
+            "measure": "gram",
+            "food": "cream cheese",
+            "weight": 250,
+            "foodCategory": "Cheese",
+            "foodId": "food_a7rvc49a09a7yjbq3ekjbbauyoqa",
+            "image": "https://www.edamam.com/food-img/ddd/dddce306e7ee41e8e07dc62e28cab94b.jpg"
+          },
+          {
+            "text": "1/4 cup (55g) caster (superfine) sugar",
+            "quantity": 55,
+            "measure": "gram",
+            "food": "sugar",
+            "weight": 55,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "2 1/4 cup (335g) plain (all-purpose) flour",
+            "quantity": 335,
+            "measure": "gram",
+            "food": "flour",
+            "weight": 335,
+            "foodCategory": "grains",
+            "foodId": "food_ahebfs0a985an4aubqaebbipra58",
+            "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg"
+          },
+          {
+            "text": "2 egg yolks",
+            "quantity": 2,
+            "measure": "<unit>",
+            "food": "egg yolks",
+            "weight": 26.933333333333334,
+            "foodCategory": "Eggs",
+            "foodId": "food_awlnigdb6qm6i1biwv7rlalfg2ni",
+            "image": "https://www.edamam.com/food-img/e3f/e3f697887aec0e8ecf09a9ca8ef3944a.jpg"
+          },
+          {
+            "text": "1/4 cup (55g) demerara sugar",
+            "quantity": 55,
+            "measure": "gram",
+            "food": "demerara sugar",
+            "weight": 55,
+            "foodCategory": "sugars",
+            "foodId": "food_aodgtqwbmeu5f6bxeffn0art3bga",
+            "image": "https://www.edamam.com/food-img/8c6/8c6662bd73900645c6385b51a95d9b03.jpg"
+          }
+        ],
+        "calories": 7046.931467925351,
+        "totalTime": 105,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/bb7366a738e9abc2490715456d9ea7f8?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Grilled Bread with Tomato (Pan con Tomate)",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/dd3/dd3064fdb5c1bc3a94ceb78fd7f66088?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ff68f77b13899c304d233f9e41607216e48fe9cbbfdeff2f0d0f2bd93ccc1a3b",
+        "source": "EatingWell",
+        "url": "http://www.eatingwell.com/recipe/280148/grilled-bread-with-tomato-pan-con-tomate/",
+        "yield": 4,
+        "healthLabels": [
+          "Dairy-Free",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Sulfite-Free"
+        ],
+        "ingredientLines": [
+          "4 slices crusty sourdough bread (about 1 inch thick)",
+          "4 tablespoons extra-virgin olive oil, divided",
+          "1 clove garlic, peeled and halved",
+          "4 medium tomatoes, halved",
+          "4 slices serrano ham or prosciutto",
+          "Ground pepper for serving"
+        ],
+        "ingredients": [
+          {
+            "text": "4 slices crusty sourdough bread (about 1 inch thick)",
+            "quantity": 4,
+            "measure": "slice",
+            "food": "sourdough bread",
+            "weight": 556,
+            "foodCategory": "bread, rolls and tortillas",
+            "foodId": "food_ay7f6vxa98k5w2ahve8h1ardjn1w",
+            "image": "https://www.edamam.com/food-img/470/47053c77e167539c64fef3f2a3249bb2.jpg"
+          },
+          {
+            "text": "4 tablespoons extra-virgin olive oil, divided",
+            "quantity": 4,
+            "measure": "tablespoon",
+            "food": "extra-virgin olive oil",
+            "weight": 54,
+            "foodCategory": "Oils",
+            "foodId": "food_b1d1icuad3iktrbqby0hiagafaz7",
+            "image": "https://www.edamam.com/food-img/4d6/4d651eaa8a353647746290c7a9b29d84.jpg"
+          },
+          {
+            "text": "1 clove garlic, peeled and halved",
+            "quantity": 1,
+            "measure": "clove",
+            "food": "garlic",
+            "weight": 3,
+            "foodCategory": "vegetables",
+            "foodId": "food_avtcmx6bgjv1jvay6s6stan8dnyp",
+            "image": "https://www.edamam.com/food-img/6ee/6ee142951f48aaf94f4312409f8d133d.jpg"
+          },
+          {
+            "text": "4 medium tomatoes, halved",
+            "quantity": 4,
+            "measure": "<unit>",
+            "food": "tomatoes",
+            "weight": 492,
+            "foodCategory": "vegetables",
+            "foodId": "food_a6k79rrahp8fe2b26zussa3wtkqh",
+            "image": "https://www.edamam.com/food-img/23e/23e727a14f1035bdc2733bb0477efbd2.jpg"
+          },
+          {
+            "text": "4 slices serrano ham or prosciutto",
+            "quantity": 4,
+            "measure": "slice",
+            "food": "serrano ham",
+            "weight": 60,
+            "foodCategory": "cured meats",
+            "foodId": "food_au1dzjfa990c8yap79k4nawq65y9",
+            "image": "https://www.edamam.com/food-img/802/8029e7b80cce92694182b85a1ebd1822.jpg"
+          },
+          {
+            "text": "Ground pepper for serving",
+            "quantity": 1,
+            "measure": "serving",
+            "food": "Ground pepper",
+            "weight": 1,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_b6ywzluaaxv02wad7s1r9ag4py89",
+            "image": "https://www.edamam.com/food-img/c6e/c6e5c3bd8d3bc15175d9766971a4d1b2.jpg"
+          }
+        ],
+        "calories": 2202.2200000000007,
+        "totalTime": 20,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/ad391f822f4634299d18072c8a7d94d6?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Olive Crostini",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/5c6/5c6c021f32cc216f24e2574300d4dd27.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=12ccaed415876684a683f0961761462205cf7008c824996b6e109cff090b9f12",
+        "source": "Betty Crocker",
+        "url": "http://www.bettycrocker.com/recipes/olive-crostini/e8e11d6b-c7e1-4de8-bc6a-b5a285bd4baf",
+        "yield": 12,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Keto-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Mediterranean",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "No oil added",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "12 slices French bread, 1 inch thick",
+          "1/3 cup chopped green olives",
+          "1/3 cup chopped ripe olives",
+          "1 container (5 ounces) garlic-and-herb or herb spreadable cheese"
+        ],
+        "ingredients": [
+          {
+            "text": "12 slices French bread, 1 inch thick",
+            "quantity": 12,
+            "measure": "slice",
+            "food": "French bread",
+            "weight": 120,
+            "foodCategory": "bread, rolls and tortillas",
+            "foodId": "food_bz1n7y8bupmgp0anvyqmda9dwufz",
+            "image": "https://www.edamam.com/food-img/470/47053c77e167539c64fef3f2a3249bb2.jpg"
+          },
+          {
+            "text": "1/3 cup chopped green olives",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "green olives",
+            "weight": 40,
+            "foodCategory": "canned fruit",
+            "foodId": "food_au01k5obo9mz1pa1febfibire8z8",
+            "image": "https://www.edamam.com/food-img/95c/95c706937e42a80661f12c094d551d95.jpg"
+          },
+          {
+            "text": "1/3 cup chopped ripe olives",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "ripe olives",
+            "weight": 44.800000000757336,
+            "foodCategory": "canned fruit",
+            "foodId": "food_bt7u5w5a064gusa46msxfb38ag06",
+            "image": "https://www.edamam.com/food-img/822/8221f2141e8dafd469414b20777735ca.jpg"
+          },
+          {
+            "text": "1 container (5 ounces) garlic-and-herb or herb spreadable cheese",
+            "quantity": 5,
+            "measure": "ounce",
+            "food": "spreadable cheese",
+            "weight": 141.747615625,
+            "foodCategory": "Cheese",
+            "foodId": "food_am9c0zybyfhgn9brc0imabzslets",
+            "image": "https://www.edamam.com/food-img/419/419f6ce36db411c072d0dbf6c8510897.jpg"
+          }
+        ],
+        "calories": 993.4361294071285,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/1562f65ffeb12af293fe971d925c816b?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Nanaimo Bars Iii",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/ee4/ee4665ce4c99bf566b99eb3b2bc9e904.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=92c87cd95b2e2929a33909fad3a4d3075845435857c01f355af29be8cc137bfb",
+        "source": "Allrecipes",
+        "url": "http://allrecipes.com/Recipe/Nanaimo-Bars-III/Detail.aspx",
+        "yield": 16,
+        "healthLabels": [
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Peanut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "4 (1 ounce) squares semisweet baking chocolate",
+          "1 3/4 cups graham cracker crumbs",
+          "1 egg, beaten",
+          "5 tablespoons unsweetened cocoa powder",
+          "1/2 cup finely chopped almonds (optional)",
+          "1/4 cup white sugar",
+          "1/2 cup butter, softened",
+          "1 cup flaked coconut",
+          "3 tablespoons heavy cream",
+          "2 cups confectioners' sugar",
+          "2 tablespoons custard powder",
+          "2 teaspoons butter"
+        ],
+        "ingredients": [
+          {
+            "text": "4 (1 ounce) squares semisweet baking chocolate",
+            "quantity": 4,
+            "measure": "ounce",
+            "food": "baking chocolate",
+            "weight": 113.3980925,
+            "foodCategory": "chocolate",
+            "foodId": "food_bczy6a4b5i8cddabc6ds9b1bmyq2",
+            "image": "https://www.edamam.com/food-img/ae6/ae60c9ec09f77cab311738f65170e734.jpg"
+          },
+          {
+            "text": "1 3/4 cups graham cracker crumbs",
+            "quantity": 1.75,
+            "measure": "cup",
+            "food": "cracker crumbs",
+            "weight": 91,
+            "foodCategory": "crackers",
+            "foodId": "food_bngjmfmb13ckgcaefl7gta8r5zx5",
+            "image": "https://www.edamam.com/food-img/533/5335c3d911793785012a46379a6ad2d3.jpg"
+          },
+          {
+            "text": "1 egg, beaten",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "egg",
+            "weight": 43,
+            "foodCategory": "Eggs",
+            "foodId": "food_bhpradua77pk16aipcvzeayg732r",
+            "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+          },
+          {
+            "text": "5 tablespoons unsweetened cocoa powder",
+            "quantity": 5,
+            "measure": "tablespoon",
+            "food": "unsweetened cocoa powder",
+            "weight": 27,
+            "foodCategory": "chocolate",
+            "foodId": "food_afcmkjjaqwjkezbfz7htdb7mpkwz",
+            "image": "https://www.edamam.com/food-img/89a/89af89595db3cf2c3007f2b064c5fef6.jpg"
+          },
+          {
+            "text": "1/2 cup finely chopped almonds (optional)",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "almonds",
+            "weight": 71.5,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bq4d2wras281i0br37nrnaglo3yc",
+            "image": "https://www.edamam.com/food-img/6c2/6c2dc21adf11afc4c8d390ee2f651e56.jpg"
+          },
+          {
+            "text": "1/4 cup white sugar",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "white sugar",
+            "weight": 50,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1/2 cup butter, softened",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "butter",
+            "weight": 113.5,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "1 cup flaked coconut",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "coconut",
+            "weight": 80,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_a0671ieawy879qbaiagcrapnmo84",
+            "image": "https://www.edamam.com/food-img/a27/a27851affdcc1da2d94da0a4fbe3b062.jpg"
+          },
+          {
+            "text": "3 tablespoons heavy cream",
+            "quantity": 3,
+            "measure": "tablespoon",
+            "food": "heavy cream",
+            "weight": 45,
+            "foodCategory": "Dairy",
+            "foodId": "food_bgtkr21b5v16mca246x9ebnaswyo",
+            "image": "https://www.edamam.com/food-img/484/4848d71f6a14dd5076083f5e17925420.jpg"
+          },
+          {
+            "text": "2 cups confectioners' sugar",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "confectioners' sugar",
+            "weight": 240,
+            "foodCategory": "sugars",
+            "foodId": "food_b7rbtshahirxisbtyc77sbv8jdue",
+            "image": "https://www.edamam.com/food-img/290/290624aa4c0e279551e462443e38bb40.jpg"
+          },
+          {
+            "text": "2 tablespoons custard powder",
+            "quantity": 2,
+            "measure": "tablespoon",
+            "food": "custard",
+            "weight": 35.24999999940403,
+            "foodCategory": "chocolate",
+            "foodId": "food_aqftc79a23qh42af8c2nva87li25",
+            "image": "https://www.edamam.com/food-img/932/932b2776ea9cd734c5986d3d013017ee.jpg"
+          },
+          {
+            "text": "2 teaspoons butter",
+            "quantity": 2,
+            "measure": "teaspoon",
+            "food": "butter",
+            "weight": 9.458333333813071,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          }
+        ],
+        "calories": 4210.72200385282,
+        "totalTime": 0,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/1659d8e0fc161536bace5248e5a7d800?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Bavarian Pretzels/Pretzel Rolls (Laugenbrezeln)",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/403/403bf5fc7c40ca9d170f8e8609dde1a2.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=b729fbf38f60d7b4d7cda0fe1334fcb97e9a76387eda080011544328a65181cd",
+        "source": "recipezaar.com",
+        "url": "http://www.recipezaar.com/Bavarian-Pretzels-Pretzel-Rolls-Laugenbrezeln-342145",
+        "yield": 8,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Vegetarian",
+          "Pescatarian",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1/3 cup baking soda (for boiling the rolls)",
+          "1 1/4 cups warm water (70-78 degrees)",
+          "3 3/4-4 cups unbleached bread flour",
+          "1 teaspoon instant yeast",
+          "2 1/4 teaspoons sea salt",
+          "kosher salt (for topping) (optional)",
+          "3 tablespoons unsalted butter , chilled, cut into 1/4 inch pieces",
+          "sesame seed (for topping) (optional)"
+        ],
+        "ingredients": [
+          {
+            "text": "1/3 cup baking soda (for boiling the rolls)",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "baking soda",
+            "weight": 73.59999999626692,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_asa4cjoa3lmt8ibwdg0cpblheo69",
+            "image": "https://www.edamam.com/food-img/7e5/7e55e4482cc2fde91f427fc568e6f5b8.jpeg"
+          },
+          {
+            "text": "1 1/4 cups warm water (70-78 degrees)",
+            "quantity": 1.25,
+            "measure": "cup",
+            "food": "water",
+            "weight": 295.735295625,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          },
+          {
+            "text": "3 3/4-4 cups unbleached bread flour",
+            "quantity": 3.875,
+            "measure": "cup",
+            "food": "bread flour",
+            "weight": 530.875,
+            "foodCategory": "grains",
+            "foodId": "food_b5xk0gwa3clakbaap10sta82dgdk",
+            "image": "https://www.edamam.com/food-img/132/1328fd505cdd3b75fbb8d7b58de5427c.jpg"
+          },
+          {
+            "text": "1 teaspoon instant yeast",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "yeast",
+            "weight": 4,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_a2xisx4br72i19btvvxgzayoelqj",
+            "image": "https://www.edamam.com/food-img/433/433749733fd8a22560cdb451b1317be1.jpg"
+          },
+          {
+            "text": "2 1/4 teaspoons sea salt",
+            "quantity": 2.25,
+            "measure": "teaspoon",
+            "food": "sea salt",
+            "weight": 10.92187500055397,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "kosher salt (for topping) (optional)",
+            "quantity": 0,
+            "measure": null,
+            "food": "kosher salt",
+            "weight": 5.746393023730926,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "3 tablespoons unsalted butter , chilled, cut into 1/4 inch pieces",
+            "quantity": 3,
+            "measure": "tablespoon",
+            "food": "unsalted butter",
+            "weight": 42.599999999999994,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "sesame seed (for topping) (optional)",
+            "quantity": 0,
+            "measure": null,
+            "food": "sesame seed",
+            "weight": 0,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bvxfnx8bwz2q3abs04kd6bbuf9w8",
+            "image": "https://www.edamam.com/food-img/291/291b355a7a0948716243164427697279.jpg"
+          }
+        ],
+        "calories": 2234.90075,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/1e72964af81fbf2923d65325623137c4?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Sourdough Starter Recipe",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/0a0/0a00d38a018ba802ca026f04b18039f0.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a2ec1201ee1131d197f1d63a7584aae312cf50f550bb60d40f15a484fbcc0bef",
+        "source": "recipeofhealth.com",
+        "url": "http://recipeofhealth.com/recipe/sourdough-starter-3816rb",
+        "yield": 3,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegan",
+          "Vegetarian",
+          "Pescatarian",
+          "Mediterranean",
+          "Dairy-Free",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "No oil added",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 (.25 oz) package active dry yeast",
+          "2 cups warm water",
+          "2 cups all-purpose flour"
+        ],
+        "ingredients": [
+          {
+            "text": "1 (.25 oz) package active dry yeast",
+            "quantity": 0.25,
+            "measure": "ounce",
+            "food": "yeast",
+            "weight": 7.08738078125,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_a2xisx4br72i19btvvxgzayoelqj",
+            "image": "https://www.edamam.com/food-img/433/433749733fd8a22560cdb451b1317be1.jpg"
+          },
+          {
+            "text": "2 cups warm water",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "water",
+            "weight": 473.176473,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          },
+          {
+            "text": "2 cups all-purpose flour",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "all-purpose flour",
+            "weight": 250,
+            "foodCategory": "grains",
+            "foodId": "food_ar3x97tbq9o9p6b6gzwj0am0c81l",
+            "image": "https://www.edamam.com/food-img/368/368077bbcab62f862a8c766a56ea5dd1.jpg"
+          }
+        ],
+        "calories": 933.0339875390625,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/3e5b84a79a4c0d43905e561a0d206546?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Brownie - Oat Cookies Recipe",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/34b/34b8d3ca09e7d2eced1a76b2e2a2a08b.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cd82c676be1356bd30f34275cba82ace0445f41efd3dd5acfe6bdf6e1e9d3242",
+        "source": "Group Recipes",
+        "url": "http://www.grouprecipes.com/80347/brownie---oat-cookies.html",
+        "yield": 12,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Pescatarian",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free"
+        ],
+        "ingredientLines": [
+          "1/2 cup whole wheat pastry flour",
+          "1 cup quick oats (not instant)",
+          "2/3 cup unsweetened cocoa powder",
+          "1 tsp baking powder",
+          "1/2 tsp coarse sea salt",
+          "1 egg replacer (like ener-g brand), prepared",
+          "1/3 cup brown sugar",
+          "1/4 cup agave nectar",
+          "1 tbsp vanilla",
+          "2/3 cup mini chocolate chips"
+        ],
+        "ingredients": [
+          {
+            "text": "1/2 cup whole wheat pastry flour",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "whole wheat pastry flour",
+            "weight": 59.5,
+            "foodCategory": "grains",
+            "foodId": "food_a6p6ryqbu49p02blw4ezxah1kb9p",
+            "image": "https://www.edamam.com/food-img/137/1372e80ae3afad422f17e1f6c612fec4.jpg"
+          },
+          {
+            "text": "1 cup quick oats (not instant)",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "quick oats",
+            "weight": 80,
+            "foodCategory": "ready-to-eat cereals",
+            "foodId": "food_a80zurbb0utplravgzuhxb1ipn8k",
+            "image": "https://www.edamam.com/food-img/80c/80c4c56c96c69a1067ea2bc39ef25415.jpg"
+          },
+          {
+            "text": "2/3 cup unsweetened cocoa powder",
+            "quantity": 0.6666666666666666,
+            "measure": "cup",
+            "food": "unsweetened cocoa powder",
+            "weight": 57.33333333333333,
+            "foodCategory": "chocolate",
+            "foodId": "food_afcmkjjaqwjkezbfz7htdb7mpkwz",
+            "image": "https://www.edamam.com/food-img/89a/89af89595db3cf2c3007f2b064c5fef6.jpg"
+          },
+          {
+            "text": "1 tsp baking powder",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "baking powder",
+            "weight": 4.6,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_bad4zycbt4w60dbut111vaub2g3e",
+            "image": "https://www.edamam.com/food-img/a84/a8410ec57a2e62a1ad9955ac14d40af6.jpg"
+          },
+          {
+            "text": "1/2 tsp coarse sea salt",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "sea salt",
+            "weight": 2.4270833334564377,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1 egg replacer (like ener-g brand), prepared",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "egg replacer",
+            "weight": 4,
+            "foodCategory": "Vegan products",
+            "foodId": "food_bv61ls3bw0eon1azwl78aavqhmsp",
+            "image": null
+          },
+          {
+            "text": "1/3 cup brown sugar",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "brown sugar",
+            "weight": 48.33333333333333,
+            "foodCategory": "sugars",
+            "foodId": "food_aodgtqwbmeu5f6bxeffn0art3bga",
+            "image": "https://www.edamam.com/food-img/8c6/8c6662bd73900645c6385b51a95d9b03.jpg"
+          },
+          {
+            "text": "1/4 cup agave nectar",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "agave nectar",
+            "weight": 83.2,
+            "foodCategory": "sugar syrups",
+            "foodId": "food_bj8pkd1bgey1rlbp58zagbjhpfi0",
+            "image": "https://www.edamam.com/food-img/3b5/3b5425ed8e35a486b4138cc8720ae9e4.jpg"
+          },
+          {
+            "text": "1 tbsp vanilla",
+            "quantity": 1,
+            "measure": "tablespoon",
+            "food": "vanilla",
+            "weight": 13,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          },
+          {
+            "text": "2/3 cup mini chocolate chips",
+            "quantity": 0.6666666666666666,
+            "measure": "cup",
+            "food": "mini chocolate chips",
+            "weight": 149.33333333333331,
+            "foodCategory": "chocolate",
+            "foodId": "food_b0camz2asgzienbko2epvbzzv6qj",
+            "image": "https://www.edamam.com/food-img/36c/36ce336d10d51259f365ec2dbc1e28c4.jpg"
+          }
+        ],
+        "calories": 1851.118,
+        "totalTime": 10,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/d0e07a3fa4de005bd051e5f8fd04ac3f?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Pollo Rosa Maria",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/6d6/6d63143a527e55f2e604ed68560919c6.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c14a24baa06db637c5389d122b2076174866a7a280ef4730f56a0747574d8c77",
+        "source": "BigOven",
+        "url": "https://www.bigoven.com/recipe/pollo-rosa-maria/170058",
+        "yield": 4,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Keto-Friendly",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free"
+        ],
+        "ingredientLines": [
+          "1 Chicken",
+          "4 chicken breasts ; split for stuffing",
+          "4 slices prosciutto ham",
+          "1/2 cup Fontina cheese",
+          "1/2 cup clarified butter",
+          "3 cloves garlic",
+          "1/2 small yellow onion ; diced",
+          "1/4 cup white wine",
+          "4 tablespoons unsalted butter",
+          "1/2 teaspoon white pepper",
+          "1/2 teaspoon Salt",
+          "1 cup mushrooms ; sliced",
+          "1/2 cup fresh sweet basil ; chopped",
+          "1 lemon ; juiced"
+        ],
+        "ingredients": [
+          {
+            "text": "1 Chicken",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "Chicken",
+            "weight": 1200,
+            "foodCategory": "Poultry",
+            "foodId": "food_bmyxrshbfao9s1amjrvhoauob6mo",
+            "image": "https://www.edamam.com/food-img/d33/d338229d774a743f7858f6764e095878.jpg"
+          },
+          {
+            "text": "4 chicken breasts ; split for stuffing",
+            "quantity": 4,
+            "measure": "<unit>",
+            "food": "chicken breasts",
+            "weight": 1088,
+            "foodCategory": "Poultry",
+            "foodId": "food_bdrxu94aj3x2djbpur8dhagfhkcn",
+            "image": "https://www.edamam.com/food-img/da5/da510379d3650787338ca16fb69f4c94.jpg"
+          },
+          {
+            "text": "4 slices prosciutto ham",
+            "quantity": 4,
+            "measure": "slice",
+            "food": "prosciutto",
+            "weight": 60,
+            "foodCategory": "cured meats",
+            "foodId": "food_au1dzjfa990c8yap79k4nawq65y9",
+            "image": "https://www.edamam.com/food-img/802/8029e7b80cce92694182b85a1ebd1822.jpg"
+          },
+          {
+            "text": "1/2 cup Fontina cheese",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "Fontina cheese",
+            "weight": 66,
+            "foodCategory": "Cheese",
+            "foodId": "food_bocv6wqb7zq8y4bzbjx2val9imlj",
+            "image": "https://www.edamam.com/food-img/0ac/0acf62d2ccdf71b1c03e13115f6cc002.jpg"
+          },
+          {
+            "text": "1/2 cup clarified butter",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "clarified butter",
+            "weight": 102.5,
+            "foodCategory": "Dairy",
+            "foodId": "food_bt9uvvxacpohzjblxojh1behk63g",
+            "image": "https://www.edamam.com/food-img/2b5/2b504c036c64481b224c9d74cc4a82e0.jpg"
+          },
+          {
+            "text": "3 cloves garlic",
+            "quantity": 3,
+            "measure": "clove",
+            "food": "garlic",
+            "weight": 9,
+            "foodCategory": "vegetables",
+            "foodId": "food_avtcmx6bgjv1jvay6s6stan8dnyp",
+            "image": "https://www.edamam.com/food-img/6ee/6ee142951f48aaf94f4312409f8d133d.jpg"
+          },
+          {
+            "text": "1/2 small yellow onion ; diced",
+            "quantity": 0.5,
+            "measure": "<unit>",
+            "food": "yellow onion",
+            "weight": 35,
+            "foodCategory": "vegetables",
+            "foodId": "food_bmrvi4ob4binw9a5m7l07amlfcoy",
+            "image": "https://www.edamam.com/food-img/205/205e6bf2399b85d34741892ef91cc603.jpg"
+          },
+          {
+            "text": "1/4 cup white wine",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "white wine",
+            "weight": 58.8,
+            "foodCategory": "wines",
+            "foodId": "food_bn44h7baron9ufaoxinmya8l0yye",
+            "image": "https://www.edamam.com/food-img/a71/a718cf3c52add522128929f1f324d2ab.jpg"
+          },
+          {
+            "text": "4 tablespoons unsalted butter",
+            "quantity": 4,
+            "measure": "tablespoon",
+            "food": "unsalted butter",
+            "weight": 56.8,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "1/2 teaspoon white pepper",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "white pepper",
+            "weight": 1.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a443px0bncpqa5avv80p3anrp26k",
+            "image": "https://www.edamam.com/food-img/4f0/4f0e35fe6c042996408b337fb550324a.jpg"
+          },
+          {
+            "text": "1/2 teaspoon Salt",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "Salt",
+            "weight": 3,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1 cup mushrooms ; sliced",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "mushrooms",
+            "weight": 70,
+            "foodCategory": "vegetables",
+            "foodId": "food_bvlose6arfl26ra396sjrb7hetqh",
+            "image": "https://www.edamam.com/food-img/d63/d639cf4a2afc7407c1d1ce286028136b.jpg"
+          },
+          {
+            "text": "1/2 cup fresh sweet basil ; chopped",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "basil",
+            "weight": 12,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bfeht3obd58c3gak5ehpibxgbbs6",
+            "image": "https://www.edamam.com/food-img/5f1/5f1b05685ac2b404236a5d1c1f3c8c10.jpg"
+          },
+          {
+            "text": "1 lemon ; juiced",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "lemon",
+            "weight": 84,
+            "foodCategory": "fruit",
+            "foodId": "food_a6uzc62astrxcgbtzyq59b6fncrr",
+            "image": "https://www.edamam.com/food-img/70a/70acba3d4c734d7c70ef4efeed85dc8f.jpg"
+          }
+        ],
+        "calories": 5686.1939999999995,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/43b1b91eb7f75775b0ec5a452610565d?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Raisin Pumpernickel Bread",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/333/3334f93fec72c17ddbdefaca756d8ded.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0669b91e143067ac45292e4f357d44a389cb7e928699e2b30c4b192e2d407634",
+        "source": "recipezaar.com",
+        "url": "http://www.recipezaar.com/Raisin-Pumpernickel-Bread-42628",
+        "yield": 12,
+        "healthLabels": [
+          "Vegetarian",
+          "Pescatarian",
+          "Dairy-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 tablespoon salt",
+          "1 package active dry yeast",
+          "2 cups whole wheat flour",
+          "2 tablespoons vegetable oil",
+          "2 cups medium rye flour",
+          "1 tablespoon instant coffee granules",
+          "1 egg white",
+          "2 cups bread flour or unbleached all-purpose flour",
+          "3-4 tablespoons cornmeal",
+          "1 1/2 tablespoons unsweetened cocoa powder",
+          "1 cup raisins",
+          "1 tablespoon cold water",
+          "1/2 cup molasses",
+          "1 1/2 cups lukewarm water (105* to 115*)"
+        ],
+        "ingredients": [
+          {
+            "text": "1 tablespoon salt",
+            "quantity": 1,
+            "measure": "tablespoon",
+            "food": "salt",
+            "weight": 18,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1 package active dry yeast",
+            "quantity": 1,
+            "measure": "package",
+            "food": "yeast",
+            "weight": 36,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_a2xisx4br72i19btvvxgzayoelqj",
+            "image": "https://www.edamam.com/food-img/433/433749733fd8a22560cdb451b1317be1.jpg"
+          },
+          {
+            "text": "2 cups whole wheat flour",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "whole wheat flour",
+            "weight": 240,
+            "foodCategory": "grains",
+            "foodId": "food_azuyr92bee8mu1aodnko9agg46su",
+            "image": "https://www.edamam.com/food-img/f46/f46a64137365c10237522be5980f769c.jpg"
+          },
+          {
+            "text": "2 tablespoons vegetable oil",
+            "quantity": 2,
+            "measure": "tablespoon",
+            "food": "vegetable oil",
+            "weight": 28,
+            "foodCategory": "Oils",
+            "foodId": "food_bt1mzi2ah2sfg8bv7no1qai83w8s",
+            "image": "https://www.edamam.com/food-img/6e5/6e51a63a6300a8ea1b4c4cc68dfaba33.jpg"
+          },
+          {
+            "text": "2 cups medium rye flour",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "rye flour",
+            "weight": 204,
+            "foodCategory": "grains",
+            "foodId": "food_aaunsnzbeyyj8rbkei49wb6nxlii",
+            "image": "https://www.edamam.com/food-img/e85/e856e81f151a059288d0f2d2b9fc8132.jpg"
+          },
+          {
+            "text": "1 tablespoon instant coffee granules",
+            "quantity": 1,
+            "measure": "tablespoon",
+            "food": "instant coffee",
+            "weight": 2.999999999797116,
+            "foodCategory": "coffee and tea",
+            "foodId": "food_aof7z08ad0qgsta38run7arojif8",
+            "image": "https://www.edamam.com/food-img/336/336e810373dd353a955a6896699b586e.jpg"
+          },
+          {
+            "text": "1 egg white",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "egg white",
+            "weight": 26.4,
+            "foodCategory": "Eggs",
+            "foodId": "food_a7hurbpb20zs42bnwg2p8bca3ihs",
+            "image": "https://www.edamam.com/food-img/b30/b304a020501418f9a63cf7f9359bc99d.jpg"
+          },
+          {
+            "text": "2 cups bread flour or unbleached all-purpose flour",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "bread flour",
+            "weight": 274,
+            "foodCategory": "grains",
+            "foodId": "food_b5xk0gwa3clakbaap10sta82dgdk",
+            "image": "https://www.edamam.com/food-img/132/1328fd505cdd3b75fbb8d7b58de5427c.jpg"
+          },
+          {
+            "text": "3-4 tablespoons cornmeal",
+            "quantity": 3.5,
+            "measure": "tablespoon",
+            "food": "cornmeal",
+            "weight": 34.34374999941935,
+            "foodCategory": "grains",
+            "foodId": "food_ab7g9h2al2pjhuakcpeqnag2jn76",
+            "image": "https://www.edamam.com/food-img/d74/d7484276c376cdfd912c22248b566484.jpg"
+          },
+          {
+            "text": "1 1/2 tablespoons unsweetened cocoa powder",
+            "quantity": 1.5,
+            "measure": "tablespoon",
+            "food": "unsweetened cocoa powder",
+            "weight": 8.100000000000001,
+            "foodCategory": "chocolate",
+            "foodId": "food_afcmkjjaqwjkezbfz7htdb7mpkwz",
+            "image": "https://www.edamam.com/food-img/89a/89af89595db3cf2c3007f2b064c5fef6.jpg"
+          },
+          {
+            "text": "1 cup raisins",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "raisins",
+            "weight": 145,
+            "foodCategory": "fruit",
+            "foodId": "food_a3qcdxyb09op1hbwstv5cbmoqc3d",
+            "image": "https://www.edamam.com/food-img/159/159e247350db62e1f87b0636a53687f5.jpg"
+          },
+          {
+            "text": "1 tablespoon cold water",
+            "quantity": 1,
+            "measure": "tablespoon",
+            "food": "water",
+            "weight": 14.786764781,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          },
+          {
+            "text": "1/2 cup molasses",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "molasses",
+            "weight": 168.5,
+            "foodCategory": "sugar syrups",
+            "foodId": "food_b61rwdgbx1ch0yabdfbn5b18umam",
+            "image": "https://www.edamam.com/food-img/800/800f6133e1db5bef8332290e0b23b2cc.jpg"
+          },
+          {
+            "text": "1 1/2 cups lukewarm water (105* to 115*)",
+            "quantity": 1.5,
+            "measure": "cup",
+            "food": "water",
+            "weight": 354.88235475,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          }
+        ],
+        "calories": 3973.677874997136,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/8a1af0fa18541d2a1b3d3378b0cc01ca?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Peanut Butter, Chocolate and Pretzel Cereal Treats",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/43d/43d7a2aff6049d8515bf293002d8aa01.jpeg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ca65cd0906161a97fa844826bd4c43a6db609313d800bdc29f1887ae1d2be275",
+        "source": "Food Network",
+        "url": "https://www.foodnetwork.com/recipes/food-network-kitchen/peanut-butter-chocolate-and-pretzel-cereal-treats-3363889",
+        "yield": 24,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Egg-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free"
+        ],
+        "ingredientLines": [
+          "4 tablespoons unsalted butter, plus more for greasing",
+          "One 10-ounce bag mini marshmallows",
+          "1/2 cup smooth peanut butter",
+          "1 teaspoon pure vanilla extract",
+          "Kosher salt",
+          "6 cups puffed chocolate and peanut butter flavored cereal, such as Reese's Puffs",
+          "6 cups puffed chocolate and peanut butter flavored cereal, such as Reese's Puffs",
+          "2 cups crushed pretzel sticks",
+          "1 cup sweetened shredded coconut flakes",
+          "2 ounces semisweet chocolate, chopped",
+          "1 teaspoon virgin or extra-virgin coconut oil"
+        ],
+        "ingredients": [
+          {
+            "text": "4 tablespoons unsalted butter, plus more for greasing",
+            "quantity": 4,
+            "measure": "tablespoon",
+            "food": "unsalted butter",
+            "weight": 56.8,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "One 10-ounce bag mini marshmallows",
+            "quantity": 10,
+            "measure": "ounce",
+            "food": "marshmallows",
+            "weight": 283.49523125,
+            "foodCategory": "candy",
+            "foodId": "food_bkif6umbr6xns2ac1pl7vaxypd3f",
+            "image": "https://www.edamam.com/food-img/9c8/9c86a95af817e527adebbf8781aa7c4f.jpg"
+          },
+          {
+            "text": "1/2 cup smooth peanut butter",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "peanut butter",
+            "weight": 129,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bz6b8fsbccyn3zaij72f7av8dl9m",
+            "image": "https://www.edamam.com/food-img/d74/d740276ae1409472a8714b2cee88a310.jpg"
+          },
+          {
+            "text": "1 teaspoon pure vanilla extract",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "vanilla extract",
+            "weight": 4.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          },
+          {
+            "text": "Kosher salt",
+            "quantity": 0,
+            "measure": null,
+            "food": "Kosher salt",
+            "weight": 9.190165665,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "6 cups puffed chocolate and peanut butter flavored cereal, such as Reese's Puffs",
+            "quantity": 6,
+            "measure": "cup",
+            "food": "Reese's Puffs",
+            "weight": 232,
+            "foodCategory": "ready-to-eat cereals",
+            "foodId": "food_a2dlcd3aw0cobiappahokbl7grz4",
+            "image": "https://www.edamam.com/food-img/1f6/1f6abe134537e9a4bc1bcef0ca672612.png"
+          },
+          {
+            "text": "6 cups puffed chocolate and peanut butter flavored cereal, such as Reese's Puffs",
+            "quantity": 6,
+            "measure": "cup",
+            "food": "Reese's Puffs",
+            "weight": 232,
+            "foodCategory": "ready-to-eat cereals",
+            "foodId": "food_a2dlcd3aw0cobiappahokbl7grz4",
+            "image": "https://www.edamam.com/food-img/1f6/1f6abe134537e9a4bc1bcef0ca672612.png"
+          },
+          {
+            "text": "2 cups crushed pretzel sticks",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "pretzel",
+            "weight": 448,
+            "foodCategory": "savory snacks",
+            "foodId": "food_btiuue0aksuwb6a4upk8zbxvczo1",
+            "image": "https://www.edamam.com/food-img/b6c/b6cac8f12822102becc852942d5b1d02.jpg"
+          },
+          {
+            "text": "1 cup sweetened shredded coconut flakes",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "coconut flakes",
+            "weight": 85,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_a9ua70bboyd4rebvrdwb0benu8pn",
+            "image": "https://www.edamam.com/food-img/d76/d76b9333b99d55d69b023d81d179aa39.jpg"
+          },
+          {
+            "text": "2 ounces semisweet chocolate, chopped",
+            "quantity": 2,
+            "measure": "ounce",
+            "food": "semisweet chocolate",
+            "weight": 56.69904625,
+            "foodCategory": "chocolate",
+            "foodId": "food_beu5dozavhrqdpblca414a55qow3",
+            "image": "https://www.edamam.com/food-img/0a1/0a1b6f30cb99e1842cac6167f6f424d7.jpg"
+          },
+          {
+            "text": "1 teaspoon virgin or extra-virgin coconut oil",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "coconut oil",
+            "weight": 4.5,
+            "foodCategory": "Oils",
+            "foodId": "food_b40ubq8a0enoidbcr1tmfbwgs6aw",
+            "image": "https://www.edamam.com/food-img/3c9/3c97284c57e76e16093d51572b558be8.jpg"
+          }
+        ],
+        "calories": 6602.222257375,
+        "totalTime": 75,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/c1adf53a2fbfe325c3749671fdc242c4?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Cream Cheese Buttermilk Biscuits recipes",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/ee8/ee84b4278711bf853157c16d85f2bef1?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ae5bb0131f66347654e5e7041fc136686cefdcd2d15db4b6ad8bc1072fcd2241",
+        "source": "bunnyswarmoven.net",
+        "url": "http://bunnyswarmoven.net/2016/02/cream-cheese-buttermilk-biscuits",
+        "yield": 6,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "2 cups all purpose flour",
+          "1/2 Teaspoon baking soda",
+          "1 1/2 Teaspoons baking powder",
+          "1 Teaspoon salt",
+          "4 Tablespoons butter, freeze the butter, then grate",
+          "4 ounces cream cheese,cut into pieces, freeze and grate",
+          "3/4 cup buttermilk"
+        ],
+        "ingredients": [
+          {
+            "text": "2 cups all purpose flour",
+            "quantity": 2,
+            "measure": "cup",
+            "food": "all purpose flour",
+            "weight": 250,
+            "foodCategory": "grains",
+            "foodId": "food_ar3x97tbq9o9p6b6gzwj0am0c81l",
+            "image": "https://www.edamam.com/food-img/368/368077bbcab62f862a8c766a56ea5dd1.jpg"
+          },
+          {
+            "text": "1/2 Teaspoon baking soda",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "baking soda",
+            "weight": 2.3,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_asa4cjoa3lmt8ibwdg0cpblheo69",
+            "image": "https://www.edamam.com/food-img/7e5/7e55e4482cc2fde91f427fc568e6f5b8.jpeg"
+          },
+          {
+            "text": "1 1/2 Teaspoons baking powder",
+            "quantity": 1.5,
+            "measure": "teaspoon",
+            "food": "baking powder",
+            "weight": 6.8999999999999995,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_bad4zycbt4w60dbut111vaub2g3e",
+            "image": "https://www.edamam.com/food-img/a84/a8410ec57a2e62a1ad9955ac14d40af6.jpg"
+          },
+          {
+            "text": "1 Teaspoon salt",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "salt",
+            "weight": 6,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "4 Tablespoons butter, freeze the butter, then grate",
+            "quantity": 4,
+            "measure": "tablespoon",
+            "food": "butter",
+            "weight": 56.8,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "4 ounces cream cheese,cut into pieces, freeze and grate",
+            "quantity": 4,
+            "measure": "ounce",
+            "food": "cream cheese",
+            "weight": 113.3980925,
+            "foodCategory": "Cheese",
+            "foodId": "food_a7rvc49a09a7yjbq3ekjbbauyoqa",
+            "image": "https://www.edamam.com/food-img/ddd/dddce306e7ee41e8e07dc62e28cab94b.jpg"
+          },
+          {
+            "text": "3/4 cup buttermilk",
+            "quantity": 0.75,
+            "measure": "cup",
+            "food": "buttermilk",
+            "weight": 183.75,
+            "foodCategory": "Milk",
+            "foodId": "food_axwuni1bjd81cybjn45rwb25o4jb",
+            "image": "https://www.edamam.com/food-img/768/768bea3c8421a7ae987bc00c4a2b82e8.jpg"
+          }
+        ],
+        "calories": 1791.1683237500001,
+        "totalTime": 50,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/a57763227054cd1430d55f5d7f161df2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Pumpkin Spice Kiss Cookie Party! recipes",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/d1f/d1f97991ca464b207070a9dce07353f7?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=91187963d73f0632fcae13d17e9e57f17176b00b9cdd2aaa0e8c2796be3ab932",
+        "source": "sprinklesomesunshine.blogspot.com",
+        "url": "http://sprinklesomesunshine.blogspot.com/2011/11/pumpkin-spice-kiss-cookie-party_11.html",
+        "yield": 24,
+        "healthLabels": [
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 1/2 cups sugar",
+          "1/2 cup butter, softened",
+          "1 teaspoon vanilla",
+          "2 eggs",
+          "2 3/4 cups flour",
+          "1 teaspoon baking powder",
+          "1/2 teaspoon salt",
+          "2 teaspoons cinnamon",
+          "1 teaspoon ground nutmeg",
+          "1/2 teaspoon ground ginger",
+          "1 package Pumpkin Spice Hershey Kisses"
+        ],
+        "ingredients": [
+          {
+            "text": "1 1/2 cups sugar",
+            "quantity": 1.5,
+            "measure": "cup",
+            "food": "sugar",
+            "weight": 300,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "1/2 cup butter, softened",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "butter",
+            "weight": 113.5,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "1 teaspoon vanilla",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "vanilla",
+            "weight": 4.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_bh1wvnqaw3q7ciascfoygaabax2a",
+            "image": "https://www.edamam.com/food-img/90f/90f910b0bf82750d4f6528263e014cca.jpg"
+          },
+          {
+            "text": "2 eggs",
+            "quantity": 2,
+            "measure": "<unit>",
+            "food": "eggs",
+            "weight": 86,
+            "foodCategory": "Eggs",
+            "foodId": "food_bhpradua77pk16aipcvzeayg732r",
+            "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+          },
+          {
+            "text": "2 3/4 cups flour",
+            "quantity": 2.75,
+            "measure": "cup",
+            "food": "flour",
+            "weight": 343.75,
+            "foodCategory": "grains",
+            "foodId": "food_ahebfs0a985an4aubqaebbipra58",
+            "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg"
+          },
+          {
+            "text": "1 teaspoon baking powder",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "baking powder",
+            "weight": 4.6,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_bad4zycbt4w60dbut111vaub2g3e",
+            "image": "https://www.edamam.com/food-img/a84/a8410ec57a2e62a1ad9955ac14d40af6.jpg"
+          },
+          {
+            "text": "1/2 teaspoon salt",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "salt",
+            "weight": 3,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "2 teaspoons cinnamon",
+            "quantity": 2,
+            "measure": "teaspoon",
+            "food": "cinnamon",
+            "weight": 5.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_atjxtznauw5zabaixm24xa787onz",
+            "image": "https://www.edamam.com/food-img/d4d/d4daa18b92c596a1c99c08537c38e65b.jpg"
+          },
+          {
+            "text": "1 teaspoon ground nutmeg",
+            "quantity": 1,
+            "measure": "teaspoon",
+            "food": "ground nutmeg",
+            "weight": 2.2,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_aa8vp2kadkkiiubgpp48fazrqiq2",
+            "image": "https://www.edamam.com/food-img/b9e/b9e54f78ae18cf99a6504b472ba25e7b.jpg"
+          },
+          {
+            "text": "1/2 teaspoon ground ginger",
+            "quantity": 0.5,
+            "measure": "teaspoon",
+            "food": "ground ginger",
+            "weight": 0.9,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a8l1yfna3fgp3ha4a5b5labyetgz",
+            "image": "https://www.edamam.com/food-img/ee0/ee08c937de5c45a36bd0ad1eafc67496.jpg"
+          },
+          {
+            "text": "1 package Pumpkin Spice Hershey Kisses",
+            "quantity": 1,
+            "measure": "package",
+            "food": "Kisses",
+            "weight": 340,
+            "foodCategory": "chocolate",
+            "foodId": "food_beu5dozavhrqdpblca414a55qow3",
+            "image": "https://www.edamam.com/food-img/0a1/0a1b6f30cb99e1842cac6167f6f424d7.jpg"
+          }
+        ],
+        "calories": 5022.876,
+        "totalTime": 20,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/c7a1ece56608259a26edb99059629115?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Warm orange trifle",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/bdc/bdcb8faaea133b6f02479c26ceae46ff.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=4168ef263a49d3402b039b0c9bda2d8e8bb84beb8e1c2af0435fcc86a4e768ce",
+        "source": "kitchen.nine.com.au",
+        "url": "https://kitchen.nine.com.au/recipes/warm-orange-trifle/e32180b7-99de-4b75-bcbb-a14cf6651e85",
+        "yield": 4,
+        "healthLabels": [
+          "Vegetarian",
+          "Pescatarian",
+          "Peanut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "⅓ cup orange juice",
+          "⅓ cup grand marnier",
+          "⅓ cup caster sugar",
+          "375g jam sponge roll, sliced",
+          "1 cup premium vanilla custard, warmed (see tip)",
+          "2 oranges, segmented (see tip)",
+          "¼ cup chopped macadamias"
+        ],
+        "ingredients": [
+          {
+            "text": "⅓ cup orange juice",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "orange juice",
+            "weight": 82.66666666666666,
+            "foodCategory": "100% juice",
+            "foodId": "food_bn7zicravp7kdrb8h9knhadt6kei",
+            "image": "https://www.edamam.com/food-img/011/011c0c3b0f3865bde575f57c556439e4.jpg"
+          },
+          {
+            "text": "⅓ cup grand marnier",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "grand marnier",
+            "weight": 74.66666666624599,
+            "foodCategory": "liquors and cocktails",
+            "foodId": "food_ajguqpia53yz3oah6w2frad3tz65",
+            "image": "https://www.edamam.com/food-img/c7f/c7fcc63de96b349534aade3de3f9fa7d.jpg"
+          },
+          {
+            "text": "⅓ cup caster sugar",
+            "quantity": 0.3333333333333333,
+            "measure": "cup",
+            "food": "caster sugar",
+            "weight": 64,
+            "foodCategory": "sugars",
+            "foodId": "food_b83hz1dbrydiwzag8btahb15lu4l",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "375g jam sponge roll, sliced",
+            "quantity": 375,
+            "measure": "gram",
+            "food": "roll",
+            "weight": 375,
+            "foodCategory": "bread, rolls and tortillas",
+            "foodId": "food_bqej00dajarrgpb1l32xhacc4kbn",
+            "image": "https://www.edamam.com/food-img/78f/78ffbae0365a1a431061ff397c3b6d38.jpg"
+          },
+          {
+            "text": "1 cup premium vanilla custard, warmed (see tip)",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "vanilla custard",
+            "weight": 282,
+            "foodCategory": "chocolate",
+            "foodId": "food_aqftc79a23qh42af8c2nva87li25",
+            "image": "https://www.edamam.com/food-img/932/932b2776ea9cd734c5986d3d013017ee.jpg"
+          },
+          {
+            "text": "2 oranges, segmented (see tip)",
+            "quantity": 2,
+            "measure": "<unit>",
+            "food": "oranges",
+            "weight": 262,
+            "foodCategory": "fruit",
+            "foodId": "food_b0bnl8oayiqhs2at63ifxbm6i3o3",
+            "image": "https://www.edamam.com/food-img/8ea/8ea264a802d6e643c1a340a77863c6ef.jpg"
+          },
+          {
+            "text": "¼ cup chopped macadamias",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "macadamias",
+            "weight": 33.5,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bfvpqcga16yhe5a01rpnnbainhno",
+            "image": "https://www.edamam.com/food-img/7bc/7bc36d19e1e81c206f309a3ca16f295b.jpg"
+          }
+        ],
+        "calories": 2213.0599999990286,
+        "totalTime": 0,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/36999ff61cdc86b3c9aea0eae8ce8d11?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Fluffy Yeast Rolls",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/c83/c83c1395dcbc347081de70c8eea01865.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=33ea08ac1f0dc1059fa9ed91404a50b4e3438cb5395dbb7fb2bd71d8c0229b69",
+        "source": "pauladeenmagazine.com",
+        "url": "https://www.pauladeenmagazine.com/fluffy-yeast-rolls-recipe/",
+        "yield": 18,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Vegetarian",
+          "Pescatarian",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 cup whole milk",
+          "¾ cup water",
+          "½ cup butter",
+          "¼ cup sugar",
+          "2 teaspoons salt",
+          "1 (0.25-ounce) package instant yeast",
+          "5 to 6 cups bread flour, divided",
+          "1 large egg, beaten",
+          "3 tablespoons melted butter",
+          "Coarse salt (optional)"
+        ],
+        "ingredients": [
+          {
+            "text": "1 cup whole milk",
+            "quantity": 1,
+            "measure": "cup",
+            "food": "whole milk",
+            "weight": 244,
+            "foodCategory": "Milk",
+            "foodId": "food_b49rs1kaw0jktabzkg2vvanvvsis",
+            "image": "https://www.edamam.com/food-img/7c9/7c9962acf83654a8d98ea6a2ade93735.jpg"
+          },
+          {
+            "text": "¾ cup water",
+            "quantity": 0.75,
+            "measure": "cup",
+            "food": "water",
+            "weight": 177.441177375,
+            "foodCategory": "water",
+            "foodId": "food_a99vzubbk1ayrsad318rvbzr3dh0",
+            "image": "https://www.edamam.com/food-img/5dd/5dd9d1361847b2ca53c4b19a8f92627e.jpg"
+          },
+          {
+            "text": "½ cup butter",
+            "quantity": 0.5,
+            "measure": "cup",
+            "food": "butter",
+            "weight": 113.5,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "¼ cup sugar",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "sugar",
+            "weight": 50,
+            "foodCategory": "sugars",
+            "foodId": "food_axi2ijobrk819yb0adceobnhm1c2",
+            "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg"
+          },
+          {
+            "text": "2 teaspoons salt",
+            "quantity": 2,
+            "measure": "teaspoon",
+            "food": "salt",
+            "weight": 12,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_btxz81db72hwbra2pncvebzzzum9",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          },
+          {
+            "text": "1 (0.25-ounce) package instant yeast",
+            "quantity": 0.25,
+            "measure": "ounce",
+            "food": "yeast",
+            "weight": 7.08738078125,
+            "foodCategory": "condiments and sauces",
+            "foodId": "food_a2xisx4br72i19btvvxgzayoelqj",
+            "image": "https://www.edamam.com/food-img/433/433749733fd8a22560cdb451b1317be1.jpg"
+          },
+          {
+            "text": "5 to 6 cups bread flour, divided",
+            "quantity": 5.5,
+            "measure": "cup",
+            "food": "bread flour",
+            "weight": 753.5,
+            "foodCategory": "grains",
+            "foodId": "food_b5xk0gwa3clakbaap10sta82dgdk",
+            "image": "https://www.edamam.com/food-img/132/1328fd505cdd3b75fbb8d7b58de5427c.jpg"
+          },
+          {
+            "text": "1 large egg, beaten",
+            "quantity": 1,
+            "measure": "<unit>",
+            "food": "egg",
+            "weight": 50,
+            "foodCategory": "Eggs",
+            "foodId": "food_bhpradua77pk16aipcvzeayg732r",
+            "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+          },
+          {
+            "text": "3 tablespoons melted butter",
+            "quantity": 3,
+            "measure": "tablespoon",
+            "food": "butter",
+            "weight": 42.599999999999994,
+            "foodCategory": "Dairy",
+            "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+            "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+          },
+          {
+            "text": "Coarse salt (optional)",
+            "quantity": 0,
+            "measure": null,
+            "food": "Coarse salt",
+            "weight": 8.700771348937499,
+            "foodCategory": "Condiments and sauces",
+            "foodId": "food_a1vgrj1bs8rd1majvmd9ubz8ttkg",
+            "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg"
+          }
+        ],
+        "calories": 4276.245987539062,
+        "totalTime": 0,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/08d147cb1b7fb75a683097479cc448e2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Ez Butterfingers",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/6ec/6ecb186cdc47be4f7f194d564cdd9983.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ea7198c500717c3aa5dda0f966fb932ee8b5d8b8e29904bfce5a9e5e2d43c956",
+        "source": "recipezaar.com",
+        "url": "http://www.recipezaar.com/Ez-Butterfingers-243828",
+        "yield": 6,
+        "healthLabels": [
+          "Vegetarian",
+          "Pescatarian",
+          "Egg-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "16 ounces wheat thins crackers",
+          "12 ounces milk chocolate chips",
+          "6 ounces peanut butter"
+        ],
+        "ingredients": [
+          {
+            "text": "16 ounces wheat thins crackers",
+            "quantity": 16,
+            "measure": "ounce",
+            "food": "wheat thins crackers",
+            "weight": 453.59237,
+            "foodCategory": "crackers",
+            "foodId": "food_b1mceflaahefxuawyuym0bjfgrag",
+            "image": "https://www.edamam.com/food-img/94b/94b9f816b014bcdf01ebffa4f7b8941e.jpg"
+          },
+          {
+            "text": "12 ounces milk chocolate chips",
+            "quantity": 12,
+            "measure": "ounce",
+            "food": "chocolate chips",
+            "weight": 340.1942775,
+            "foodCategory": "chocolate",
+            "foodId": "food_b0camz2asgzienbko2epvbzzv6qj",
+            "image": "https://www.edamam.com/food-img/36c/36ce336d10d51259f365ec2dbc1e28c4.jpg"
+          },
+          {
+            "text": "6 ounces peanut butter",
+            "quantity": 6,
+            "measure": "ounce",
+            "food": "peanut butter",
+            "weight": 170.09713875,
+            "foodCategory": "plant-based protein",
+            "foodId": "food_bz6b8fsbccyn3zaij72f7av8dl9m",
+            "image": "https://www.edamam.com/food-img/d74/d740276ae1409472a8714b2cee88a310.jpg"
+          }
+        ],
+        "calories": 4788.801446275001,
+        "totalTime": 0,
+        "dishType": [
+          "biscuits and cookies"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/bd1e34d48ed3d9a6c9b48fc243b25acf?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    },
+    {
+      "recipe": {
+        "label": "Injera (Fermented Sourdough Bread)",
+        "image": "https://edamam-product-images.s3.amazonaws.com/web-img/c12/c1242dd8cda6348ffe2842447bd94006.jpeg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICj8XWTO1VPpyPTVkzXAlySjuAQxvGmixEUZ7WcYec4qAiEAr9B6BgXXnnOZNloBDccNramWFXTcLR4zIh3TC6nCr3QqwgUI5f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDLTbpPHqc65nY3aFeyqWBRvA%2B6OOysQRH0IilNxug%2FcSpkEGuFhKhhR9D3ni2G5vAVcfJEQjpRHw1wpNBf94p03bHC5ISAuAhdlV8i2Xd9sbm9uAjx0IGEhRn6hu%2F6TIArz2sCQoAauZ6LOZ6Uxpcckv%2BQWq1gOCdVFc4FPP%2FJgP3I3DfmcDjbWpT9OiJRQhAwewOsdYtCTG9txuTKKqHxZtUtTdtJrtsX0jEqX0ijPcQK4eU5U8Ygj%2BgU8qZp2qnzieN64uVALtbLewmSTfrtWeoPM5mmKyqEjm10I%2BQt%2BSMN9daSSS%2FyTs1cexAgciO8c70lhXMxOGiBA56q%2B2E8m2qwBZX81IA0f6czu6LOq9fSxQKwCg%2FX9dSDxmCaBLAh%2Fpfpe2Nxdo9O%2FnLolAMhJ4V7jwAfp0ho%2FbFDBKtyyO%2FtDrwXA3Bipx%2FwzXnVw7xu2C2Ww0TFBXLCO%2F6eysg773F816%2FlhRfKVfr6q5aKVyjl0yafS8eAK9SX35gHhIP2rGpunB4D5ZnygZbr%2B6I%2FbTlxfhnseXOJ%2BW3ZZ%2Ft9%2BDI14q%2F%2BeICS6rZDMuSnmRiG%2FmWn90zg1NgA6XNWRVy2B3jKvgRGEIWQprz%2FySpA84ZZa8%2BkLvM2iqcUH%2BVcaRjSVjBXY2SNPaRdTiCMS%2Fwz0X6iD9Y8xY65mIUR%2FDAor%2FYbow2vuIPwjL10swKUc3zR8tUty7CeQcWFCFweMpP50rEBwv9OtoSTVnF1ZRV%2FGGpgmiVu7ScTyq1hq%2FWN4XYbEgS%2FTtVGyHAXMfzdumkErwCQBuxJgCsmYLYtlm9gi956rUIH5peXTEQdd8bAxvA5fkthLjIMw0quUX0MZxrSMWRe0RTR8S8gzCPnJyZ4bnHhdQ3ozI8Mnrqd%2FyzIFqnXf9p8EgMOjO%2Bq4GOrEBTopDincM4guwEcpYN381akmQGRzAHgdoaJbowE9R0kxk94PxX77F1WzxpCaT7smAWx7BT6%2FqBwGKdBy1g4%2FFoOlg3PKNkfKPQJ41vGJqFWq7xXSZ09jMejt8NN%2B8SFSe0jU3sTsVNGUQlKOa4XnXViUlVh5QJfNrt%2FEoLI5TozhPn4ZTwGnpFdz7znGdlaezPTW4muNZoHRhWJp%2FV37ylCyHxkeMStKF6PllJKuyAsxY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240228T034447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHICEFB4L%2F20240228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=959dc54eea7407e6871282bf3327720814bdf44b3461341b3a4b3cfe2b186b81",
+        "source": "food.com",
+        "url": "http://www.food.com/recipe/injera-fermented-sourdough-bread-532832",
+        "yield": 10,
+        "healthLabels": [
+          "Sugar-Conscious",
+          "Vegan",
+          "Vegetarian",
+          "Pescatarian",
+          "Mediterranean",
+          "DASH",
+          "Dairy-Free",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Sesame-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "No oil added",
+          "Sulfite-Free",
+          "Kosher"
+        ],
+        "ingredientLines": [
+          "1 1⁄2 lbs teff flour",
+          "1⁄2 lb barley flour",
+          "1⁄4 cup wheat flour"
+        ],
+        "ingredients": [
+          {
+            "text": "1 1⁄2 lbs teff flour",
+            "quantity": 1.5,
+            "measure": "pound",
+            "food": "teff flour",
+            "weight": 680.388555,
+            "foodCategory": "grains",
+            "foodId": "food_anhss3hbuqyq3gb2waptdbkndju1",
+            "image": "https://www.edamam.com/food-img/823/823f0a28584afe06675767e5d8f69538.jpg"
+          },
+          {
+            "text": "1⁄2 lb barley flour",
+            "quantity": 0.5,
+            "measure": "pound",
+            "food": "barley flour",
+            "weight": 226.796185,
+            "foodCategory": "grains",
+            "foodId": "food_bky2hqhb37t0puaeu6em9augo8fi",
+            "image": "https://www.edamam.com/food-img/f7a/f7aac8fcae9137e44af96ea3379e1a45.jpg"
+          },
+          {
+            "text": "1⁄4 cup wheat flour",
+            "quantity": 0.25,
+            "measure": "cup",
+            "food": "wheat flour",
+            "weight": 31.25,
+            "foodCategory": "grains",
+            "foodId": "food_ar3x97tbq9o9p6b6gzwj0am0c81l",
+            "image": "https://www.edamam.com/food-img/368/368077bbcab62f862a8c766a56ea5dd1.jpg"
+          }
+        ],
+        "calories": 3393.2228351,
+        "totalTime": 6250,
+        "dishType": [
+          "bread"
+        ]
+      },
+      "_links": {
+        "self": {
+          "href": "https://api.edamam.com/api/recipes/v2/134a38cddb27e3d4b69921354146b3e3?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a",
+          "title": "Self"
+        }
+      }
+    }
+  ]
+}
