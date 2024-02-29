@@ -4,7 +4,9 @@ function useEdamam() {
       const res = await fetch(url);
       const edamamData = await res.json();
       if (!res.ok) {
-        throw new Error(data.errorMsg ? data.errorMsg : "Something went wrong");
+        throw new Error(
+          edamamData.errorMsg ? edamamData.errorMsg : "Something went wrong"
+        );
       }
       return edamamData;
     } catch (err) {
@@ -29,7 +31,7 @@ function useEdamam() {
   const edamamRecpUri = (str) => {
     const apiUrl = "https://api.edamam.com/api/recipes/v2/";
     let startIdx = apiUrl.lastIndexOf("/");
-    return str.substring(startIdx + 1, startIdx + 32);
+    return str.substring(startIdx + 1, startIdx + 33);
   };
 
   return {

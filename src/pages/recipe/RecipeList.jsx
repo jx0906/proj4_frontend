@@ -77,8 +77,10 @@ export default function RecipeList() {
 
       const mappedEdamamRecp = edamamRecp.hits.map((hit) => {
         let recipe = hit.recipe;
+        console.log(hit);
+        console.log(`${edamamRecpUri(hit._links.self.href)}`);
         return {
-          _id: `edam/${edamamRecpUri(hit._links.self.href)}`,
+          _id: `${edamamRecpUri(hit._links.self.href)}edam`,
           name: recipe.label,
           category: formattedCategories(recipe.dishType[0]),
           levelOfDiff: derivedLevelofDiff(recipe.ingredientLines),
@@ -99,6 +101,7 @@ export default function RecipeList() {
           updatedAt: new Date().toISOString(), // You can set this to the current date and time
           __v: 0, // Assuming this is a version field
           image: null,
+          edamamProp: { hit },
         };
       });
       return mappedEdamamRecp;
