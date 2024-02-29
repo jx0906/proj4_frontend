@@ -16,12 +16,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
-import {
-  Link,
-  useLocation,
-  useNavigate,
-  useOutletContext,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import LoaderDots from "../../components/parts/Loader";
@@ -41,7 +36,7 @@ export default function searchRecipes() {
     getData();
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchTerm]);
 
   const getData = async () => {
     try {
@@ -59,14 +54,14 @@ export default function searchRecipes() {
   };
 
   const form = useForm({
-    validate: {
-      category: (value) =>
-        !value && "Please choose a category which best represents your recipe.",
-      levelOfDiff: (value) =>
-        !value &&
-        "Please choose an area which best represents the difficulty of this recipe.",
-      timeRequired: (value) => !value && "Please enter a time",
-    },
+    // validate: {
+    //   category: (value) =>
+    //     !value && "Please choose a category which best represents your recipe.",
+    //   levelOfDiff: (value) =>
+    //     !value &&
+    //     "Please choose an area which best represents the difficulty of this recipe.",
+    //   timeRequired: (value) => !value && "Please enter a time",
+    // },
   });
 
   const handleClearFilter = () => {
@@ -80,6 +75,11 @@ export default function searchRecipes() {
     let recpCategory;
     let recpTimeRequired;
     // let recpSource;
+
+    const searchCriteria = {
+      category: form.values.category,
+      levelOfDiff: form.values.levelOfDiff,
+    };
 
     const filterParams = (input) => {
       // Use reduce to accumulate the filter string
@@ -97,9 +97,9 @@ export default function searchRecipes() {
     };
 
     const recpData = await sendRequest(
-      `${
-        import.meta.env.VITE_API_URL
-      }/recipe/search?searchTerm=${filterParams}`,
+      `${import.meta.env.VITE_API_URL}/recipe/search?searchTerm=${filterParams(
+        form.values
+      )}`,
       "GET"
     );
     setData(resData);
@@ -108,7 +108,7 @@ export default function searchRecipes() {
 
   return (
     <>
-      <form
+      {/* <form
         onSubmit={form.onSubmit(() => {
           filterList();
         })}
@@ -152,7 +152,7 @@ export default function searchRecipes() {
             Clear
           </Button>
         </Group>
-      </form>
+      </form> */}
       {loading ? (
         <LoaderDots />
       ) : (

@@ -48,7 +48,7 @@ export default function RecipeList() {
         {
           extData
             ? (recipeCollection = [...intData, ...extData])
-            : (recipeCollection = intData);
+            : (recipeCollection = [...intData]);
         }
         setData(recipeCollection);
         setLoading(false);

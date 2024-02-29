@@ -12,10 +12,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { IconTrash, IconEdit } from "@tabler/icons-react";
 import dayjs from "dayjs";
-import Modal from "../../components/parts/Modal";
-import useFetch from "../../hooks/useFetch";
-import LoaderDots from "../../components/parts/Loader";
-import useToast from "../../hooks/useToast";
+import Modal from "../../components/parts/Modal.jsx";
+import useFetch from "../../hooks/useFetch.jsx";
+import LoaderDots from "../../components/parts/Loader.jsx";
+import useToast from "../../hooks/useToast.jsx";
 import { UserContext } from "../../App.jsx";
 
 function Th({ children }) {
@@ -28,7 +28,7 @@ function Th({ children }) {
   );
 }
 
-function AllUserRecipes() {
+function UserCreatedRecipes() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [data, setData] = useState([]);
   const [dataToCancel, setDataToCancel] = useState([]);
@@ -133,7 +133,7 @@ function AllUserRecipes() {
   return (
     <>
       <Title order={2} ta="center" mb="lg">
-        Your Creations
+        My Creations
       </Title>
       {loading ? (
         <LoaderDots />
@@ -176,4 +176,4 @@ function AllUserRecipes() {
   );
 }
 
-export default AllUserRecipes;
+export default UserCreatedRecipes;

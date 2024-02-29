@@ -29,53 +29,50 @@ export default function UserActions({ recipeData, user, pathId }) {
 
   async function handleClickToBookmark(evt) {
     evt.preventDefault();
-    // console.log(recipeData);
-    // console.log(user);
-    // console.log(recipeData.id);
-    // console.log(recipeData._id);
-    let recpExists, res;
+
+    let existingRecipe, res;
     try {
       // Check if data.source is "AppUser" (ie, created originally in app). bookmark directly if yes.
       if (recipeData.source === "AppUser") {
         res = await sendRequest(
-          `${import.meta.env.VITE_API_URL}/Recipe/${pathId}/edit`,
+          `${import.meta.env.VITE_API_URL}/recipe/${pathId}/addbookmark`,
           "POST",
           {
             bookmarked: recipeData.bookmarked
-              ? recipeData.bookmarked.push(user.id)
+              ? [...recipeData.bookmarked, user.id] //array.push will return the length and not the array itself!
               : [user.id],
           }
         );
       } else {
         // Check if external recipe already exists (ie, created when other users bookmarked it) to prev creating duplicates
-        recpExists = await sendRequest(
-          `${import.meta.env.VITE_API_URL}/Recipe/${pathId}`,
+        // check if edamamId field = pathId
+        existingRecipe = await sendRequest(
+          `${import.meta.env.VITE_API_URL}/recipe/find?edamamId=${pathId}`,
           "GET"
         );
 
-        if (recpExists) {
-          // if yes, update bookmarks directly
+        if (!existingRecipe) {
+          // if yes, update bookmark directly
           res = await sendRequest(
-            `${import.meta.env.VITE_API_URL}/Recipe/${pathId}/edit`,
+            `${import.meta.env.VITE_API_URL}/recipe/${
+              existingRecipe._id
+            }/addbookmark`,
             "POST",
             {
-              bookmarked: data.bookmarked
-                ? data.bookmarked.push(user.id)
+              bookmarked: existingRecipe.bookmarked
+                ? [...existingRecipe.bookmarked, user.id] //array.push will return the length and not the array itself!
                 : [user.id],
             }
           );
         } else {
           //  else, create recipe with user ID = admin ID and relevant user info in bookmarked field.
-          console.log("Recipe not found, creating a new one with bookmarks.");
           res = await sendRequest(
             `${import.meta.env.VITE_API_URL}/recipe/create`,
             "POST",
             {
-              ...data, // Spread operator includes all existing data, ie, data we had mapped from Edamam in Recipe.jsx for FE render
-              bookmarked: recipeData.bookmarked
-                ? recipeData.bookmarked.push(user.id)
-                : [user.id],
-              user: ObjectId("65d443ddbe873f42ef4ca680"), // admin user ID
+              ...recipeData, // Spread operator includes all existing data, ie, data we had mapped from Edamam in Recipe.jsx for FE render
+              bookmarked: [user.id],
+              user: "65d443ddbe873f42ef4ca680", // admin user ID
             }
           );
         }
@@ -108,9 +105,7 @@ export default function UserActions({ recipeData, user, pathId }) {
               size="lg"
               onClick={handleClickToBookmark}
               // Check if data.bookmarked is defined and if yes, whether it includes user.id
-              disabled={
-                recipeData.bookmarked && recipeData.bookmarked.includes(user.id)
-              }
+              disabled={recipeData.bookmarked.includes(user.id)}
             >
               <IconBookmarkPlus style={{ width: rem(20) }} stroke={1.5} />
             </ActionIcon>
