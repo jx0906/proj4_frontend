@@ -68,7 +68,7 @@ function Recipe() {
               key: ingredient.foodId,
             };
           }),
-          instructions: edamamRecp.recipe.url,
+          instructions: "",
           description: "",
           source: edamamRecp.recipe.source,
           image: null,
@@ -89,7 +89,7 @@ function Recipe() {
     setLoading(false);
   };
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
       {loading ? (
@@ -170,13 +170,13 @@ function Recipe() {
 
                 <Box w="70%" px="xs">
                   <Text>
-                    {data.instructions.includes("http") ? (
+                    {data.instructions === "" ? (
                       <>
                         Visit{" "}
                         <a href={data.instructions} target="_blank">
                           {data.instructions}
                         </a>{" "}
-                        for details.
+                        for baking instructions.
                       </>
                     ) : (
                       data.instructions

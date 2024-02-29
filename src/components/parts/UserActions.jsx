@@ -56,7 +56,7 @@ export default function UserActions({ recipeData, user, pathId }) {
           res = await sendRequest(
             `${import.meta.env.VITE_API_URL}/recipe/${
               existingRecipe._id
-            }/addbookmark`,
+            }/updatebookmark`,
             "POST",
             {
               bookmarked: existingRecipe.bookmarked
@@ -73,6 +73,18 @@ export default function UserActions({ recipeData, user, pathId }) {
               ...recipeData, // Spread operator includes all existing data, ie, data we had mapped from Edamam in Recipe.jsx for FE render
               bookmarked: [user.id],
               user: "65d443ddbe873f42ef4ca680", // admin user ID
+              instructions: `Visit ${recipeData.instructions} for baking instructions.`,
+              description: `This recipe is from ${
+                recipeData.source
+              } and is associated with ${recipeData.healthLabels[0]}, ${
+                recipeData.healthLabels[1]
+              } and ${
+                recipeData.healthLabels[2]
+              } diets, amongst others. It packs a total of
+                ${parseInt(
+                  recipeData.calories
+                )} calories for the specified serving. Give it a try if it appeals to you today!
+           `,
             }
           );
         }
@@ -111,11 +123,12 @@ export default function UserActions({ recipeData, user, pathId }) {
             </ActionIcon>
           </Tooltip>
 
-          <Tooltip label="Add notes">
+          <Tooltip label="(COMING SOON!) Add notes">
             <ActionIcon variant="default" size="lg">
               <IconCirclePlus
                 style={{ width: rem(20) }}
                 stroke={1.5}
+                disabled
                 // onClick={() => navigate("/user/notes")}
               />
             </ActionIcon>

@@ -6,11 +6,12 @@ import {
   Text,
   Anchor,
   Title,
+  Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { IconBookmarkOff, IconEdit } from "@tabler/icons-react";
+import { IconBookmarkOff, IconCirclePlus } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";
 import useFetch from "../../hooks/useFetch.jsx";
 import LoaderDots from "../../components/parts/Loader.jsx";
@@ -56,7 +57,9 @@ function UserBookmarks() {
 
   const removeBookmark = async () => {
     const updatedBookmarks = await sendRequest(
-      `${import.meta.env.VITE_API_URL}/recipe/search?bookmarkedUser=${user.id}`,
+      `${import.meta.env.VITE_API_URL}/recipe/${
+        dataToUpdate._id
+      }/updatebookmark`,
       "POST",
       {
         // using filter instead of splice because i want a new array
@@ -84,31 +87,37 @@ function UserBookmarks() {
         </Table.Td>
 
         <Table.Td>{row.description}</Table.Td>
-        <Table.Td>{dayjs(row.createdAt).format("DD/MM/YYYY")}</Table.Td>
+        <Table.Td>{row.source}</Table.Td>
         {/* <Table.Td>{row.pax}</Table.Td>
       <Table.Td>{row.request}</Table.Td> */}
 
         <Table.Td w="85px">
-          <ActionIcon
-            variant="default"
-            size="md"
-            onClick={() => {
-              setDataToUpdate(row);
-            }}
-          >
-            <IconBookmarkOff size="input-sm" stroke={1.5} />
-          </ActionIcon>
+          <Tooltip label="Remove bookmark">
+            <ActionIcon
+              variant="default"
+              size="md"
+              onClick={() => {
+                setDataToUpdate(row);
+                removeBookmark();
+              }}
+            >
+              <IconBookmarkOff size="input-sm" stroke={1.5} />
+            </ActionIcon>
+          </Tooltip>
         </Table.Td>
         <Table.Td w="85px">
-          <ActionIcon
-            variant="default"
-            size="md"
-            onClick={() => {
-              navigate(`/recipe/${row._id}/edit`);
-            }}
-          >
-            <IconEdit size="input-sm" stroke={1.5} />
-          </ActionIcon>
+          <Tooltip label="(COMING SOON!) Add notes">
+            <ActionIcon
+              variant="default"
+              size="md"
+              disabled
+              // onClick={() => {
+              //   navigate(`/recipe/${row._id}/edit`);
+              // }}
+            >
+              <IconCirclePlus size="input-sm" stroke={1.5} />
+            </ActionIcon>
+          </Tooltip>
         </Table.Td>
       </Table.Tr>
     ));
@@ -137,7 +146,7 @@ function UserBookmarks() {
                 <Table.Tr>
                   <Th>Recipe Name</Th>
                   <Th>Description</Th>
-                  {/* {/* <Th>Time</Th> */}
+                  <Th>Source of Recipe</Th>
                   {/* <Th>Pax</Th> */}
                   {/* <Th>Date Created</Th> */}
                 </Table.Tr>

@@ -34,6 +34,7 @@ function NewRecipe() {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
+    // console.log(user);
     if (!user) {
       notifications.show({
         message: "You can only create a recipe if you are logged in.",
@@ -109,7 +110,7 @@ function NewRecipe() {
           timeRequired: form.values.timeRequired,
           servings: form.values.servings,
           instructions: form.values.instructions,
-          user: req.user.id,
+          user: user.id,
         }
       );
       console.log(res);
