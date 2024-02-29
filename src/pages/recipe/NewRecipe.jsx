@@ -15,12 +15,13 @@ import { useForm } from "@mantine/form";
 import { IconTrash } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDisclosure, randomId } from "@mantine/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Modal from "../../components/parts/Modal";
 import useFetch from "../../hooks/useFetch";
 import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
+import { UserContext } from "../../App.jsx";
 
 function NewRecipe() {
   // manage the state of whether a component (such as a modal) is open or closed.
@@ -28,18 +29,20 @@ function NewRecipe() {
   const navigate = useNavigate();
   const { sendRequest } = useFetch();
   const { successToast, errorToast } = useToast();
-  // const { user } = useOutletContext();
+  const { user } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    // if (!user) {
-    //  notifications.show({
-    //     message: "You can only create a recipe if you are logged in.",
-    //     autoClose: 1000,
-    // })
-    //       navigate("/signin");
-    //       return;
+    // console.log(user);
+    if (!user) {
+      notifications.show({
+        message: "You can only create a recipe if you are logged in.",
+        autoClose: 1000,
+      });
+      navigate("/signin");
+      return;
+    }
     setLoading(false);
     window.scrollTo(0, 0);
   }, []);
@@ -107,6 +110,7 @@ function NewRecipe() {
           timeRequired: form.values.timeRequired,
           servings: form.values.servings,
           instructions: form.values.instructions,
+          user: user.id,
         }
       );
       console.log(res);

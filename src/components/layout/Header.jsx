@@ -198,8 +198,8 @@ export const Header = ({ user, setUser }) => {
                     My Creations
                   </Menu.Item>
                   <Menu.Item
-                    // component={Link}
-                    // to="/user/bookmarks"
+                    component={Link}
+                    to="/user/bookmarks"
                     leftSection={
                       <IconBookmarks
                         style={{ width: rem(16), height: rem(16) }}

@@ -9,7 +9,8 @@ import "./index.css";
 import App from "./App.jsx";
 import UserLogin from "./pages/user/Login.jsx";
 import UserSignUp from "./pages/user/Signup.jsx";
-import AllUserRecipes from "./pages/user/AllUserRecipes.jsx";
+import UserCreatedRecipes from "./pages/user/UserCreatedRecipes.jsx";
+import UserBookmarks from "./pages/user/UserBookmarks.jsx";
 import RecipeList from "./pages/recipe/RecipeList.jsx";
 import Recipe from "./pages/recipe/Recipe.jsx";
 import NewRecipe from "./pages/recipe/NewRecipe.jsx";
@@ -46,8 +47,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/* User */}
             <Route path="/login" element={<UserLogin />} />
             <Route path="/signup" element={<UserSignUp />} />
-            <Route path="user/creations" element={<AllUserRecipes />} />
-            {/* <Route path="user/recipe" element={<UserRecipes />} /> */}
+            <Route path="user/creations" element={<UserCreatedRecipes />} />
+            <Route path="user/bookmarks" element={<UserBookmarks />} />
 
             {/* Recipes */}
             <Route path="/recipe/create" element={<NewRecipe />} />

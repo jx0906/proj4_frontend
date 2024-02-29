@@ -20,7 +20,7 @@ function useEdamam() {
     return ingredientCount >= 5 && ingredientCount <= 10
       ? "Intermediate"
       : ingredientCount > 10
-      ? "Difficult"
+      ? "Advanced"
       : "Easy";
   };
 

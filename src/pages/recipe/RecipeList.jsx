@@ -33,6 +33,8 @@ export default function RecipeList() {
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
   useEffect(() => {
+    let recipeCollection;
+
     const fetchData = async () => {
       /* need to set this up as async so the concatenation of both int and ext list would only
       start when both fetch processes are fulfilled, else we may run into the possibility of
@@ -41,10 +43,13 @@ export default function RecipeList() {
       try {
         const intData = await getInternalList();
         const extData = await getEdamamList();
-        console.log(extData);
+        // console.log(extData);
         //recall that we had set both output as array of objects to facilitate the use of map
-
-        const recipeCollection = [...intData, ...extData];
+        {
+          extData
+            ? (recipeCollection = [...intData, ...extData])
+            : (recipeCollection = [...intData]);
+        }
         setData(recipeCollection);
         setLoading(false);
       } catch (err) {
@@ -72,36 +77,18 @@ export default function RecipeList() {
   const getEdamamList = async () => {
     try {
       const edamamRecp = await sendEdamamRequest(
-        "https://api.edamam.com/api/recipes/v2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&dishType=Biscuits%20and%20cookies&dishType=Bread&random=true&field=label&field=image&field=source&field=url&field=yield&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=dishType&field=externalId"
+        "https://api.edamam.com/api/recipes/v2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&dishType=Biscuits%20and%20cookies&dishType=Bread&random=true&field=label&field=image&field=ingredientLines&field=dishType"
       );
 
       const mappedEdamamRecp = edamamRecp.hits.map((hit) => {
         let recipe = hit.recipe;
-        console.log(hit);
-        console.log(`${edamamRecpUri(hit._links.self.href)}`);
+
         return {
           _id: `${edamamRecpUri(hit._links.self.href)}edam`,
           name: recipe.label,
           category: formattedCategories(recipe.dishType[0]),
           levelOfDiff: derivedLevelofDiff(recipe.ingredientLines),
-          timeRequired: recipe.totalTime,
-          servings: recipe.yield,
-          ingredients: recipe.ingredients.map((ingredient) => {
-            return {
-              quantity: ingredient.quantity,
-              unit: ingredient.measure,
-              name: ingredient.food,
-              key: ingredient.foodId,
-            };
-          }),
-          instructions: recipe.url,
-          description: `This recipe from ${recipe.source} is associated with ${recipe.healthLabels[0]}, ${recipe.healthLabels[1]} and ${recipe.healthLabels[2]} diets, amongst others. It packs a total of ${recipe.calories} for the specified serving. Give it a try if it appeals to you today!`,
-          source: recipe.source,
-          createdAt: new Date().toISOString(), // You can set this to the current date and time
-          updatedAt: new Date().toISOString(), // You can set this to the current date and time
-          __v: 0, // Assuming this is a version field
           image: null,
-          edamamProp: { hit },
         };
       });
       return mappedEdamamRecp;
