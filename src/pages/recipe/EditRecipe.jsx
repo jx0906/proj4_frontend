@@ -16,7 +16,6 @@ import {
   Link,
   useLocation,
   useNavigate,
-  useOutletContext,
 } from "react-router-dom";
 import { useDisclosure, randomId } from "@mantine/hooks";
 import { IconTrash } from "@tabler/icons-react";

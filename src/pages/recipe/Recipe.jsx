@@ -8,7 +8,7 @@ import {
   Flex,
   useMantineTheme,
 } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import useEdamam from "../../hooks/useEdamam";
 import classes from "./RecipeList.module.css";
@@ -21,8 +21,10 @@ import {
   IconSchool,
   IconToolsKitchen3,
 } from "@tabler/icons-react";
+import { UserContext } from "../../App.jsx";
 
 function Recipe() {
+  const { user } = useContext(UserContext);
   const { sendRequest } = useFetch();
   const { sendEdamamRequest, derivedLevelofDiff, formattedCategories } =
     useEdamam();
@@ -36,6 +38,7 @@ function Recipe() {
     : location.pathname.split("/")[2];
 
   useEffect(() => {
+    console.log(user);
     getData();
     window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,10 +51,10 @@ function Recipe() {
         const edamamRecp = await sendEdamamRequest(
           `https://api.edamam.com/api/recipes/v2/${pathId}?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&field=label&field=image&field=images&field=source&field=url&field=yield&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=dishType`
         );
-        console.log(edamamRecp);
+        // console.log(edamamRecp);
 
         fetchedData = {
-          _id: `${pathId}`,
+          edamamId: `${pathId}`,
           name: edamamRecp.recipe.label,
           category: formattedCategories(edamamRecp.recipe.dishType[0]),
           levelOfDiff: derivedLevelofDiff(edamamRecp.recipe.ingredientLines),
@@ -68,12 +71,10 @@ function Recipe() {
           instructions: edamamRecp.recipe.url,
           description: "",
           source: edamamRecp.recipe.source,
-          createdAt: new Date().toISOString(), // You can set this to the current date and time
-          updatedAt: new Date().toISOString(), // You can set this to the current date and time
-          __v: 0, // Assuming this is a version field
           image: null,
           healthLabels: edamamRecp.recipe.healthLabels,
           calories: edamamRecp.recipe.calories,
+          bookmarked: [],
         };
       } else {
         fetchedData = await sendRequest(
@@ -88,6 +89,7 @@ function Recipe() {
     setLoading(false);
   };
 
+  console.log(data);
   return (
     <>
       {loading ? (
@@ -111,9 +113,9 @@ function Recipe() {
                     </a>{" "}
                     and is associated with {data.healthLabels[0]},{" "}
                     {data.healthLabels[1]} and {data.healthLabels[2]} diets,
-                    amongst others. It packs a total of {data.calories} calories
-                    for the specified serving. Give it a try if it appeals to
-                    you today!
+                    amongst others. It packs a total of{" "}
+                    {parseInt(data.calories)} calories for the specified
+                    serving. Give it a try if it appeals to you today!
                   </>
                 ) : (
                   data.description
@@ -139,7 +141,7 @@ function Recipe() {
                 </Text>
               </Flex>
 
-              <UserActions />
+              <UserActions recipeData={data} user={user} pathId={pathId} />
 
               {data.image && (
                 <Image
