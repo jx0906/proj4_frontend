@@ -8,14 +8,12 @@ import {
   Title,
   Tooltip,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { IconBookmarkOff, IconCirclePlus } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";
 import useFetch from "../../hooks/useFetch.jsx";
 import LoaderDots from "../../components/parts/Loader.jsx";
-import useToast from "../../hooks/useToast.jsx";
 import { UserContext } from "../../App.jsx";
 
 function Th({ children }) {
@@ -30,9 +28,8 @@ function Th({ children }) {
 
 function UserBookmarks() {
   const [data, setData] = useState([]);
-  const [dataToUpdate, setdataToUpdate] = useState([]);
+  const [dataToUpdate, setDataToUpdate] = useState([]);
   const { sendRequest } = useFetch();
-  const { successToast, errorToast } = useToast();
   const { user } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -55,74 +52,65 @@ function UserBookmarks() {
     setLoading(false);
   };
 
-  const removeBookmark = async () => {
-    const updatedBookmarks = await sendRequest(
-      `${import.meta.env.VITE_API_URL}/recipe/${
-        dataToUpdate._id
-      }/updatebookmark`,
-      "POST",
-      {
-        // using filter instead of splice because i want a new array
-        bookmarked: recipeData.bookmarked.filter((id) => id !== user.id),
-      }
-    );
-    // Success feedback
-    notifications.show({
-      message: "Bookmark removed!",
-      autoClose: 1000,
-    });
+  const removeBookmark = async (row) => {
+    try {
+      const res = await sendRequest(
+        `${import.meta.env.VITE_API_URL}/recipe/${row._id}/updatebookmark`,
+        "POST",
+        {
+          // using filter instead of splice because i want a new array
+          bookmarked:
+            row.bookmarked.length === 1
+              ? []
+              : row.bookmarked.filter((userId) => userId !== user.id),
+        }
+      );
+      setData((prevData) =>
+        prevData.filter((recipe) => recipe._id !== row._id)
+      );
+
+      // Success feedback
+      notifications.show({
+        message: "Bookmark removed!",
+        autoClose: 1000,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+    setLoading(false);
   };
 
-  const rows =
-    // () => {
-    //   if (!data) {
-    //     return null;
-    //   } else {
-    data.map((row) => (
+  const rows = () => {
+    return data.map((row) => (
       <Table.Tr key={row._id}>
         <Table.Td>
           <Anchor component={Link} to={`/recipe/${row._id}`}>
             {row.name ? row.name : "Recipe"}
           </Anchor>
         </Table.Td>
-
         <Table.Td>{row.description}</Table.Td>
         <Table.Td>{row.source}</Table.Td>
-        {/* <Table.Td>{row.pax}</Table.Td>
-      <Table.Td>{row.request}</Table.Td> */}
-
-        <Table.Td w="85px">
+        <Table.Td w="30px">
           <Tooltip label="Remove bookmark">
             <ActionIcon
               variant="default"
               size="md"
-              onClick={() => {
-                setDataToUpdate(row);
-                removeBookmark();
-              }}
+              onClick={() => removeBookmark(row)}
             >
               <IconBookmarkOff size="input-sm" stroke={1.5} />
             </ActionIcon>
           </Tooltip>
         </Table.Td>
-        <Table.Td w="85px">
+        <Table.Td w="30px">
           <Tooltip label="(COMING SOON!) Add notes">
-            <ActionIcon
-              variant="default"
-              size="md"
-              disabled
-              // onClick={() => {
-              //   navigate(`/recipe/${row._id}/edit`);
-              // }}
-            >
+            <ActionIcon variant="default" size="md" disabled>
               <IconCirclePlus size="input-sm" stroke={1.5} />
             </ActionIcon>
           </Tooltip>
         </Table.Td>
       </Table.Tr>
     ));
-  //   }
-  // };
+  };
 
   return (
     <>
@@ -131,7 +119,7 @@ function UserBookmarks() {
       </Title>
       {loading ? (
         <LoaderDots />
-      ) : rows.length === 0 ? (
+      ) : rows().length === 0 ? (
         <Text fw={500} ta="center">
           You have not bookmarked any recipes yet. <br />
           <Anchor component={Link} to="/">
@@ -151,7 +139,7 @@ function UserBookmarks() {
                   {/* <Th>Date Created</Th> */}
                 </Table.Tr>
               </Table.Tbody>
-              <Table.Tbody>{rows}</Table.Tbody>
+              <Table.Tbody>{rows()}</Table.Tbody>
             </Table>
           </ScrollArea>
         </>

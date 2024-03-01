@@ -6,6 +6,8 @@ import {
   Text,
   Anchor,
   Title,
+  Image,
+  Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useNavigate } from "react-router-dom";
@@ -77,51 +79,49 @@ function UserCreatedRecipes() {
     }
   };
 
-  const rows =
-    // () => {
-    //   if (!data) {
-    //     return null;
-    //   } else {
-    data.map((row) => (
+  const rows = () => {
+    return data.map((row) => (
       <Table.Tr key={row._id}>
         <Table.Td>
           <Anchor component={Link} to={`/recipe/${row._id}`}>
             {row.name ? row.name : "Recipe"}
           </Anchor>
         </Table.Td>
-
         <Table.Td>{row.description}</Table.Td>
         <Table.Td>{dayjs(row.createdAt).format("DD/MM/YYYY")}</Table.Td>
-        {/* <Table.Td>{row.pax}</Table.Td>
-      <Table.Td>{row.request}</Table.Td> */}
 
-        <Table.Td w="85px">
-          <ActionIcon
-            variant="default"
-            size="md"
-            onClick={() => {
-              toggle();
-              setDataToCancel(row);
-            }}
-          >
-            <IconTrash size="input-sm" stroke={1.5} />
-          </ActionIcon>
+        {/* <Table.Td>{row.request}</Table.Td> */}
+
+        <Table.Td w="30px">
+          <Tooltip label="Delete recipe">
+            <ActionIcon
+              variant="default"
+              size="md"
+              onClick={() => {
+                toggle();
+                setDataToCancel(row);
+              }}
+            >
+              <IconTrash size="input-sm" stroke={1.5} />
+            </ActionIcon>
+          </Tooltip>
         </Table.Td>
-        <Table.Td w="85px">
-          <ActionIcon
-            variant="default"
-            size="md"
-            onClick={() => {
-              navigate(`/recipe/${row._id}/edit`);
-            }}
-          >
-            <IconEdit size="input-sm" stroke={1.5} />
-          </ActionIcon>
+        <Table.Td w="30px">
+          <Tooltip label="Edit recipe">
+            <ActionIcon
+              variant="default"
+              size="md"
+              onClick={() => {
+                navigate(`/recipe/${row._id}/edit`);
+              }}
+            >
+              <IconEdit size="input-sm" stroke={1.5} />
+            </ActionIcon>
+          </Tooltip>
         </Table.Td>
       </Table.Tr>
     ));
-  //   }
-  // };
+  };
 
   const modalContent = (
     <ul>
@@ -137,7 +137,7 @@ function UserCreatedRecipes() {
       </Title>
       {loading ? (
         <LoaderDots />
-      ) : rows.length === 0 ? (
+      ) : rows().length === 0 ? (
         <Text fw={500} ta="center">
           You have not created any recipes yet. <br />
           <Anchor component={Link} to="/recipe/create">
@@ -151,13 +151,12 @@ function UserCreatedRecipes() {
               <Table.Tbody>
                 <Table.Tr>
                   <Th>Recipe Name</Th>
+                  {/* <Th></Th> */}
                   <Th>Description</Th>
-                  {/* {/* <Th>Time</Th> */}
-                  {/* <Th>Pax</Th> */}
                   <Th>Date Created</Th>
                 </Table.Tr>
               </Table.Tbody>
-              <Table.Tbody>{rows}</Table.Tbody>
+              <Table.Tbody>{rows()}</Table.Tbody>
             </Table>
           </ScrollArea>
 
