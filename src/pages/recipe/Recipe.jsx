@@ -71,7 +71,7 @@ function Recipe() {
           instructions: "",
           description: "",
           source: edamamRecp.recipe.source,
-          image: { imgname: edamamRecp.recipe.image },
+          image: { imgName: edamamRecp.recipe.image },
           healthLabels: edamamRecp.recipe.healthLabels,
           calories: edamamRecp.recipe.calories,
           bookmarked: [],
@@ -104,9 +104,9 @@ function Recipe() {
               gap="xs"
             >
               <Title order={2}>{data.name}</Title>
-              {data.image && data.image.imgname && (
+              {data.image && data.image.imgName && (
                 <Image
-                  src={data.image.imgname}
+                  src={data.image.imgName}
                   alt={data.name}
                   className={classes.image}
                   w="90%"
