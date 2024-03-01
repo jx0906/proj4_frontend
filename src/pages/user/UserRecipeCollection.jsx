@@ -4,113 +4,131 @@ import {
   Flex,
   Text,
   Card,
+  Button,
   Stack,
   Box,
   Image,
-  Title,
+  Select,
   useMantineTheme,
   Group,
-  Select,
-  Button,
-  NumberInput,
+  Title,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import LoaderDots from "../../components/parts/Loader";
 import { useMediaQuery } from "@mantine/hooks";
+import { UserContext } from "../../App.jsx";
 
-export default function searchRecipes() {
+export default function UserRecipeCollection() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const searchTerm = location.search.slice(1); //location.search = ?{searchKeywords}
+  const { user } = useContext(UserContext);
+  const form = useForm();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
+  let userCollection, userCreatedRecp, userBookmarks;
+  // const [filterOptions, setFilterOptions] = useState([]);
+  // const [filteredData, setFilteredData] = useState([]);
+  const [uniqueDataForRender, setUniqueDataForRender] = useState([]);
 
   useEffect(() => {
-    getData();
-    window.scrollTo(0, 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchTerm]);
+    fetchData();
+  }, [userBookmarks, userCreatedRecp]); //else it will just keep running indefinitely
 
-  const getData = async () => {
+  const fetchData = async () => {
     try {
-      const recpData = await sendRequest(
-        `${
-          import.meta.env.VITE_API_URL
-        }/recipe/search?searchTerm=${searchTerm}`,
-        "GET"
-      );
-      setData(recpData.recipes);
+      userCreatedRecp = await getCreations();
+      userBookmarks = await getBookmarks();
+
+      if (userCreatedRecp && userBookmarks) {
+        userCollection = [...userCreatedRecp, ...userBookmarks];
+      } else if (!userCreatedRecp) {
+        userCollection = [...userBookmarks];
+      } else {
+        userCollection = [...userCreatedRecp];
+      }
+      setData(userCollection);
+      removeDupsForRender();
+      // filter();
     } catch (err) {
-      console.log(err);
+      console.error("Error fetching data:", err);
     }
     setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   };
 
-  const form = useForm({
-    // validate: {
-    //   category: (value) =>
-    //     !value && "Please choose a category which best represents your recipe.",
-    //   levelOfDiff: (value) =>
-    //     !value &&
-    //     "Please choose an area which best represents the difficulty of this recipe.",
-    //   timeRequired: (value) => !value && "Please enter a time",
-    // },
-  });
-
-  const handleClearFilter = () => {
-    form.reset();
-    setLoading(true);
-  };
-
-  const filterList = async () => {
-    setLoading(true);
-    let recpLevelOfDiff;
-    let recpCategory;
-    let recpTimeRequired;
-    // let recpSource;
-
-    const searchCriteria = {
-      category: form.values.category,
-      levelOfDiff: form.values.levelOfDiff,
-    };
-
-    const filterParams = (input) => {
-      // Use reduce to accumulate the filter string
-      // alternative - const filterParams = (input) => { return Object.entries(input).map(([key, value]) => `${key}=${value}&`).join('');};
-
-      const filterString = Object.entries(input).reduce(
-        (accumulator, [key, value]) => {
-          return `${accumulator}${key}=${value}&`;
-        },
-        ""
+  const getCreations = async () => {
+    try {
+      const creations = await sendRequest(
+        `${import.meta.env.VITE_API_URL}/recipe/user`,
+        "GET"
       );
-
-      // Remove the trailing ampersand
-      return filterString.slice(0, -1);
-    };
-
-    const recpData = await sendRequest(
-      `${import.meta.env.VITE_API_URL}/recipe/search?searchTerm=${filterParams(
-        form.values
-      )}`,
-      "GET"
-    );
-    setData(resData);
-    setLoading(false);
+      // recpData returns as an object. need to get array to use map function below
+      return creations.recipes;
+    } catch (err) {
+      console.error("Error fetching user created data:", err);
+    }
   };
+
+  const getBookmarks = async () => {
+    try {
+      const bookmarks = await sendRequest(
+        `${import.meta.env.VITE_API_URL}/recipe/search?bookmarkedUser=${
+          user.id
+        }`,
+        "GET"
+      );
+      // recpData returns as an object. need to get array to use map function below
+      return bookmarks.recipes;
+    } catch (err) {
+      console.error("Error fetching bookmark data:", err);
+    }
+  };
+
+  // Remove duplicates based on _id
+  const removeDupsForRender = () => {
+    const uniqueRecipes = Array.from(
+      new Set(data.map((recipe) => recipe._id))
+    ).map((id) => {
+      return data.find((recipe) => recipe._id === id);
+    });
+    setUniqueDataForRender(uniqueRecipes);
+  };
+
+  // const filter = () => {
+  //   const options = [];
+  //   if (userBookmarks && userCreatedRecp) {
+  //     options.push("All", "Bookmarks only", "Creations Only");
+  //   } else if (userCreatedRecp && !userBookmarks) {
+  //     options.push("Creations only");
+  //   } else {
+  //     options.push("Bookmarks only");
+  //   }
+  //   setFilterOptions(options);
+  // };
+
+  // const filterData = () => {
+  //   let filteredList = [];
+  //   setLoading(true);
+
+  //   form.values.view = "All"
+  //     ? (filteredList = [userCollection])
+  //     : (form.values.view = "Bookmarks only"
+  //         ? (filteredList = [...userBookmarks])
+  //         : (filteredList = [...userCreatedRecp]));
+  //   setData(filteredList);
+  //   setLoading(false);
+  // };
 
   return (
     <>
       {/* <form
         onSubmit={form.onSubmit(() => {
-          filterList();
+          filterData();
         })}
       >
         <Group
@@ -119,37 +137,14 @@ export default function searchRecipes() {
           miw={!isPc ? "calc(50% - 12px)" : "150px"}
         >
           <Select
-            label="Category"
+            label="View"
             placeholder="Pick one"
-            data={["Pastries", "Biscuits", "Bread", "Cakes"]}
+            data={filterOptions}
             searchable
-            {...form.getInputProps("category")}
+            {...form.getInputProps("View")}
           />
-          <Select
-            label="Level of Difficulty"
-            placeholder="Pick one"
-            data={["Easy", "Intermediate", "Advanced"]}
-            searchable
-            {...form.getInputProps("levelOfDiff")}
-          />
-          <NumberInput
-            label="Time Required"
-            withAsterisk
-            placeholder="in minutes"
-            min={0}
-            {...form.getInputProps("timeRequired")}
-          />
-
           <Button type="submit" mt="25px">
             Filter
-          </Button>
-          <Button
-            mt="25px"
-            variant="outline"
-            onClick={handleClearFilter}
-            disabled={!form.isDirty()}
-          >
-            Clear
           </Button>
         </Group>
       </form> */}
@@ -158,7 +153,7 @@ export default function searchRecipes() {
       ) : (
         <>
           <Title order={3} mt="sm" lineClamp={2}>
-            Were you looking for these?
+            My Recipe Collection
           </Title>
           <Flex
             gap="xs"
@@ -168,7 +163,7 @@ export default function searchRecipes() {
             mt="sm"
             h="100px"
           >
-            {data.map((recipe) => (
+            {uniqueDataForRender.map((recipe) => (
               <Anchor
                 key={recipe._id}
                 component={Link}
