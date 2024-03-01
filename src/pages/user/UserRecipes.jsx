@@ -20,7 +20,6 @@ import {
     Link,
     useLocation,
     useNavigate,
-    useOutletContext,
   } from "react-router-dom";
   import { useEffect, useState } from "react";
   import useFetch from "../../hooks/useFetch";
@@ -31,7 +30,7 @@ import {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { sendRequest } = useFetch();
-    // const { user } = useOutletContext();
+
     const navigate = useNavigate();
     const location = useLocation();
     const searchTerm = location.search.slice(1); //location.search = ?{searchKeywords}

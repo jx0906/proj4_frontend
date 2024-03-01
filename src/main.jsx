@@ -11,6 +11,7 @@ import UserLogin from "./pages/user/Login.jsx";
 import UserSignUp from "./pages/user/Signup.jsx";
 import UserCreatedRecipes from "./pages/user/UserCreatedRecipes.jsx";
 import UserBookmarks from "./pages/user/UserBookmarks.jsx";
+import UserRecipeCollection from "./pages/user/UserRecipeCollection.jsx";
 import RecipeList from "./pages/recipe/RecipeList.jsx";
 import Recipe from "./pages/recipe/Recipe.jsx";
 import NewRecipe from "./pages/recipe/NewRecipe.jsx";
@@ -49,6 +50,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/signup" element={<UserSignUp />} />
             <Route path="user/creations" element={<UserCreatedRecipes />} />
             <Route path="user/bookmarks" element={<UserBookmarks />} />
+            <Route path="user/collection" element={<UserRecipeCollection />} />
 
             {/* Recipes */}
             <Route path="/recipe/create" element={<NewRecipe />} />

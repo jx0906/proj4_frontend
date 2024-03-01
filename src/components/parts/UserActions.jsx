@@ -35,7 +35,7 @@ export default function UserActions({ recipeData, user, pathId }) {
       // Check if data.source is "AppUser" (ie, created originally in app). bookmark directly if yes.
       if (recipeData.source === "AppUser") {
         res = await sendRequest(
-          `${import.meta.env.VITE_API_URL}/recipe/${pathId}/addbookmark`,
+          `${import.meta.env.VITE_API_URL}/recipe/${pathId}/updatebookmark`,
           "POST",
           {
             bookmarked: recipeData.bookmarked
