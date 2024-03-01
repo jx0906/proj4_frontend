@@ -4,18 +4,14 @@ import {
   Flex,
   Text,
   Card,
-  Button,
   Stack,
   Box,
   Image,
-  Select,
   useMantineTheme,
-  Group,
   Title,
 } from "@mantine/core";
-import { useForm } from "@mantine/form";
 import { IconSchool, IconToolsKitchen3 } from "@tabler/icons-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import LoaderDots from "../../components/parts/Loader";
@@ -27,39 +23,35 @@ export default function UserRecipeCollection() {
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
   const { user } = useContext(UserContext);
-  const form = useForm();
   const theme = useMantineTheme();
   const isPc = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
-  let userCollection, userCreatedRecp, userBookmarks;
-  // const [filterOptions, setFilterOptions] = useState([]);
-  // const [filteredData, setFilteredData] = useState([]);
-  const [uniqueDataForRender, setUniqueDataForRender] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  }, [userBookmarks, userCreatedRecp]); //else it will just keep running indefinitely
+    const fetchData = async () => {
+      let userCollection, userCreatedRecp, userBookmarks;
+      try {
+        userCreatedRecp = await getCreations();
+        userBookmarks = await getBookmarks();
 
-  const fetchData = async () => {
-    try {
-      userCreatedRecp = await getCreations();
-      userBookmarks = await getBookmarks();
+        if (userCreatedRecp && userBookmarks) {
+          userCollection = [...userCreatedRecp, ...userBookmarks];
+        } else if (!userCreatedRecp) {
+          userCollection = [...userBookmarks];
+        } else {
+          userCollection = [...userCreatedRecp];
+        }
 
-      if (userCreatedRecp && userBookmarks) {
-        userCollection = [...userCreatedRecp, ...userBookmarks];
-      } else if (!userCreatedRecp) {
-        userCollection = [...userBookmarks];
-      } else {
-        userCollection = [...userCreatedRecp];
+        setData(userCollection);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setLoading(false);
       }
-      setData(userCollection);
-      removeDupsForRender();
-      // filter();
-    } catch (err) {
-      console.error("Error fetching data:", err);
-    }
-    setLoading(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    };
+
+    fetchData();
+  }, []); //else it will just keep running indefinitely
 
   const getCreations = async () => {
     try {
@@ -89,81 +81,30 @@ export default function UserRecipeCollection() {
     }
   };
 
-  // Remove duplicates based on _id
-  const removeDupsForRender = () => {
-    const uniqueRecipes = Array.from(
-      new Set(data.map((recipe) => recipe._id))
-    ).map((id) => {
-      return data.find((recipe) => recipe._id === id);
-    });
-    setUniqueDataForRender(uniqueRecipes);
-  };
-
-  // const filter = () => {
-  //   const options = [];
-  //   if (userBookmarks && userCreatedRecp) {
-  //     options.push("All", "Bookmarks only", "Creations Only");
-  //   } else if (userCreatedRecp && !userBookmarks) {
-  //     options.push("Creations only");
-  //   } else {
-  //     options.push("Bookmarks only");
-  //   }
-  //   setFilterOptions(options);
-  // };
-
-  // const filterData = () => {
-  //   let filteredList = [];
-  //   setLoading(true);
-
-  //   form.values.view = "All"
-  //     ? (filteredList = [userCollection])
-  //     : (form.values.view = "Bookmarks only"
-  //         ? (filteredList = [...userBookmarks])
-  //         : (filteredList = [...userCreatedRecp]));
-  //   setData(filteredList);
-  //   setLoading(false);
-  // };
+  const uniqueRecipes = Array.from(
+    new Set(data.map((recipe) => recipe._id))
+  ).map((id) => {
+    return data.find((recipe) => recipe._id === id);
+  });
 
   return (
     <>
-      {/* <form
-        onSubmit={form.onSubmit(() => {
-          filterData();
-        })}
+      <Title order={3} mt="sm" lineClamp={2}>
+        My Recipe Collection
+      </Title>
+      <Flex
+        gap="xs"
+        justify="flex-start"
+        align="center"
+        wrap="wrap"
+        mt="sm"
+        h="100px"
       >
-        <Group
-          align="flex-start"
-          mb="xl"
-          miw={!isPc ? "calc(50% - 12px)" : "150px"}
-        >
-          <Select
-            label="View"
-            placeholder="Pick one"
-            data={filterOptions}
-            searchable
-            {...form.getInputProps("View")}
-          />
-          <Button type="submit" mt="25px">
-            Filter
-          </Button>
-        </Group>
-      </form> */}
-      {loading ? (
-        <LoaderDots />
-      ) : (
-        <>
-          <Title order={3} mt="sm" lineClamp={2}>
-            My Recipe Collection
-          </Title>
-          <Flex
-            gap="xs"
-            justify="flex-start"
-            align="center"
-            wrap="wrap"
-            mt="sm"
-            h="100px"
-          >
-            {uniqueDataForRender.map((recipe) => (
+        {loading ? (
+          <LoaderDots />
+        ) : (
+          <>
+            {uniqueRecipes.map((recipe) => (
               <Anchor
                 key={recipe._id}
                 component={Link}
@@ -216,9 +157,9 @@ export default function UserRecipeCollection() {
                 </Flex>
               </Anchor>
             ))}
-          </Flex>
-        </>
-      )}
+          </>
+        )}
+      </Flex>
     </>
   );
 }
