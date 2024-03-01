@@ -1,6 +1,5 @@
 import { Group, Text, rem, SimpleGrid } from "@mantine/core";
 import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
-import { useDisclosure } from "@mantine/hooks";
 import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
 import useToast from "../../hooks/useToast";
 
@@ -10,7 +9,6 @@ export default function ImageDropzone({
   convertedFile,
   setConvertedFile,
 }) {
-  const [visible, { toggle }] = useDisclosure(true);
   const { successToast, errorToast } = useToast();
 
   const maxSizeInBytes = 10 * 1024 ** 2; // 10 MB in bytes
@@ -48,7 +46,6 @@ export default function ImageDropzone({
   return (
     <Dropzone
       onDrop={(acceptedFiles) => {
-        toggle();
         fileUpload(acceptedFiles[0]); // Only handle the first file if multiple files are dropped
       }}
       onReject={() =>

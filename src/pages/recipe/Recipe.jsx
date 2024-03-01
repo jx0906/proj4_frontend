@@ -169,11 +169,17 @@ function Recipe() {
                   <Text>
                     {data.instructions === "" ? (
                       <>
-                        Visit{" "}
-                        <a href={data.url} target="_blank">
-                          {data.url}
-                        </a>{" "}
-                        for baking instructions.
+                        {data.url !== "" ? (
+                          <> Visit {data.source} for baking instructions.</>
+                        ) : (
+                          <>
+                            Visit{" "}
+                            <a href={data.url} target="_blank">
+                              {data.url}
+                            </a>{" "}
+                            for baking instructions.
+                          </>
+                        )}
                       </>
                     ) : (
                       data.instructions
