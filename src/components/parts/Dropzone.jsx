@@ -2,6 +2,7 @@ import { Group, Text, rem, SimpleGrid } from "@mantine/core";
 import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
 import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
 import useToast from "../../hooks/useToast";
+import classes from "./Dropzone.module.css";
 
 export default function ImageDropzone({
   file,
@@ -11,14 +12,15 @@ export default function ImageDropzone({
 }) {
   const { successToast, errorToast } = useToast();
 
-  const maxSizeInBytes = 10 * 1024 ** 2; // 10 MB in bytes
+  const maxSizeInBytes = 50 * 1024; // 50KB
+  // const maxSizeInBytes = 10 * 1024 ** 2;  10 MB in bytes
 
-  const preview = (file) => {
-    const imageUrl = URL.createObjectURL(file);
-    return (
-      <Image src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
-    );
-  };
+  // const preview = (file) => {
+  //   const imageUrl = URL.createObjectURL(file);
+  //   return (
+  //     <Image src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
+  //   );
+  // };
 
   //read the uploaded file as a base64 string
   function fileUpload(uploadedFile) {
@@ -52,13 +54,16 @@ export default function ImageDropzone({
         errorToast({
           title: "Oops!",
           message:
-            "We can only accept one image file (png/jpeg) that is less than 10mb in size.",
+            "We can only accept one image file (png/jpeg) that is less than 50KB in size.",
         })
       }
       maxSize={maxSizeInBytes}
       accept={[MIME_TYPES.png, MIME_TYPES.jpeg]}
       multiple={false}
+      // disabled
+      // className={classes.disabled}
     >
+      {/* visible only for user dragging actions */}
       <Group
         justify="center"
         gap="sm"
@@ -101,12 +106,12 @@ export default function ImageDropzone({
             Share a picture of the dish here!
           </Text>
           <Text size="sm" c="dimmed" inline mt={7}>
-            We can only accept .png and .jpeg files that are less than 10mb in
+            We can only accept .png and .jpeg files that are less than 50 kb in
             size.
           </Text>
-          <SimpleGrid cols={{ base: 1, sm: 4 }} mt={preview ? "xl" : 0}>
+          {/* <SimpleGrid cols={{ base: 1, sm: 4 }} mt={preview ? "xl" : 0}>
             {preview}
-          </SimpleGrid>
+          </SimpleGrid> */}
         </div>
       </Group>
     </Dropzone>
