@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   Image,
   Text,
@@ -71,10 +71,11 @@ function Recipe() {
           instructions: "",
           description: "",
           source: edamamRecp.recipe.source,
-          image: null,
+          image: { imgname: edamamRecp.recipe.image },
           healthLabels: edamamRecp.recipe.healthLabels,
           calories: edamamRecp.recipe.calories,
           bookmarked: [],
+          url: edamamRecp.recipe.url,
         };
       } else {
         fetchedData = await sendRequest(
@@ -89,7 +90,6 @@ function Recipe() {
     setLoading(false);
   };
 
-  // console.log(data);
   return (
     <>
       {loading ? (
@@ -104,6 +104,18 @@ function Recipe() {
               gap="xs"
             >
               <Title order={2}>{data.name}</Title>
+              {data.image && data.image.imgname && (
+                <Image
+                  src={data.image.imgname}
+                  alt={data.name}
+                  className={classes.image}
+                  w="90%"
+                  h="auto"
+                  mt="lg"
+                  radius="md"
+                ></Image>
+              )}
+              <UserActions recipeData={data} user={user} pathId={pathId} />
               <Text mt="md">
                 {data.description === "" ? (
                   <>
@@ -114,14 +126,13 @@ function Recipe() {
                     and is associated with {data.healthLabels[0]},{" "}
                     {data.healthLabels[1]} and {data.healthLabels[2]} diets,
                     amongst others. It packs a total of{" "}
-                    {parseInt(data.calories)} calories for the specified
-                    serving. Give it a try if it appeals to you today!
+                    {parseInt(data.calories)} calories for the each serving.
+                    Give it a try if it appeals to you today!
                   </>
                 ) : (
                   data.description
                 )}
               </Text>
-
               <Flex direction="row" align="center" gap="5px" mt="xs">
                 <IconSoup w="sm" h="sm" stroke={1.5} />
                 <Text size="sm" c="black" lh="1">
@@ -140,21 +151,7 @@ function Recipe() {
                   {data.levelOfDiff}
                 </Text>
               </Flex>
-
-              <UserActions recipeData={data} user={user} pathId={pathId} />
-
-              {data.image && (
-                <Image
-                  src={data.image}
-                  alt={data.name}
-                  className={classes.image}
-                  w="100%"
-                  h="auto"
-                  mt="lg"
-                  radius="md"
-                ></Image>
-              )}
-              <Flex direction="row">
+              <Flex direction="row" mt="5px">
                 <Box w="30%" px="xs">
                   <ul style={{ listStyle: "none", padding: 0 }}>
                     {data.ingredients.map((ingredient, index) => (
@@ -173,8 +170,8 @@ function Recipe() {
                     {data.instructions === "" ? (
                       <>
                         Visit{" "}
-                        <a href={data.instructions} target="_blank">
-                          {data.instructions}
+                        <a href={data.url} target="_blank">
+                          {data.url}
                         </a>{" "}
                         for baking instructions.
                       </>
