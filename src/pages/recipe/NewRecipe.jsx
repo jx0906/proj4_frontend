@@ -182,9 +182,9 @@ function NewRecipe() {
 
     return (
       <div>
-        {convertedFile && (
-          <Image src={convertedFile} alt={data.name} w="50%" h="auto" />
-        )}
+        {/* {convertedFile && (
+          <Image src={convertedFile} alt={form.values.name} w="50%" h="auto" />
+        )} */}
         <ul>
           {Object.entries(recpDetails).map(([key, value]) => (
             <li key={key}>

@@ -32,6 +32,7 @@ import {
   IconSearch,
   IconSettings,
   IconLogout,
+  IconBrain,
 } from "@tabler/icons-react";
 import classes from "./HeaderTabs.module.css";
 import logo from "../../assets/logo.png";
@@ -108,26 +109,8 @@ export const Header = ({ user, setUser }) => {
               }
             }}
           />
-          <Group>
-            {/* Auth Buttons*/}
-            {!user &&
-              location.pathname !== "/login" &&
-              location.pathname !== "/signup" && (
-                <>
-                  <Button variant="outline" component={Link} to="/login">
-                    Login
-                  </Button>
-                  <Button component={Link} to="/signup">
-                    Sign up
-                  </Button>
-                </>
-              )}
-          </Group>
-
-          {/* User Menu */}
-          {user && (
-            <>
-              <Group justify="flex-end" align="flex-end">
+          {user &&(
+           <Group justify="flex-end" align="flex-end">
                 <Tooltip label="Create Recipe">
                   <ActionIcon
                     variant="default"
@@ -157,6 +140,27 @@ export const Header = ({ user, setUser }) => {
                   </ActionIcon>
                 </Tooltip>
               </Group>
+              )}
+          <Group>
+            {/* Auth Buttons*/}
+            {!user &&
+              location.pathname !== "/login" &&
+              location.pathname !== "/signup" && (
+                <>
+                  <Button variant="outline" component={Link} to="/login">
+                    Login
+                  </Button>
+                  <Button component={Link} to="/signup">
+                    Sign up
+                  </Button>
+                </>
+              )}
+          </Group>
+
+          {/* User Menu */}
+          {user && (
+            <>
+             
               <Menu
                 width={200}
                 position="bottom-end"
@@ -184,6 +188,7 @@ export const Header = ({ user, setUser }) => {
                 </Menu.Target>
                 <Menu.Dropdown>
                   <Menu.Label>My Recipe Collection</Menu.Label>
+
                   <Menu.Item
                     component={Link}
                     to="user/creations"
@@ -210,6 +215,7 @@ export const Header = ({ user, setUser }) => {
                   >
                     My Bookmarks
                   </Menu.Item>
+
                   <>
                     <Menu.Label>My Notes</Menu.Label>
                     <Menu.Item
@@ -251,9 +257,26 @@ export const Header = ({ user, setUser }) => {
                         stroke={1.5}
                       />
                     }
+                    disabled
                   >
-                    Account settings
+                    Account Settings
                   </Menu.Item>
+                  {user.isAdmin && (
+                    <Menu.Item
+                      component={Link}
+                      to="admin/recipes"
+                      leftSection={
+                        <IconBrain
+                          style={{ width: rem(16), height: rem(16) }}
+                          color={theme.colors.red[6]}
+                          stroke={1.5}
+                        />
+                      }
+                    >
+                      Manage All Recipes
+                    </Menu.Item>
+                  )}
+
                   <Menu.Item
                     leftSection={
                       <IconLogout
