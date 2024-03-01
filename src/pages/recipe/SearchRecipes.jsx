@@ -21,11 +21,19 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import LoaderDots from "../../components/parts/Loader";
 import { useMediaQuery } from "@mantine/hooks";
+import classes from "./RecipeList.module.css";
+import useEdamam from "../../hooks/useEdamam";
 
 export default function searchRecipes() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
+  const {
+    sendEdamamRequest,
+    derivedLevelofDiff,
+    formattedCategories,
+    edamamRecpUri,
+  } = useEdamam();
   const navigate = useNavigate();
   const location = useLocation();
   const searchTerm = location.search.slice(1); //location.search = ?{searchKeywords}
@@ -53,16 +61,7 @@ export default function searchRecipes() {
     setLoading(false);
   };
 
-  const form = useForm({
-    // validate: {
-    //   category: (value) =>
-    //     !value && "Please choose a category which best represents your recipe.",
-    //   levelOfDiff: (value) =>
-    //     !value &&
-    //     "Please choose an area which best represents the difficulty of this recipe.",
-    //   timeRequired: (value) => !value && "Please enter a time",
-    // },
-  });
+  const form = useForm({});
 
   const handleClearFilter = () => {
     form.reset();
@@ -109,52 +108,57 @@ export default function searchRecipes() {
   return (
     <>
       {/* <form
-        onSubmit={form.onSubmit(() => {
-          filterList();
-        })}
-      >
-        <Group
-          align="flex-start"
-          mb="xl"
-          miw={!isPc ? "calc(50% - 12px)" : "150px"}
+          onSubmit={form.onSubmit(() => {
+            filterList();
+          })}
         >
-          <Select
-            label="Category"
-            placeholder="Pick one"
-            data={["Pastries", "Biscuits", "Bread", "Cakes"]}
-            searchable
-            {...form.getInputProps("category")}
-          />
-          <Select
-            label="Level of Difficulty"
-            placeholder="Pick one"
-            data={["Easy", "Intermediate", "Advanced"]}
-            searchable
-            {...form.getInputProps("levelOfDiff")}
-          />
-          <NumberInput
-            label="Time Required"
-            withAsterisk
-            placeholder="in minutes"
-            min={0}
-            {...form.getInputProps("timeRequired")}
-          />
-
-          <Button type="submit" mt="25px">
-            Filter
-          </Button>
-          <Button
-            mt="25px"
-            variant="outline"
-            onClick={handleClearFilter}
-            disabled={!form.isDirty()}
+          <Group
+            align="flex-start"
+            mb="xl"
+            miw={!isPc ? "calc(50% - 12px)" : "150px"}
           >
-            Clear
-          </Button>
-        </Group>
-      </form> */}
+            <Select
+              label="Category"
+              placeholder="Pick one"
+              data={["Pastries", "Biscuits", "Bread", "Cakes"]}
+              searchable
+              {...form.getInputProps("category")}
+            />
+            <Select
+              label="Level of Difficulty"
+              placeholder="Pick one"
+              data={["Easy", "Intermediate", "Advanced"]}
+              searchable
+              {...form.getInputProps("levelOfDiff")}
+            />
+            <NumberInput
+              label="Time Required"
+              withAsterisk
+              placeholder="in minutes"
+              min={0}
+              {...form.getInputProps("timeRequired")}
+            />
+  
+            <Button type="submit" mt="25px">
+              Filter
+            </Button>
+            <Button
+              mt="25px"
+              variant="outline"
+              onClick={handleClearFilter}
+              disabled={!form.isDirty()}
+            >
+              Clear
+            </Button>
+          </Group>
+        </form> */}
       {loading ? (
         <LoaderDots />
+      ) : !data || data.length === 0 ? (
+        <Title order={3} mt="sm" lineClamp={2}>
+          Sorry, there were no results for your query. Please try another
+          search.
+        </Title>
       ) : (
         <>
           <Title order={3} mt="sm" lineClamp={2}>

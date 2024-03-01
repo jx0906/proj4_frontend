@@ -21,7 +21,7 @@ import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
 import { UserContext } from "../../App.jsx";
-import { Notifications } from "@mantine/notifications";
+import { notifications } from "@mantine/notifications";
 
 function EditRecipe() {
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -120,7 +120,7 @@ function EditRecipe() {
   const handleSubmit = async () => {
     try {
       const res = await sendRequest(
-        `${import.meta.env.VITE_API_URL}/Recipe/${pathId}/edit`,
+        `${import.meta.env.VITE_API_URL}/recipe/${pathId}/edit`,
         "POST",
         payload
       );
@@ -254,6 +254,25 @@ function EditRecipe() {
     }
   };
 
+  const handleClickToDelete = async () => {
+    try {
+      await sendRequest(
+        `${import.meta.env.VITE_API_URL}/recipe/${pathId}/`,
+        "DELETE"
+      );
+      close();
+      successToast({
+        title: "Success!",
+        message: "Recipe deleted!",
+      });
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      close();
+      errorToast();
+    }
+  };
+
   return (
     <>
       {loading ? (
@@ -384,6 +403,13 @@ function EditRecipe() {
                 >
                   Cancel
                 </Button>
+                <ActionIcon
+                  variant="default"
+                  size="md"
+                  onClick={handleClickToDelete}
+                >
+                  <IconTrash size="input-sm" stroke={1.5} />
+                </ActionIcon>
                 <Button type="submit">Update</Button>
               </Group>
             </form>

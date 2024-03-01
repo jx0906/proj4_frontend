@@ -123,13 +123,6 @@ function UserCreatedRecipes() {
     ));
   };
 
-  const modalContent = (
-    <ul>
-      <li>Name: {dataToCancel.name}</li>
-      <li>Description: {dataToCancel.description}</li>
-    </ul>
-  );
-
   return (
     <>
       <Title order={2} ta="center" mb="lg">
@@ -164,7 +157,7 @@ function UserCreatedRecipes() {
           <Modal
             opened={opened}
             title="Delete a recipe"
-            modalContent={modalContent}
+            modalContent="You will not be able to undo this. Pls confirm if you would like to proceed with the deletion."
             toggle={toggle}
             close={close}
             handleSubmit={handleSubmit}
