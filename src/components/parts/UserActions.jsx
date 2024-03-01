@@ -3,6 +3,7 @@ import {
   IconBookmarkPlus,
   IconCirclePlus,
   IconShare,
+  IconEdit,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { notifications } from "@mantine/notifications";
@@ -120,6 +121,19 @@ export default function UserActions({ recipeData, user, pathId }) {
               disabled={recipeData.bookmarked.includes(user.id)}
             >
               <IconBookmarkPlus style={{ width: rem(20) }} stroke={1.5} />
+            </ActionIcon>
+          </Tooltip>
+
+          <Tooltip label="Edit recipe">
+            <ActionIcon
+              variant="default"
+              size="lg"
+              disabled={!(user.isAdmin || user._id === recipeData.user)}
+              onClick={() => {
+                navigate(`/recipe/${pathId}/edit`);
+              }}
+            >
+              <IconEdit style={{ width: rem(20) }} stroke={1.5} />
             </ActionIcon>
           </Tooltip>
 
