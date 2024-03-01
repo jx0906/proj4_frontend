@@ -32,6 +32,7 @@ function NewRecipe() {
   const { user } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
   const [file, setFile] = useState(null);
+  const [convertedFile, setConvertedFile] = useState(null);
 
   useEffect(() => {
     // console.log(user);
@@ -77,11 +78,6 @@ function NewRecipe() {
     },
   });
 
-  // Function to handle file upload
-  const handleFileUpload = (uploadedFile) => {
-    setFile(uploadedFile);
-  };
-
   // Function to handle form submission
   const handleSubmit = async () => {
     try {
@@ -91,13 +87,12 @@ function NewRecipe() {
         {
           name: form.values.name,
           description: form.values.description,
-          // image: file.map((properties) => {
-          //   return {
-          //     name: ingredient.quantity,
-          //     data: ingredient.unit,
-          //     contentType: ingredient.name,
-          //   };
-          // }),
+          image: {
+            imgName: convertedFile,
+            imgLabel: file.name,
+            // imgData: file.buffer?
+            imgContentType: file.type,
+          },
           category: form.values.category,
           ingredients: form.values.ingredients.map((ingredient) => {
             return {
@@ -171,7 +166,6 @@ function NewRecipe() {
       // add user info in req body
       Name: form.values.name,
       Description: form.values.description,
-      image: file && JSON.stringify(file),
       Category: form.values.category,
       levelOfDiff: form.values.levelOfDiff,
       timeRequired: form.values.timeRequired,
@@ -187,19 +181,24 @@ function NewRecipe() {
     };
 
     return (
-      <ul>
-        {Object.entries(recpDetails).map(([key, value]) => (
-          <li key={key}>
-            {key === "levelOfDiff"
-              ? `Level of Difficulty: ${value}`
-              : key === "timeRequired"
-              ? `Time Required: ${value} min`
-              : key === "ingredients"
-              ? `Ingredients: ${renderIngredients(value)}`
-              : `${key}: ${value}`}
-          </li>
-        ))}
-      </ul>
+      <div>
+        {convertedFile && (
+          <Image src={convertedFile} alt={data.name} w="50%" h="auto" />
+        )}
+        <ul>
+          {Object.entries(recpDetails).map(([key, value]) => (
+            <li key={key}>
+              {key === "levelOfDiff"
+                ? `Level of Difficulty: ${value}`
+                : key === "timeRequired"
+                ? `Time Required: ${value} min`
+                : key === "ingredients"
+                ? `Ingredients: ${renderIngredients(value)}`
+                : `${key}: ${value}`}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   };
 
@@ -317,7 +316,12 @@ function NewRecipe() {
               <Text size="sm" mt="md">
                 Upload image
               </Text>
-              <ImageDropzone handleFileUpload={handleFileUpload} />
+              <ImageDropzone
+                file={file}
+                setFile={setFile}
+                convertedFile={convertedFile}
+                setConvertedFile={setConvertedFile}
+              />
 
               <Group justify="center" mt="xl">
                 <Button
@@ -334,7 +338,7 @@ function NewRecipe() {
                     console.log(
                       `${JSON.stringify(form)} and File = ${JSON.stringify(
                         file
-                      )}`
+                      )} and ${convertedFile}`
                     );
                     console.log(`Modal opened: ${opened}`);
                   }}

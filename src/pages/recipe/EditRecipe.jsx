@@ -12,11 +12,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useState, useEffect, useContext } from "react";
-import {
-  Link,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDisclosure, randomId } from "@mantine/hooks";
 import { IconTrash } from "@tabler/icons-react";
 import Modal from "../../components/parts/Modal";
@@ -25,6 +21,7 @@ import useToast from "../../hooks/useToast";
 import LoaderDots from "../../components/parts/Loader";
 import ImageDropzone from "../../components/parts/Dropzone";
 import { UserContext } from "../../App.jsx";
+import { Notifications } from "@mantine/notifications";
 
 function EditRecipe() {
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -37,6 +34,8 @@ function EditRecipe() {
   const { user } = useContext(UserContext);
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
+  const [file, setFile] = useState(null);
+  const [convertedFile, setConvertedFile] = useState(null);
 
   const form = useForm({
     initialValues: {
@@ -98,6 +97,9 @@ function EditRecipe() {
         levelOfDiff: recpData.levelOfDiff,
         timeRequired: recpData.timeRequired,
         servings: recpData.servings,
+        image: recpData.image
+          ? { imgName: recpData.image.imgName || recpData.image.imgname || "" }
+          : {}, // Conditional rendering of image name
         ingredients: recpData.ingredients.map((ingredient) => {
           return {
             quantity: ingredient.quantity,
@@ -114,11 +116,6 @@ function EditRecipe() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Function to handle file upload
-  const handleFileUpload = (uploadedFile) => {
-    setFile(uploadedFile);
-  };
 
   const handleSubmit = async () => {
     try {
@@ -176,13 +173,6 @@ function EditRecipe() {
     const formSubmit = {
       name: input.name,
       description: input.description,
-      // image: file.map((properties) => {
-      //   return {
-      //     name: ingredient.quantity,
-      //     data: ingredient.unit,
-      //     contentType: ingredient.name,
-      //   };
-      // }),
       category: input.category,
       ingredients: input.ingredients.map((ingredient) => {
         return {
@@ -196,7 +186,15 @@ function EditRecipe() {
       servings: input.servings,
       instructions: input.instructions,
     };
-    setPayload(formSubmit);
+
+    setPayload({
+      ...formSubmit,
+      image: {
+        imgName: convertedFile ? convertedFile : "",
+        imgLabel: file ? file.name : "",
+        imgContentType: file ? file.type : "",
+      },
+    });
   };
 
   function renderIngredients(ingredientArray) {
@@ -370,7 +368,12 @@ function EditRecipe() {
               <Text size="sm" mt="md">
                 Upload image
               </Text>
-              <ImageDropzone handleFileUpload={handleFileUpload} />
+              <ImageDropzone
+                file={file}
+                setFile={setFile}
+                convertedFile={convertedFile}
+                setConvertedFile={setConvertedFile}
+              />
 
               <Group justify="center" mt="xl">
                 <Button
