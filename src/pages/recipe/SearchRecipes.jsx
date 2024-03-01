@@ -22,18 +22,11 @@ import useFetch from "../../hooks/useFetch";
 import LoaderDots from "../../components/parts/Loader";
 import { useMediaQuery } from "@mantine/hooks";
 import classes from "./RecipeList.module.css";
-import useEdamam from "../../hooks/useEdamam";
 
 export default function searchRecipes() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sendRequest } = useFetch();
-  const {
-    sendEdamamRequest,
-    derivedLevelofDiff,
-    formattedCategories,
-    edamamRecpUri,
-  } = useEdamam();
   const navigate = useNavigate();
   const location = useLocation();
   const searchTerm = location.search.slice(1); //location.search = ?{searchKeywords}

@@ -59,6 +59,7 @@ export default function RecipeList() {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     };
     fetchData();
+    window.scrollTo(0, 0);
   }, []);
 
   const getInternalList = async () => {

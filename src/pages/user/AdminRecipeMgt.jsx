@@ -6,7 +6,6 @@ import {
   Text,
   Anchor,
   Title,
-  Image,
   Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -30,7 +29,7 @@ function Th({ children }) {
   );
 }
 
-function UserCreatedRecipes() {
+function AdminRecipeMgt() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [data, setData] = useState([]);
   const [dataToCancel, setDataToCancel] = useState([]);
@@ -52,7 +51,7 @@ function UserCreatedRecipes() {
 
   const getList = async () => {
     const recpdata = await sendRequest(
-      `${import.meta.env.VITE_API_URL}/recipe/user`,
+      `${import.meta.env.VITE_API_URL}/recipe/`,
       "GET"
     );
     setData(recpdata.recipes);
@@ -131,13 +130,6 @@ function UserCreatedRecipes() {
       </Title>
       {loading ? (
         <LoaderDots />
-      ) : rows().length === 0 ? (
-        <Text fw={500} ta="center">
-          You have not created any recipes yet. <br />
-          <Anchor component={Link} to="/recipe/create">
-            Submit one now!
-          </Anchor>
-        </Text>
       ) : (
         <>
           <ScrollArea>
@@ -169,4 +161,4 @@ function UserCreatedRecipes() {
   );
 }
 
-export default UserCreatedRecipes;
+export default AdminRecipeMgt;

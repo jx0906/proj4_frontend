@@ -51,6 +51,7 @@ export default function UserRecipeCollection() {
     };
 
     fetchData();
+    window.scrollTo(0, 0);
   }, []); //else it will just keep running indefinitely
 
   const getCreations = async () => {

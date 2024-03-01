@@ -113,7 +113,7 @@ function EditRecipe() {
     };
     console.log(user);
     getData();
-
+    window.scrollTo(0, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -210,19 +210,25 @@ function EditRecipe() {
     const displayData = {};
 
     Object.keys(var1).forEach((key) => {
-      if (Object.prototype.hasOwnProperty.call(var2, key)) {
+      if (key in var2) {
         // separate comparison for ingredients as it is stored as an array in the backend db unlike the rest
-        if (key === "ingredients") {
-          if (var1.ingredients) {
-            const isIngredientsEqual =
-              var1.ingredients.length === var2.ingredients.length &&
-              var1.ingredients.every((ingredient) =>
-                var2.ingredients.includes(ingredient)
-              );
+        if (key === "ingredients" && var1.ingredients) {
+          //check if ingredients arrays are equal
+          const isIngredientsEqual =
+            var1.ingredients.length === var2.ingredients.length &&
+            // check if at least one ingredient in var2 matches current ingredient in var1
+            var1.ingredients.every((ingredient1) =>
+              var2.ingredients.some(
+                (ingredient2) =>
+                  ingredient1.quantity === ingredient2.quantity &&
+                  ingredient1.unit === ingredient2.unit &&
+                  ingredient1.name === ingredient2.name
+              )
+            );
 
-            if (!isIngredientsEqual) {
-              displayData[key] = var1[key];
-            }
+          // if not equal
+          if (!isIngredientsEqual) {
+            displayData[key] = var1[key];
           } else {
             return; //var1.ingredients would be undefined if the field is not edited (from console.logs)
           }

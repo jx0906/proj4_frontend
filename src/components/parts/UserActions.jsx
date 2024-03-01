@@ -15,6 +15,7 @@ export default function UserActions({ recipeData, user, pathId }) {
   const { sendRequest } = useFetch();
   const clipboard = useClipboard({ timeout: 500 });
   var getURL = window.location.href;
+  let existingRecipe;
 
   function handleClickToShare(evt) {
     evt.preventDefault();
@@ -31,7 +32,7 @@ export default function UserActions({ recipeData, user, pathId }) {
   async function handleClickToBookmark(evt) {
     evt.preventDefault();
 
-    let existingRecipe, res;
+    let res;
     try {
       // Check if data.source is "AppUser" (ie, created originally in app). bookmark directly if yes.
       if (recipeData.source === "AppUser") {
@@ -128,7 +129,10 @@ export default function UserActions({ recipeData, user, pathId }) {
             <ActionIcon
               variant="default"
               size="lg"
-              disabled={!(user.isAdmin || user._id === recipeData.user)}
+              disabled={
+                !(user.isAdmin || user._id === recipeData.user) &&
+                !existingRecipe
+              }
               onClick={() => {
                 navigate(`/recipe/${pathId}/edit`);
               }}
