@@ -129,10 +129,7 @@ export default function UserActions({ recipeData, user, pathId }) {
             <ActionIcon
               variant="default"
               size="lg"
-              disabled={
-                !(user.isAdmin || user._id === recipeData.user) &&
-                !existingRecipe
-              }
+              disabled={user.isAdmin || user._id == recipeData.user}
               onClick={() => {
                 navigate(`/recipe/${pathId}/edit`);
               }}
