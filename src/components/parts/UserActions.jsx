@@ -54,19 +54,6 @@ export default function UserActions({ recipeData, user, pathId }) {
         );
 
         if (!existingRecipe) {
-          // if yes, update bookmark directly
-          res = await sendRequest(
-            `${import.meta.env.VITE_API_URL}/recipe/${
-              existingRecipe._id
-            }/updatebookmark`,
-            "POST",
-            {
-              bookmarked: existingRecipe.bookmarked
-                ? [...existingRecipe.bookmarked, user.id] //array.push will return the length and not the array itself!
-                : [user.id],
-            }
-          );
-        } else {
           //  else, create recipe with user ID = admin ID and relevant user info in bookmarked field.
           res = await sendRequest(
             `${import.meta.env.VITE_API_URL}/recipe/create`,
@@ -87,6 +74,19 @@ export default function UserActions({ recipeData, user, pathId }) {
                   recipeData.calories
                 )} calories for the specified serving. Give it a try if it appeals to you today!
            `,
+            }
+          );
+        } else {
+          // if yes, update bookmark directly
+          res = await sendRequest(
+            `${import.meta.env.VITE_API_URL}/recipe/${
+              existingRecipe._id
+            }/updatebookmark`,
+            "POST",
+            {
+              bookmarked: existingRecipe.bookmarked
+                ? [...existingRecipe.bookmarked, user.id] //array.push will return the length and not the array itself!
+                : [user.id],
             }
           );
         }
@@ -125,18 +125,24 @@ export default function UserActions({ recipeData, user, pathId }) {
             </ActionIcon>
           </Tooltip>
 
-          <Tooltip label="Edit recipe">
-            <ActionIcon
-              variant="default"
-              size="lg"
-              disabled={user.isAdmin || user._id == recipeData.user}
-              onClick={() => {
-                navigate(`/recipe/${pathId}/edit`);
-              }}
-            >
-              <IconEdit style={{ width: rem(20) }} stroke={1.5} />
-            </ActionIcon>
-          </Tooltip>
+          {existingRecipe && (
+            <Tooltip label="Edit recipe">
+              <ActionIcon
+                variant="default"
+                size="lg"
+                disabled={
+                  !user.isAdmin && user.id !== existingRecipe.user
+                    ? "true"
+                    : "false"
+                }
+                onClick={() => {
+                  navigate(`/recipe/${pathId}/edit`);
+                }}
+              >
+                <IconEdit style={{ width: rem(20) }} stroke={1.5} />
+              </ActionIcon>
+            </Tooltip>
+          )}
 
           <Tooltip label="(COMING SOON!) Add notes">
             <ActionIcon variant="default" size="lg">
