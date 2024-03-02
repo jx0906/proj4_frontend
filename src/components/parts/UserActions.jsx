@@ -53,7 +53,9 @@ export default function UserActions({ recipeData, user, pathId }) {
           "GET"
         );
 
-        if (!existingRecipe) {
+        console.log(existingRecipe); // returns [] for recipes which DO NOT exist
+
+        if (!existingRecipe || existingRecipe.length === 0) {
           //  else, create recipe with user ID = admin ID and relevant user info in bookmarked field.
           res = await sendRequest(
             `${import.meta.env.VITE_API_URL}/recipe/create`,
@@ -125,15 +127,16 @@ export default function UserActions({ recipeData, user, pathId }) {
             </ActionIcon>
           </Tooltip>
 
-          {existingRecipe && (
+          {/* recipeData ={..} so cannot use .array.length */}
+
+          {/* {(Object.keys(recipeData).length > 0 ||
+            (existingRecipe && existingRecipe.length > 0)) && (
             <Tooltip label="Edit recipe">
               <ActionIcon
                 variant="default"
                 size="lg"
                 disabled={
-                  !user.isAdmin && user.id !== existingRecipe.user
-                    ? "true"
-                    : "false"
+                  user.isAdmin || user.id === recipeData.user ? "false" : "true"
                 }
                 onClick={() => {
                   navigate(`/recipe/${pathId}/edit`);
@@ -142,7 +145,7 @@ export default function UserActions({ recipeData, user, pathId }) {
                 <IconEdit style={{ width: rem(20) }} stroke={1.5} />
               </ActionIcon>
             </Tooltip>
-          )}
+          )} */}
 
           <Tooltip label="(COMING SOON!) Add notes">
             <ActionIcon variant="default" size="lg">
