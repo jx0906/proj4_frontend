@@ -64,7 +64,6 @@ Separate permissions for admin and users
 ### Creation of "fetchEdamama" hook to facilitate fetch of external recipe data
 - Besides enabling me to streamline multiple operations which I would have to repeatedly define and call throughout the development of the app, the sense of satisfaction also came from knowing that a fellow SE could benefit from the hook for efficiency gains.  
 ```
-
 function useEdamam() {
   const sendEdamamRequest = async (url) => {
     try {
@@ -116,9 +115,8 @@ export default useEdamam;
 ### Enabling keyword search through indexing and regex searches
 - This first hand experience demystified the keyword searches I frequently performed as a user. Of particular surprise was the simplicity of its implementation.
 ```
-
+util/textIndexes.js
 ...
-
 // Apply the text search plugin to the data schemas
 Recipe.schema.plugin(require("mongoose-text-search"));
 User.schema.plugin(require("mongoose-text-search"));
@@ -139,6 +137,8 @@ User.schema.index({
 
 ```
 
+recipeModel.jsx
+```
 async function getByKeyword(searchTerm) {
   // use regex to match the search term against intended database fields.
   const searchTermRegex = new RegExp(searchTerm, "i"); // 'i' for case-insensitive search
