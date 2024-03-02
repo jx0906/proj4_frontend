@@ -12,8 +12,7 @@ export default function ImageDropzone({
 }) {
   const { successToast, errorToast } = useToast();
 
-  const maxSizeInBytes = 50 * 1024; // 50KB
-  // const maxSizeInBytes = 10 * 1024 ** 2;  10 MB in bytes
+  const maxSizeInBytes = 10 * 1024 ** 2; //10 MB in bytes
 
   // const preview = (file) => {
   //   const imageUrl = URL.createObjectURL(file);
@@ -54,7 +53,7 @@ export default function ImageDropzone({
         errorToast({
           title: "Oops!",
           message:
-            "We can only accept one image file (png/jpeg) that is less than 50KB in size.",
+            "We can only accept one image file (png/jpeg) that is less than 10MB in size.",
         })
       }
       maxSize={maxSizeInBytes}
@@ -106,7 +105,7 @@ export default function ImageDropzone({
             Share a picture of the dish here!
           </Text>
           <Text size="sm" c="dimmed" inline mt={7}>
-            We can only accept .png and .jpeg files that are less than 50 kb in
+            We can only accept .png and .jpeg files that are less than 10mb in
             size.
           </Text>
           {/* <SimpleGrid cols={{ base: 1, sm: 4 }} mt={preview ? "xl" : 0}>

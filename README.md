@@ -1,13 +1,6 @@
-# todaybakewhat
 
-## Live URL
-
-https://todaybakewhat.onrender.com
-
-## Source Repositories
-
-- Backend API https://github.com/jx0906/proj4-backend
-- Frontend Application https://github.com/jx0906/proj4-frontend
+# [todaybakewhat](https://todaybakewhat.onrender.com)
+Developed with the objective to support users in their search for The Bake Recipe of the day, this app brings together recipes thoughtfully created by the todaybakewhat community and data aggregated from third party APIs, overlayed with features like note taking to record bake observations and comments, track pantry inventory and curate shopping lists, as well as customisable price trackers to enable the smart user to compare prices of the ingredients required for the bake, all from the convenience of one app.
 
 ## Screenshots
 Landing page for the enthusiastic baker, with recipe contributions from the todaybakewhat community and data aggregated from third party APIs to enrich the repetoire  
@@ -30,9 +23,9 @@ Separate permissions for admin and users
 
 ## Technologies Used
 
-- largely Javascript
+- Javascript, HTML, CSS
 
-### Backend API/DB
+### Backend API/DB ([Source Repository](https://github.com/jx0906/proj4-backend))
 
 - [Mongo DB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
@@ -66,7 +59,10 @@ Separate permissions for admin and users
 
 - I had always been curious about how a team could work together to develop an app so am particuarly thankful for the experience this round to work on one from start to "end" all by myself. Through the process, I experienced first hand and gleaned insights on the expected roles and responsibilities of various actors in the team, and how these would have shaped their perpsectives in the app development process. As I stepped in the shoes of each role to develop the app (eg, backend dev, UI/UX designer, product manager), I also gained greater awareness of my strengths and weaknesses, as well as my interests in specific software engineering functions. 
 
-- The meta takeaways aside, I also gained more confidence in my technical skills, as evident in my reduced apprehension to self-debug and troubleshoot. One thing I found particularly gratifying was the creation of my own "hook" to fetch and process the Edamam data for the app operations as it enabled me to streamline multiple operations which I would have to repeatedly define and call throughout the development of the app. The sense of satisfaction comes from knowing that a fellow SE could also benefit from the hook for efficiency gains.  
+- On the technical front, I gained more confidence in my coding skills - evident in my reduced apprehension to self-debug and troubleshoot, and had my first dips in the creation of my own "hook" to fetch and process the external data for the app operations, as well as enabling keyword search through indexing.
+
+### Creation of "fetchEdamama" hook to facilitate fetch of external recipe data
+- Besides enabling me to streamline multiple operations which I would have to repeatedly define and call throughout the development of the app, the sense of satisfaction also came from knowing that a fellow SE could benefit from the hook for efficiency gains.  
 ```
 
 function useEdamam() {
@@ -114,6 +110,52 @@ function useEdamam() {
 }
 
 export default useEdamam;
+
+```
+
+### Enabling keyword search through indexing and regex searches
+- This first hand experience demystified the keyword searches I frequently performed as a user. Of particular surprise was the simplicity of its implementation.
+```
+
+...
+
+// Apply the text search plugin to the data schemas
+Recipe.schema.plugin(require("mongoose-text-search"));
+User.schema.plugin(require("mongoose-text-search"));
+
+// Create text indexes
+Recipe.schema.index({
+  name: "text",
+  description: "text",
+  "ingredients.name": "text",
+});
+
+User.schema.index({
+  name: "text",
+  email: "text",
+});
+
+...
+
+```
+
+async function getByKeyword(searchTerm) {
+  // use regex to match the search term against intended database fields.
+  const searchTermRegex = new RegExp(searchTerm, "i"); // 'i' for case-insensitive search
+
+  const data = await recipeDao
+    .find({
+      $or: [
+        { name: { $regex: searchTermRegex } }, // 'i' flag for case-insensitive search
+        { description: { $regex: searchTermRegex } },
+        { "ingredients.name": { $regex: searchTermRegex } },
+        { instructions: { $regex: searchTermRegex } },
+      ],
+    })
+    .sort({ name: 1 }); // ascending order
+
+  return data;
+}
 
 ```
 
