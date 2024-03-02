@@ -78,7 +78,7 @@ export default function RecipeList() {
   const getEdamamList = async () => {
     try {
       const edamamRecp = await sendEdamamRequest(
-        "https://api.edamam.com/api/recipes/v2?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&dishType=Biscuits%20and%20cookies&dishType=Bread&random=true&field=label&field=image&field=ingredientLines&field=dishType"
+        `${process.env.EDAMAM_API_URL}&app_id=${process.env.EDAMAM_APP_ID}&${process.env.EDAMAM_APP_KEY}&dishType=Biscuits%20and%20cookies&dishType=Bread&random=true&field=label&field=image&field=ingredientLines&field=dishType`
       );
 
       const mappedEdamamRecp = edamamRecp.hits.map((hit) => {

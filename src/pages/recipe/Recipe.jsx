@@ -49,9 +49,8 @@ function Recipe() {
       let fetchedData;
       if (location.pathname.includes("edam")) {
         const edamamRecp = await sendEdamamRequest(
-          `https://api.edamam.com/api/recipes/v2/${pathId}?type=public&app_id=06f16e1e&app_key=c06c81514c5f0c114da3fa25ac9cc76a&field=label&field=image&field=images&field=source&field=url&field=yield&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=dishType`
+          `https://api.edamam.com/api/recipes/v2/${pathId}?type=public&app_id=${process.env.EDAMAM_APP_ID}&${process.env.EDAMAM_APP_KEY}&field=label&field=image&field=images&field=source&field=url&field=yield&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=dishType`
         );
-        // console.log(edamamRecp);
 
         fetchedData = {
           edamamId: `${pathId}`,
