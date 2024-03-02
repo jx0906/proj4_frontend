@@ -1,8 +1,9 @@
+
 # [todaybakewhat](https://todaybakewhat.onrender.com)
 Developed with the objective to support users in their search for The Bake Recipe of the day, this app brings together recipes thoughtfully created by the todaybakewhat community and data aggregated from third party APIs, overlayed with features like note taking to record bake observations and comments, track pantry inventory and curate shopping lists, as well as customisable price trackers to enable the smart user to compare prices of the ingredients required for the bake, all from the convenience of one app.
 
 ## Screenshots
-Landing page for the enthusiastic baker, with an overview of the recipe contributions from the app community and data aggregated from third party APIs to enrich the repetoire
+Landing page for the enthusiastic baker, with recipe contributions from the todaybakewhat community and data aggregated from third party APIs to enrich the repetoire  
 <img width="796" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/ed325b52-bc20-41c4-9847-877e055687d3">  
 
 Complete recipe information with options for users to share recipes through a link, and for logged on users, to bookmark recipes for future reference, edit self-created recipes and append notes.  
@@ -111,6 +112,7 @@ function useEdamam() {
 export default useEdamam;
 
 ```
+
 ### Enabling keyword search through indexing and regex searches
 - This first hand experience demystified the keyword searches I frequently performed as a user. Of particular surprise was the simplicity of its implementation.
 ```
@@ -156,6 +158,7 @@ async function getByKeyword(searchTerm) {
 }
 
 ```
+
 ## Next Steps
 
 - Refine media upload feature
