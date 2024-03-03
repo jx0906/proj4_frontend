@@ -3,22 +3,22 @@
 Developed with the objective to support users in their search for The Bake Recipe of the day, this app brings together recipes thoughtfully created by the todaybakewhat community and data aggregated from third party APIs, overlayed with features like note taking to record bake observations and comments, track pantry inventory and curate shopping lists, as well as customisable price trackers to enable the smart user to compare prices of the ingredients required for the bake, all from the convenience of one app.
 
 ## Screenshots
-Landing page for the enthusiastic baker, with recipe contributions from the todaybakewhat community and data aggregated from third party APIs to enrich the repetoire  
+Landing page for the enthusiastic baker, with recipe contributions from the todaybakewhat community and data aggregated from third party APIs to enrich the database  
 <img width="796" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/ed325b52-bc20-41c4-9847-877e055687d3">  
 
-Complete recipe information with options for users to share recipes through a link, and for logged on users, to bookmark recipes for future reference, edit self-created recipes and append notes.  
+Complete recipe information with options for users to share recipes through a link, and for logged on users, to bookmark recipes for future reference, edit self-created recipes and append notes  
 <img width="520" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/e44e4ac9-5882-4785-843b-f62f095b52a7">  
 
 Recipe Management - conveniently search, create, edit, and record your baking adventures all in one platform  
-<img width="751" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/c6fcafdc-3aa9-40f0-a994-1f12e8f8270b">
- 
-<img width="747" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/982b69f1-b1e1-45f7-b9c1-cb21be249de4">
+<img width="751" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/c6fcafdc-3aa9-40f0-a994-1f12e8f8270b">  
 
-<img width="523" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/b081ca40-9bd7-45d0-b9b6-4aca6a58e206">
-
-<img width="835" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/0238d7cd-0508-449c-80f0-23a893c9e2d7">
-
-Separate permissions for admin and users  
+<img width="747" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/982b69f1-b1e1-45f7-b9c1-cb21be249de4">  
+  
+<img width="523" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/b081ca40-9bd7-45d0-b9b6-4aca6a58e206">  
+  
+<img width="835" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/0238d7cd-0508-449c-80f0-23a893c9e2d7">  
+  
+Separate permissions for admin and users    
 <img width="682" alt="image" src="https://github.com/jx0906/proj4_frontend/assets/142247158/e03c585f-1b52-4d94-9c55-3164b509b6a5">
 
 ## Technologies Used
@@ -57,11 +57,11 @@ Separate permissions for admin and users
 
 ## Key Challenges/takeaways
 
-- I had always been curious about how a team could work together to develop an app so am particuarly thankful for the experience this round to work on one from start to "end" all by myself. Through the process, I experienced first hand and gleaned insights on the expected roles and responsibilities of various actors in the team, and how these would have shaped their perpsectives in the app development process. As I stepped in the shoes of each role to develop the app (eg, backend dev, UI/UX designer, product manager), I also gained greater awareness of my strengths and weaknesses, as well as my interests in specific software engineering functions. 
+- I have always been curious about how a team could work together to develop an app so am particuarly thankful for the experience this round to work on one from scratch all by myself. Through the process, I experienced first hand and gleaned insights on the expected roles and responsibilities of various actors in the team, and how these would have shaped their perspectives in the app development process. As I stepped in the shoes of each role to develop the app (eg, backend dev, UI/UX designer, product manager), I also gained greater awareness of my strengths and weaknesses, as well as my interests in specific software engineering functions. 
 
 - On the technical front, I gained more confidence in my coding skills - evident in my reduced apprehension to self-debug and troubleshoot, and had my first dips in the creation of my own "hook" to fetch and process the external data for the app operations, as well as enabling keyword search through indexing.
 
-### Creation of "fetchEdamama" hook to facilitate fetch of external recipe data
+### Creation of "useEdamama" hook to facilitate fetch of external recipe data
 - Besides enabling me to streamline multiple operations which I would have to repeatedly define and call throughout the development of the app, the sense of satisfaction also came from knowing that a fellow SE could benefit from the hook for efficiency gains.  
 ```
 function useEdamam() {
